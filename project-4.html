@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Andes</title>
+    <!-- Bootsrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Bootstrap Scripts for Navbar-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Slick Scripts for Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="./src/slick-project.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div id="home" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="navbar-brand" href="./index.html">Nathan Wildofsky</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html">About Me</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#resume">Resume</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="slick-carousel">
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/IA/IA_decks.png" alt="The included decks of cards">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/IA/IA_money.png" alt="The money cards">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/IA/IA_actions.png" alt="The action cards">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/IA/IA_hand.png" alt="An example hand">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/IA/IA_board.png" alt="An example of a mid-game board">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="content">
+            <div id="tags">
+                <span>Group Project</span>
+                <span>Card Game</span>
+            </div>
+            <div id="details">
+                <h1>Investment Andes</h1>
+                <p id="stats">
+                    <span>Timeframe:</span> 2 Months<br>
+                    <span>Role:</span> Game Designer and Playtest Coordinator<br>
+                    <span>Tools:</span> Tabletop Simulator<br>
+                    <span>Skills: </span> Teamwork, Communication
+                </p>
+                <p id="description">
+                    A fast-paced and high stakes card game intended for play in tabletop simulator. Make smart
+                    investments into buildings that you think will give you the most benefit and use any action
+                    cards you get to give yourself an advantage over the other players. The game only continues
+                    while there is still money left in the deck, so once the economy dries up, the player with the
+                    most money wins. Investment Andes was a group project and my contribution, along with my other
+                    teammates, was the balancing of the game, the ideas for buildings and action cards, and the rules
+                    of the game.<br><br>
+
+                    There are 5 building options that all players have access to purchase, and they each have passive 
+                    effects that in some way increase the amount of cards in your hand. The two cheapest buildings have 
+                    the effect of increasing your draw at the start of your turn of one of the card types while the more 
+                    expensive buildings will let you draw cards in response to the other players' actions. With only the 
+                    building system, players with more money will simply be able to buy the better buildings and only get 
+                    richer from there. To make the game more fair and randomized, action cards are an additional deck that 
+                    you get to draw from that offer all sorts of effects. With action cards, you can stop other players' 
+                    buildings from functioning, steal cards from another player, draw more cards, and reduce the cost of 
+                    the buildings on your turn. The balance is never perfect because most players don't know that they should 
+                    be trying to get more action cards when they're lower on money instead of money cards, but still with 
+                    action cards the game gets more chaotic and competitive between the players.
+                </p>
+                <p id="challenges">
+                <ul><b>Challenges:</b>
+                    <li>Balancing the game in such a way that the rich don't always get richer but also that money received 
+                        feels earned and worthwhile.
+                    </li>
+                    <li>Maintaining the feel of the game for both small and large player groups.</li>
+                    <li>Keeping the game's fast pace even when players need to count their money for every purchase 
+                        and strategize what building to purchase.
+                    </li>
+                </ul>
+                </p>
+                <p id="likes">
+                <ul><b>What I did well:</b>
+                    <li>Reduced the number of buildings available in the game to an easily comprehensible 5. 
+                        Originally there were way more buildings with various inconsistent effects and it was way 
+                        too much.
+                    </li>
+                    <li>Gave players calculators to use and lowered the value of money as a whole so 
+                        calculations for purchasing buildings and counting each player's final score.
+                    </li>
+                    <li>Designed a comprehensive and easy to read pdf of the game's rules that allows for quick 
+                        access to labeled topics that a player would be specifically searching for.
+                    </li>
+                </ul>
+                </p>
+                <p id="dislikes">
+                <ul><b>What I would change/improve:</b>
+                    <li>In general the action cards need to be seen by newer players as a viable option instead 
+                        of them thinking they only need money. Possibly add more card examples in the rules so they 
+                        understand what action cards can do.
+                    </li>
+                    <li>Action cards are a bit too strong I think, once players realize what they can do it's normally 
+                        the player who gets the most action cards who wins the whole game. Lowering the limit 
+                        of action cards that can be played in a turn could reduce their turn-by-turn strength and 
+                        reducing the number of action cards that are: "Draw X money cards," or changing their effect 
+                        to be more conditional.
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://drive.google.com/file/d/1KLew1eUWlu_wpQKOsgTqwLcl4hJgzUfQ/view?usp=sharing" class="button">View Rules</a>
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2413986966" class="button">See on Steam</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="contact">
+            <h1>Contact Me!</h1>
+            <div id="contact-wrapper">
+                <div id="contact-info">
+                    <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
+                    <p>Phone: 937-925-2140</p>
+                    <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
+                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Superflare" class="icon">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                    <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
+                </div>
+                <div id="form">
+                    <form
+                        action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSc3q5mThzK3OKhMMbQpZ6J9xwnAq2IvWFdXDhVAUHu-SCwh8g/formResponse">
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="emailAddress" required placeholder="Your email"><br>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="entry.2005620554" required placeholder="Your name"><br>
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="entry.839337160" required
+                            placeholder="Your message"></textarea><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

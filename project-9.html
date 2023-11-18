@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Finder</title>
+    <!-- Bootsrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Bootstrap Scripts for Navbar-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Slick Scripts for Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="./src/slick-project.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div id="home" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="navbar-brand" href="./index.html">Nathan Wildofsky</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html">About Me</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#resume">Resume</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="slick-carousel">
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/PK/PK_rayquaza.png" alt="Searching the API for rayquaza">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/PK/PK_name_search.png" alt="Focusing on a charizard card">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/PK/PK_specific.png" alt="The card-specific page">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/PK/PK_filter.png" alt="Filtering the search results">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/PK/PK_mobile.png" alt="The site interface on mobile">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="content">
+            <div id="tags">
+                <span>Solo Project</span>
+                <span>Application</span>
+                <span>Web Development</span>
+                <span></span>
+            </div>
+            <div id="details">
+                <h1>Pokemon TCG Card Finder</h1>
+                <p id="stats">
+                    <span>Timeframe:</span> 2 Weeks<br>
+                    <span>Role:</span> Developer and Designer<br>
+                    <span>Tools:</span> Visual Studio Code, Pokemon TCG API<br>
+                    <span>Skills: </span> Javascript, HTML, CSS
+                </p>
+                <p id="description">
+                    A website I designed and created that uses Javascript and the Pokemon TCG
+                    API that allows the user to search for any Pokemon card using multiple search options and filters.
+                    Once the user finds a card that they want to learn more about or see a clearer picture of, they can
+                    simply click on the card and they are taken to a new page that has a higher resolution picture of
+                    the card as well as all the important details of the card given in a much easier to read design. The
+                    website is mainly for users who already know a fair amount about Pokemon cards and are looking for
+                    something specific, but it helps users who might not know as much by restricting number inputs to
+                    the valid range and certain filters so that there are fewer invalid queries to the API. The site is
+                    also fully responsive with the exception of the filter popout not fitting the screens of some mobile
+                    phones.<br><br>
+
+                    You are able to search for cards by name, text on the card, health amount, attack damage, attack cost, 
+                    and retreat cost. Results can be specified even further by filtering the cards by card type, energy type, 
+                    and rarity. The API provides a lot of options for limiting the results of the API call but does not have 
+                    an easy way to limit the results with multiple parameters at a time. To correct this for my website, I 
+                    make multiple calls to the API each with a different parameter that the user specified, then combine the 
+                    results of all the individual calls that fit all of the parameters set and display them.<br><br>
+                    
+                    The page for individual cards that are selected is completely modular. It is one html file that adapts its 
+                    content based on the card clicked to get there. This can be done by adding the id of the selected card to 
+                    the url of this page after a '?' character, and then reading the id when the page loads and grabbing that card's 
+                    information. If you click the advanced button from this page, then you will be taken back to the main app 
+                    page and the last call made to the API will be done again.
+                </p>
+                <p id="challenges">
+                <ul><b>Challenges:</b>
+                    <li>Giving proper search results when the API does not allow for all the search option combinations 
+                        that my website provides.
+                    </li>
+                    <li>Creating 1 separate page that displays the data for any card that is clicked on.</li>
+                    <li>Designing the application to be responsive and work on various mobile devices.</li>
+                    <li>Applying the selected sort method, filters, and search parameters to the data before 
+                        it is displayed on the app.
+                    </li>
+                </ul>
+                </p>
+                <p id="likes">
+                <ul><b>What I did well:</b>
+                    <li>Gave the users a large number of ways to limit the search how they want to.</li>
+                    <li>Search results are dynamically displayed in a grid pattern that is responsive.</li>
+                    <li>Card text is displayed using graphics similar to the ones on the cards themselves.</li>
+                </ul>
+                </p>
+                <p id="dislikes">
+                <ul><b>What I would change/improve:</b>
+                    <li>Add the enter button as an alternative to pressing the search button in the app header.</li>
+                    <li>Utilize local storage to retain query data and search parameters so the API is called less often 
+                        and users don't have to re-enter the same parameters.
+                    </li>
+                    <li>Fix cases where a card will appear in the list on the main page but when selected the 
+                        website says there is no data for that card or it cannot find that card.
+                    </li>
+                    <li>Make the application even more useful by allowing users to create decks out of searched cards 
+                        or lists of cards they may have collected.
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://people.rit.edu/nsw7227/235/project2/" class="button">Try It Out</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="contact">
+            <h1>Contact Me!</h1>
+            <div id="contact-wrapper">
+                <div id="contact-info">
+                    <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
+                    <p>Phone: 937-925-2140</p>
+                    <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
+                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Superflare" class="icon">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                    <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
+                </div>
+                <div id="form">
+                    <form
+                        action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSc3q5mThzK3OKhMMbQpZ6J9xwnAq2IvWFdXDhVAUHu-SCwh8g/formResponse">
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="emailAddress" required placeholder="Your email"><br>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="entry.2005620554" required placeholder="Your name"><br>
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="entry.839337160" required
+                            placeholder="Your message"></textarea><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
