@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Jump Frenzy</title>
+    <!-- Bootsrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Bootstrap Scripts for Navbar-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Slick Scripts for Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="./src/slick-project.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div id="home" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="navbar-brand" href="./index.html">Nathan Wildofsky</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html">About Me</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item nav-border" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="./index.html#resume">Resume</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="slick-carousel">
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/WJF/WJ_title.png" alt="The game title screen">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/WJF/WJ_begin.png" alt="A frame of the game with minimal obstacles">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/WJF/WJ_difficult.png" alt="A frame of the game with multiple obstacles">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                    <img src="./media/WJF/WJ_lost.png" alt="The game over screen">
+                </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="content">
+            <div id="tags">
+                <span>Solo Project</span>
+                <span>Web Game</span>
+                <span>2D</span>
+                <span>Arcade</span>
+            </div>
+            <div id="details">
+                <h1>Wall Jump Frenzy</h1>
+                <p id="stats">
+                    <span>Timeframe:</span> 2 Weeks<br>
+                    <span>Role:</span> Game Developer and Designer<br>
+                    <span>Tools:</span> Visual Studio Code, PixiJS, Howler.JS<br>
+                    <span>Skills: </span> Javascript, HTML, CSS
+                </p>
+                <p id="description">
+                    A simple arcade-clicker game designed for the web with Javascript, PixiJS, and
+                    Howler.JS. The goal is to collect as many coins as possible while avoiding all of the obstacles that
+                    spawn in while you play. To play, just left-click anywhere on the game screen to jump from wall to
+                    wall.
+                    The block's jumping movement is physics based
+                    and it will also rotate in the air, always landing flush with the wall. Obstacles will spawn in
+                    with their hitboxes deactivated so that the player can
+                    plan their movement around the obstacles. After a short period of time each obstacle will then
+                    activate and move across the screen. Collision with an active obstacle will end the game unless the
+                    player has picked up a shield, which increases the player's health by one. After the player loses
+                    its shield, it will gain invincibility for a short period.<br><br>
+
+                    Perfecting the block's movement as much as I could was the main
+                    challenge of this game and I went through two different iterations of jumping mechanics and rotation
+                    mechanics. At first for jumping, I started with the physics kinematics equation for delta position
+                    using an initial velocty and an acceleration, which resulted in an arch, but did not allow for
+                    jumping multiple times in the air all that easily. So I switched to a system where acceleration and
+                    velocty were calculated separately each frame so that each jump, velocity could be changed so the
+                    block restarts its arch. For rotation I initially started rotating the block constantly until it 
+                    hits a wall and then it would rotate quickly to be flush with that wall. This method didn't look 
+                    very nice and sometimes took longer than it should have to jump to the right rotation. I modified 
+                    the code to instead do 1 full rotation and stop. This still kept the look that I wanted while completely 
+                    removing all the rotation issues I was experiencing.
+                </p>
+                <p id="challenges">
+                <ul><b>Challenges:</b>
+                    <li>Perfecting the block's jump speed and force to feel fun, balanced, and not require too 
+                        many clicks.
+                    </li>
+                    <li>Implementing a rotation during each jump that adds to the visual flair but doesn't interrupt 
+                        the gameplay by having different rotations when landing on the walls.
+                    </li>
+                    <li>Setting up all the obstacles in the game to be randomly placed, to have a random speed, 
+                        and a random duration that are all within set parameters.</li>
+                </ul>
+                </p>
+                <p id="likes">
+                <ul><b>What I did well:</b>
+                    <li>The game starts out easier with less obstacles to dodge and gets harder as the player 
+                        collects more coins. Multiple tiers of difficulty are incorperated which come into effect 
+                        after certain coin requirements.
+                    </li>
+                    <li>The game is endless and allows for very high high-scores. It's fun to challenge other people 
+                        and see who is able to get the highest score.
+                    </li>
+                    <li>The rules are very simple to understand and can be understood through only playing the game.</li>
+                </ul>
+                </p>
+                <p id="dislikes">
+                <ul><b>What I would change/improve:</b>
+                    <li>Increase the block's jump height while keeping the falling the velocity around the same.</li>
+                    <li>Give the block a 360 degree rotation everytime it jumps, and increase the speed of the rotation 
+                        if it's too close to the wall.
+                    </li>
+                    <li>Add more powerups for the player in addition to the shield.</li>
+                    <li>Add more obstacles with different movement patterns.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://people.rit.edu/nsw7227/235/project3/" class="button">Play Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="contact">
+            <h1>Contact Me!</h1>
+            <div id="contact-wrapper">
+                <div id="contact-info">
+                    <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
+                    <p>Phone: 937-925-2140</p>
+                    <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
+                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Superflare" class="icon">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                    <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
+                </div>
+                <div id="form">
+                    <form
+                        action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSc3q5mThzK3OKhMMbQpZ6J9xwnAq2IvWFdXDhVAUHu-SCwh8g/formResponse">
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="emailAddress" required placeholder="Your email"><br>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="entry.2005620554" required placeholder="Your name"><br>
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="entry.839337160" required
+                            placeholder="Your message"></textarea><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

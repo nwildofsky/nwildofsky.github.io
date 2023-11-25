@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Andes</title>
+    <title>Basic Rendering Engine</title>
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -16,8 +15,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- My Stylesheet -->
     <link rel="stylesheet" href="css/project.css">
     <!-- Bootstrap Scripts for Navbar-->
@@ -31,14 +29,11 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- Slick Scripts for Carousel -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="module" src="./src/slick-project.js"></script>
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -71,27 +66,47 @@
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/IA/IA_decks.png" alt="The included decks of cards">
+                <img src="./media/BRE/bre_progress_1.png" alt="Render of shapes with colors in the frame">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/IA/IA_money.png" alt="The money cards">
+                <img src="./media/BRE/bre_progress_2.png" alt="Render of 3D models of different shapes with their normals displayed">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/IA/IA_actions.png" alt="The action cards">
+                <img src="./media/BRE//bre_progress_3.png" alt="Render of 3D models colored only by the lighting in the scene">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/IA/IA_hand.png" alt="An example hand">
+                <img src="./media/BRE/bre_progress_4.png" alt="Render of 3D models with lighting and texture">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/IA/IA_board.png" alt="An example of a mid-game board">
+                <img src="./media/BRE/bre_progress_5.png" alt="Render of 3D models with normal maps that affect lighting and a skybox">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/BRE/bre_progress_6.png" alt="Render of spheres showcasing PBR lighting quality">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/BRE/bre_final.png" alt="Final version of the engine rendering a winter snowglobe scene">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/BRE/bre_rotate.png" alt="Example of the UI being used to alter Entities in the scene">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/BRE/bre_change_lighting.png" alt="Example of the UI being used to alter lighting in the scene">
                 </div>
             </div>
         </div>
@@ -100,82 +115,91 @@
     <main>
         <div id="content">
             <div id="tags">
-                <span>Group Project</span>
-                <span>Card Game</span>
+                <span>Solo Project</span>
+                <span>Application</span>
+                <span>3D</span>
+                <span>Graphics Programming</span>
             </div>
             <div id="details">
-                <h1>Investment Andes</h1>
+                <h1>Basic Rendering Engine</h1>
                 <p id="stats">
-                    <span>Timeframe:</span> 2 Months<br>
-                    <span>Role:</span> Game Designer and Playtest Coordinator<br>
-                    <span>Tools:</span> Tabletop Simulator<br>
-                    <span>Skills: </span> Teamwork, Communication
+                    <span>Timeframe:</span> 3 Months<br>
+                    <span>Role:</span> Feature Developer<br>
+                    <span>Tools:</span> Visual Studio, Dear ImGui, DirectX 11<br>
+                    <span>Skills: </span> C++, HLSL
                 </p>
                 <p id="description">
-                    A fast-paced and high stakes card game intended for play in tabletop simulator. Make smart
-                    investments into buildings that you think will give you the most benefit and use any action
-                    cards you get to give yourself an advantage over the other players. The game only continues
-                    while there is still money left in the deck, so once the economy dries up, the player with the
-                    most money wins. Investment Andes was a group project and my contribution, along with my other
-                    teammates, was the balancing of the game, the ideas for buildings and action cards, and the rules
-                    of the game.<br><br>
+                    A custom rendering engine built with C++ and utilizing DirectX 11. This was a semester-long class
+                    project where every new feature was added one assignment at a time. Features individually worked on
+                    and implemented are: a virtual camera, camera controls, skyboxes, Dear ImGui UI for runtime modification,
+                    custom pixel and vertex shaders written in hlsl, game entities with associated transforms, meshes, and
+                    PBR materials, multiple light types, and shadow maps. The project also makes use of the professor's own
+                    SimpleShader library which makes the process of implementing and integrating shaders into a DirectX application
+                    a lot more convenient. I really enjoyed working on this project and put all my effort into making the engine
+                    as functional as possible but also structuring the code in a organized and understandable way. As such,
+                    this project serves as the best example of my skill with C++.<br><br>
 
-                    There are 5 building options that all players have access to purchase, and they each have passive 
-                    effects that in some way increase the amount of cards in your hand. The two cheapest buildings have 
-                    the effect of increasing your draw at the start of your turn of one of the card types while the more 
-                    expensive buildings will let you draw cards in response to the other players' actions. With only the 
-                    building system, players with more money will simply be able to buy the better buildings and only get 
-                    richer from there. To make the game more fair and randomized, action cards are an additional deck that 
-                    you get to draw from that offer all sorts of effects. With action cards, you can stop other players' 
-                    buildings from functioning, steal cards from another player, draw more cards, and reduce the cost of 
-                    the buildings on your turn. The balance is never perfect because most players don't know that they should 
-                    be trying to get more action cards when they're lower on money instead of money cards, but still with 
-                    action cards the game gets more chaotic and competitive between the players.
+                    The project started as a barebones DirectX 11 application provided by the professor. The underlying functionality
+                    of creating a new application window and using DirectX to display a frame of pixels with a swap chain was already
+                    implemented at the start. From there I built it up to be something that could display 3D objects in a virtual
+                    environment with fairly accurate materials and lighting.<br><br>
+
+                    Every object that is dislpayed within the engine is stored as a Game Entity class. This is an object-oriented class
+                    that includes a transform, mesh, and material. These properties all come together to determine what pixels in the
+                    frame are representative of the object and what color those pixels are. They are also everything that can be manipulated
+                    and changed with the UI menus at runtime. The transform contains the objects position, rotation, and scale. The position,
+                    rotation, and scale of objects are normally accessed in a 4x4 matrix containing each field, but multiple additional ways to
+                    assign and retrieve these variables are also provided. For the transform's rotation, I spent a good amount of time trying to
+                    use quaternions as the main data type to store the rotation. This was working fine until I added functionality to manipulate
+                    an object's rotation in the application's UI using euler angles. I tried multiple formulas to convert euler angles back to
+                    quaternions but could never find one that worked flawlessly. Once I started changing the rotation around the z-axis (forward and back),
+                    the conversion no longer produced accurate results. So, I made the decision to store rotations as euler angles instead of a
+                    quaternion, but created functions the convert that representation to either a matrix or a quaternion to be used for something else.<br><br>
+
+                    For lighting and shadow maps, I chose to support 3 types of lights: directional lights, point lights, and spot lights.
+                    While performing lighting calculations with all 3 types were fairly similar and straightforward, calculating the shadows
+                    formed from each light type was a much more complicated endeavor. The method of displaying shadows that I chose was the
+                    simplest one. Build depth buffers from the perspective of the light and only allows light to shine on objects that are
+                    the closest depth for each pixel of the depth buffer. For directional and spot lights, this process only needed to happen
+                    once, but for point lights, since they shine in every direction, this process needed to be done 6 times to create a depth
+                    buffer cube and analyse every surrounding direction.<br><br>
+
+                    I also wanted to make the light objects as dynamic as possible so that they could be moved in real time and change the
+                    lighting and shadowing conditions. I was able to get the lighting to update with movements at every frame but I could
+                    not get the shadow maps to do the same. From there I pivoted recalculating and updating the shadow maps from a per frame
+                    operation to a per request operation. I locked the movement and rotation of light objects when the lights are set to cast
+                    shadows. The user can then turn off that light's shadows, reposition it, and turn the shadows back on and the shadow maps
+                    will update at that moment to the new light direction.
                 </p>
                 <p id="challenges">
-                <ul><b>Challenges:</b>
-                    <li>Balancing the game in such a way that the rich don't always get richer but also that money received 
-                        feels earned and worthwhile.
-                    </li>
-                    <li>Maintaining the feel of the game for both small and large player groups.</li>
-                    <li>Keeping the game's fast pace even when players need to count their money for every purchase 
-                        and strategize what building to purchase.
-                    </li>
-                </ul>
+                    <ul><b>Challenges:</b>
+                        <li>Learning and implementing all the intricacies of pixel shader lighting calculations and BDRFs</li>
+                        <li>Learning to work with the DirectX 11 library and learning to code in HLSL</li>
+                        <li>Making as many properties as possible available to be manipulated with runtime UI menus</li>
+                        <li>Attempting to use quaternions as the sole data type for storing rotations, exept in the UI</li>
+                        <li>Ensuring that the lighting and shadows in the engine are able to be dynamically changed at runtime</li>
+                    </ul>
                 </p>
                 <p id="likes">
-                <ul><b>What I did well:</b>
-                    <li>Reduced the number of buildings available in the game to an easily comprehensible 5. 
-                        Originally there were way more buildings with various inconsistent effects and it was way 
-                        too much.
-                    </li>
-                    <li>Gave players calculators to use and lowered the value of money as a whole so 
-                        calculations for purchasing buildings and counting each player's final score.
-                    </li>
-                    <li>Designed a comprehensive and easy to read pdf of the game's rules that allows for quick 
-                        access to labeled topics that a player would be specifically searching for.
-                    </li>
-                </ul>
+                    <ul><b>What I did well:</b>
+                        <li>Made the application easy to use with simple camera controls and user-friendly UI menus</li>
+                        <li>Simply structured and well documented code with many useful function overloads</li>
+                        <li>Integrated tinyobj loader into the mesh class to support loading a wider variety of 3D model types</li>
+                        <li>Implemented a creative way to allow light positions to change and shadow maps to update dynamically</li>
+                    </ul>
                 </p>
                 <p id="dislikes">
-                <ul><b>What I would change/improve:</b>
-                    <li>In general the action cards need to be seen by newer players as a viable option instead 
-                        of them thinking they only need money. Possibly add more card examples in the rules so they 
-                        understand what action cards can do.
-                    </li>
-                    <li>Action cards are a bit too strong I think, once players realize what they can do it's normally 
-                        the player who gets the most action cards who wins the whole game. Lowering the limit 
-                        of action cards that can be played in a turn could reduce their turn-by-turn strength and 
-                        reducing the number of action cards that are: "Draw X money cards," or changing their effect 
-                        to be more conditional.
-                    </li>
-                </ul>
+                    <ul><b>What I would change/improve:</b>
+                        <li>Improve ease of use when setting up a 3D environment to be rendered</li>
+                        <li>Add tools in the UI for creating and adding objects to the environment</li>
+                        <li>Continue to add more advanced graphics features such as: light baking, material swapping, animated textures, etc.</li>
+                        <li>Improve the performance with optimizations on both the GPU and CPU side</li>
+                    </ul>
                 </p>
             </div>
 
             <div class="project-links">
-                <a href="https://drive.google.com/file/d/1KLew1eUWlu_wpQKOsgTqwLcl4hJgzUfQ/view?usp=sharing" class="button">View Rules</a>
-                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2413986966" class="button">See on Steam</a>
+                <a href="https://github.com/nwildofsky/IGM-540/tree/Class-Code/Final-Shadows" class="button">See the Code</a>
             </div>
         </div>
     </main>
@@ -188,13 +212,13 @@
                     <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
                     <p>Phone: 937-925-2140</p>
                     <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                    <a href="mailto:wildofskynsw@gmail.com" class="icon">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Superflare" class="icon">
+                    <a href="https://github.com/nwildofsky" class="icon">
                         <i class="fab fa-github-square"></i>
                     </a>
                     <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
@@ -216,5 +240,4 @@
         </div>
     </footer>
 </body>
-
 </html>

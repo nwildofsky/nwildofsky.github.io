@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humans Vs. Zombies</title>
+    <title>Talisman of Ethshar</title>
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -15,7 +16,8 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- My Stylesheet -->
     <link rel="stylesheet" href="css/project.css">
     <!-- Bootstrap Scripts for Navbar-->
@@ -29,11 +31,14 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- Slick Scripts for Carousel -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="module" src="./src/slick-project.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -66,37 +71,27 @@
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
-                <img src="./media/HZ/HZ_start.png" alt="The start of the simulation">
+                    <img src="./media/TE/TE_title.png" alt="The title screen">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                <img src="./media/HZ/HZ_humans.png" alt="Adding more humans to the simulation">
+                    <img src="./media/TE/TE_level-select.png" alt="The level select screen">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                <img src="./media/HZ/HZ_chase.png" alt="Zombies chasing after multiple humans">
+                    <img src="./media/TE/TE_lvl4.png" alt="Level 4 example">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                <img src="./media/HZ/HZ_debug.png" alt="Debug mode enabled">
+                    <img src="./media/TE/TE_thumbnail.png" alt="Level 8 example">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                <img src="./media/HZ/HZ_pov.png" alt="The camera view of a human in the simulation">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/HZ/HZ_zombies.png" alt="Adding more zombies to the simulation">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/HZ/HZ_obstacles.png" alt="Adding more obstacles to the simulation">
+                    <img src="./media/TE/TE_lvl13.png" alt="Level 13 example">
                 </div>
             </div>
         </div>
@@ -105,70 +100,91 @@
     <main>
         <div id="content">
             <div id="tags">
-                <span>Solo Project</span>
-                <span>Interactive Simulation</span>
+                <span>Group Project</span>
+                <span>Game</span>
+                <span>2D</span>
+                <span>Puzzle</span>
             </div>
             <div id="details">
-                <h1>Autonomous Agents: Humans vs. Zombies</h1>
+                <h1>Talisman of Ethshar</h1>
                 <p id="stats">
-                    <span>Timeframe:</span> 2 Months<br>
-                    <span>Role:</span> Game Developer<br>
+                    <span>Timeframe:</span> 5 Weeks<br>
+                    <span>Role:</span> Gameplay Programmer, Level Designer, and UI Designer<br>
                     <span>Tools:</span> Unity, Visual Studio<br>
-                    <span>Skills: </span> C#
+                    <span>Skills:</span> C# 
                 </p>
                 <p id="description">
-                    An interactive simulation designed in Unity where autonomous human and zombie
-                    "players" move independently through a system of steering forces. These forces are based on their
-                    desires to either flee from zombies or catch any humans. Both humans and zombies
-                    will also avoid obstacles, stay within the boundaries, and separate from each other if they are
-                    extremely close to prevent stacking. The simulation has defaults for the amount of humans, zombies,
-                    and obstacles but the player is able to add more in realtime. There are also options for multiple
-                    camera views and debug mode which gives more details about each object's movement during runtime.<br><br>
+                    A connect-the-dots style puzzle game crafted in Unity and inspired by the Ethshar universe.
+                    Talisman of Ethshar consists of 15 levels of increasingly difficult puzzles where you are tasked
+                    with recreating the "talisman" image in the bottom right by connecting the dots one-by-one.
+                    You can start your line at any dot and can connect to any dot from there but you cannot go back
+                    across a line you've already drawn. As you progress through the game, new mechanics are introduced
+                    that keep the puzzles fresh, fun, and challenging. This was a group project and my responsibilities
+                    were designing most of the puzzles, creating the look and feel of the game, and programming the
+                    functionality for connecting dots and checking if the puzzle has been correctly solved.<br><br>
 
+                    Each level consists of a list of nodes, each dot in the level corresponding to a node, and each node 
+                    has a list of current connections to other nodes and a list of the correct connections to other nodes. 
+                    By clicking or dragging on multiple dots in the game, both nodes in the code would add the other to their 
+                    respective current connections lists. Nodes can only added as connections if they are not already in the 
+                    current connections list. If every node in the level has a current connection list that contains the same 
+                    nodes, regardless of order, as the correct connection list, then the level has been completed. Starting at 
+                    level 11, a new mechanic is introduced where any line made from a red dot will "break" any other lines it 
+                    intersects with when a connection is made. Our team had planned to introduce another mechanic and 5 additional 
+                    levels at the end of the game, but we were not able to finish this completely by the deadline and had to cut it.
+                    <br><br>
 
-                    Movement is done through forces instead of
-                    directly manipulating each "player's" velocity or position so that there can be multiple pushes or
-                    pulls trying to direct each "player" that all add to the net force that is ultimately what drives
-                    the movement. But because of this, every force needs to be given a proper weight and the entire
-                    collection of forces needs to have a maximum limit.
+                    The puzzles for the early levels were fairly easy to design since the base of this game can be boiled down to
+                    drawing Euler paths. For starting levels, easier levels would be Euler paths where all nodes have an even number 
+                    of connections so that there are a multitude of ways to draw a correct path. Difficulty could be added, by giving 
+                    some nodes in the graph odd numbers of connections, so the correct path could only be drawn starting and ending at 
+                    these nodes. Complexity could also be added to the graphs themselves to make drawing the full path more challenging. 
+                    Designing the levels which included the break mechanic (red dots) was much harder as the graphs no longer followed 
+                    the same logic. Each of these levels was designed with an intended path but there are many different ways to solve 
+                    these levels, some harder and some easier.
                 </p>
                 <p id="challenges">
-                    <ul><b>Challenges:</b>
-                        <li>Learning and implementing Craig Reynolds' versions of pursue,
-                            evade, separation, obstacle avoidance, and boundary evasion steering forces.</li>
-                        <li>Balancing each of these forces and each object's properties so that humans still most
-                            importantly want to stay alive and zombies still want to convert humans, but they don't get stuck as
-                            often and rarely pass through obstacles.</li>
-                    </ul>
+                <ul><b>Challenges:</b>
+                    <li>Drawing the lines so that every connection is straight and has the same width</li>
+                    <li>Allowing the player to connect multiple dots at once when they connect 2 dots but there are other 
+                        dots between those 2.
+                    </li>
+                    <li>Correctly checking if the level has been completed.</li>
+                    <li>Tracking the player's progress through the game and displaying that in the level select screen.</li>
+                </ul>
                 </p>
                 <p id="likes">
-                    <ul><b>What I did well:</b>
-                        <li>Gave each of the forces acting on the "players" its own weight so that all forces are still present 
-                            but some have more priority than the others.
-                        </li>
-                        <li>Zombies chase the humans based on their predictions of where the humans will be. Both humans and 
-                            zombies have markers of their future positions after a set period of time at their current velocity. 
-                            These calculated positions are what the zombies chase. This also allows the humans to escape the zombies 
-                            in most cases with their fast, snappy movement.
-                        </li>
-                        <li>Both zombies and humans don't overlap and pile together into one when chasing or running away.
-                        </li>
-                        <li>All movement is restricted to the bounds of whatever gameobject is set as the play space.</li>
-                    </ul>
+                <ul><b>What I did well:</b>
+                    <li>Used multiple of Unity's Line Renderers to draw the connections, instead of just 1, so that 
+                        the connections' geometry don't depend on any of the others.
+                    </li>
+                    <li>Connections can be drawn by clicking on 2 dots, dragging the mouse from 1 dot to another, and clicking 
+                        on another dot when the line drawn passes through mutiple more dots.
+                    </li>
+                    <li>The mouse cursor lets the player know whether or not they can create a connection with a dot it's 
+                        hovering over, and the lines that would be broken when a connection is made are highlighted with red.
+                    </li>
+                    <li>The game is challenging, starting out easier and scaling up from there.</li>
+                </ul>
                 </p>
                 <p id="dislikes">
-                    <ul><b>What I would change/improve:</b>
-                        <li>Convert the basic shapes used for each of the objects into more interesting and meaningful models.</li>
-                        <li>Make it so the zombies avoid the obstacles as well as the humans do without giving them a larger max 
-                            net force and causing them to chase the humans faster.
-                        </li>
-                        <li>Add pausing/playing features and rewind functionality to the simulation.</li>
-                    </ul>
+                <ul><b>What I would change/improve:</b>
+                    <li>Add more new mechanics, and levels along with that, to the game. The break mechanic makes 
+                        the game more interesting and adding more mechanics like that would give the game the variety 
+                        it needs.
+                    </li>
+                    <li>If more levels are added, some of the overly complex levels with just the base mechanics 
+                        should be simplified or removed.
+                    </li>
+                    <li>Make the hint system way more useful. Currently it highlights 2 dots as a recommended start 
+                        but it does not signify which is first or second and it's only for starting out in the level.
+                    </li>
+                </ul>
                 </p>
             </div>
 
             <div class="project-links">
-                <a href="https://igme-202.github.io/project-3-4-Superflare/" class="button">Play Now</a>
+                <a href="https://play.unity.com/mg/other/talisman-of-ethshar" class="button">Play Now</a>
             </div>
         </div>
     </main>
@@ -181,13 +197,13 @@
                     <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
                     <p>Phone: 937-925-2140</p>
                     <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                    <a href="mailto:wildofskynsw@gmail.com" class="icon">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Superflare" class="icon">
+                    <a href="https://github.com/nwildofsky" class="icon">
                         <i class="fab fa-github-square"></i>
                     </a>
                     <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
@@ -209,4 +225,5 @@
         </div>
     </footer>
 </body>
+
 </html>

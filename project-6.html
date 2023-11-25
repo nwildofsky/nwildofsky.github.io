@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quake Tracker</title>
+    <title>Dresden Files: Skyline</title>
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -71,32 +71,32 @@
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_home.png" alt="The site homepage">
+                    <img src="./media/DF/DF_title.png" alt="The title screen">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_map.png" alt="A map with markers for earthquake locations">
+                    <img src="./media/DF/DF_scene_1.png" alt="Entering the first scene">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_saved.png" alt="The saved page with a list of earthquakes">
+                    <img src="./media/DF/DF_body.png" alt="The dead body in the office">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_zoom.png" alt="A zoomed in map on taiwan">
+                    <img src="./media/DF/DF_dialogue.png" alt="Talking with Ava">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_large.png" alt="A search for high magnitude earthquakes">
+                    <img src="./media/DF/DF_office.png" alt="The Executive's Office">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/QT/QT_mobile.png" alt="The interface design for mobile">
+                    <img src="./media/DF/DF_inspect.png" alt="Inspecting a gun clue">
                 </div>
             </div>
         </div>
@@ -105,67 +105,73 @@
     <main>
         <div id="content">
             <div id="tags">
-                <span>Solo Project</span>
-                <span>Application</span>
-                <span>Web Development</span>
+                <span>Group Project</span>
+                <span>Game</span>
+                <span>3D</span>
+                <span>Murder Mystery</span>
             </div>
             <div id="details">
-                <h1>Quake Tracker</h1>
+                <h1>Dresden Files: Skyline</h1>
                 <p id="stats">
-                    <span>Timeframe:</span> 1 Month<br>
-                    <span>Role:</span> Developer and Designer<br>
-                    <span>Tools:</span> Visual Studio Code, Bulma Framework<br>
-                    <span>Skills:</span> Javascript, HTML, CSS 
+                    <span>Timeframe:</span> 5 Weeks<br>
+                    <span>Role:</span> Level Designer and Event System Programmer<br>
+                    <span>Tools:</span> Unity, Visual Studio<br>
+                    <span>Skills: </span> C#
                 </p>
                 <p id="description">
-                    A web application I designed that by default shows you the earthquakes that have occurred in the
-                    world in the past 6 hours, but also allows you to search a large database of recorded earthquakes with
-                    various parameters. I used the USGS Earthquake Catalog API as the database for the application and mapped
-                    the data received from the API with Mapbox. Earthquakes are dynamically sized proportionate to their
-                    magnitude, and can each be selected and focused on. The earthquakes can also be saved to another page for quick
-                    access or for going to the official site for that earthquake and seeing more information. You can search and
-                    filter earthquake results by the time of the quake, its magnitude, its depth, and by location. I also made
-                    it so the whole site is responsive and can be viewed and used on almost all devices.<br><br>
+                    A 3D Murder Mystery game built in Unity and set in the Dresden Files universe. Players are able
+                    to search multiple open scenes for any clues that will help them decifer the strange unexplained
+                    murder before them. Then, speak with the suspects to see every side of the story and piece together
+                    what really happened. This was a group project and my contribution was mainly the level design, the
+                    sequencing of the series of events, and some of the functionality of interacting with clues and
+                    tracking the players' interactions.<br><br>
 
-                    This site makes use of fetch() and promises in Javascript to asynchronously get data back from the API. 
-                    A default search is made, when the app is first loaded, for earthquakes the occurred in the past 6 hours. 
-                    Then every time the search button is pressed all of the current input paramters' values are processed and 
-                    a query is made to the API with specific limitations. The API sometimes struggles with different sorting 
-                    styles or with queries that encompass a large number of earthquakes, so I added a time limit for data to be 
-                    received from the API. If no data has been received when this time limit expires, the query fails and the site 
-                    lets you know to limit the search further. To save the API from nonstop requests, the data from 
-                    the most recent query is saved to local storage, as well as parameter values. The saved earthquakes is also 
-                    a list that is stored within local storage. This allows the site to remember the last search, quake list, and 
-                    saved quakes even after you close it and come back to it later.
+                    I created all of the levels by compositing free 3D models from the Unity Asset Store and online that 
+                    I thought fit the Dresden Files universe shown in their comics. I also utilized a cell-shaded shader 
+                    with large black outlines to give the game even more of a comic-book feel. In both of the scenes where 
+                    the player has the chance to find clues, finding the clues is optional but the end of the game features 
+                    a quiz which will test how well you know what events actually took place in the story. There are some 
+                    clues that will have a different text blurb depending on if certain other clues have been found, and 
+                    once all the clues in a room have been found the game will then prompt the player to leave.<br><br>
+
+                    The game follows a story, written by one of my teammates, which has a lot of events and things that change 
+                    within the scenes as you progress. Depending on where you are in the game, different clues are available and 
+                    different dialogue will happen with the other characters. I made sure the game had the proper flow of events 
+                    as well as programming the full dialogue system along with creating its animations.
                 </p>
                 <p id="challenges">
                 <ul><b>Challenges:</b>
-                    <li>Linking the map's state with the list's state when selecting quakes.</li>
-                    <li>Allowing the search and list to be collapsable.</li>
-                    <li>Creating an app interface that is responsive to a wide range of device widths and input types.</li>
-                    <li>Giving the selected quake on the map and in the list a different color.</li>
+                    <li>Fitting all the content we wanted to put into the game within the limited time frame.</li>
+                    <li>Setting up all of the clues so that the player can inspect them.</li>
+                    <li>Designing the 2 office rooms so they look lived in and have personality.</li>
+                    <li>Implementing changes to the scenes when the player returns to them later in the game.</li>
                 </ul>
                 </p>
                 <p id="likes">
                 <ul><b>What I did well:</b>
-                    <li>Interactions with the map and app page in general are intuitive and fluid.</li>
-                    <li>Utilized local storage to save important aspects of the app and to use less resources calling the API.</li>
-                    <li>The app starts up in mobile mode when its loading and detects a small screen width.</li>
-                    <li>Added various ways for the users to search the database of quakes.</li>
+                    <li>Created levels that fit the aesthetic of the Dresden Files and look like they could be in 
+                        a comic book.
+                    </li>
+                    <li>Added scene transition and dialogue animations for a more polished feel.</li>
+                    <li>Accounted for all posibilities of the order and number of clues found.</li>
                 </ul>
                 </p>
                 <p id="dislikes">
                 <ul><b>What I would change/improve:</b>
-                    <li>Implement the sort and filter options in the saved page.</li>
-                    <li>Design a more appealing looking theme and style for the entire website.</li>
-                    <li>Smooth out the map resizing animations so it doesn't look choppy.</li>
-                    <li>Add an option to focus the search on any location in the world with a text input.</li>
+                    <li>Add more scenes for the player to figure out some of the more minute details of the 
+                        plot that is currently meant to be surmised.
+                    </li>
+                    <li>Implement additional clues that are either red herrings or don't have too much significance 
+                        so the mystery is not so straightforward to figure out.
+                    </li>
+                    <li>Add more characters into the story and give the character models more life with animations.</li>
                 </ul>
                 </p>
             </div>
 
             <div class="project-links">
-                <a href="https://people.rit.edu/nsw7227/330/project-1" class="button">Try It Out</a>
+                <a href="https://drive.google.com/file/d/1F9yBTlMsCIBalvKFb1fpcEf-zaiL93N4/view?usp=sharing"
+                    class="button">Download & Play</a>
             </div>
         </div>
     </main>
@@ -178,13 +184,13 @@
                     <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
                     <p>Phone: 937-925-2140</p>
                     <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                    <a href="mailto:wildofskynsw@gmail.com" class="icon">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Superflare" class="icon">
+                    <a href="https://github.com/nwildofsky" class="icon">
                         <i class="fab fa-github-square"></i>
                     </a>
                     <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>

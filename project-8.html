@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wall Jump Frenzy</title>
+    <title>Humans Vs. Zombies</title>
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -16,8 +15,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- My Stylesheet -->
     <link rel="stylesheet" href="css/project.css">
     <!-- Bootstrap Scripts for Navbar-->
@@ -31,14 +29,11 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- Slick Scripts for Carousel -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="module" src="./src/slick-project.js"></script>
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -71,23 +66,39 @@
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/WJF/WJ_title.png" alt="The game title screen">
+                <img src="./media/HZ/HZ_start.png" alt="The start of the simulation">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/WJF/WJ_begin.png" alt="A frame of the game with minimal obstacles">
+                <img src="./media/HZ/HZ_humans.png" alt="Adding more humans to the simulation">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/WJF/WJ_difficult.png" alt="A frame of the game with multiple obstacles">
+                <img src="./media/HZ/HZ_chase.png" alt="Zombies chasing after multiple humans">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/WJF/WJ_lost.png" alt="The game over screen">
+                <img src="./media/HZ/HZ_debug.png" alt="Debug mode enabled">
                 </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/HZ/HZ_pov.png" alt="The camera view of a human in the simulation">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/HZ/HZ_zombies.png" alt="Adding more zombies to the simulation">
+                </div>
+            </div>
+            <div class="slick-item">
+                <div class="img">
+                <img src="./media/HZ/HZ_obstacles.png" alt="Adding more obstacles to the simulation">
+                </div>
+            </div>
         </div>
     </header>
 
@@ -95,81 +106,69 @@
         <div id="content">
             <div id="tags">
                 <span>Solo Project</span>
-                <span>Web Game</span>
-                <span>2D</span>
-                <span>Arcade</span>
+                <span>Interactive Simulation</span>
             </div>
             <div id="details">
-                <h1>Wall Jump Frenzy</h1>
+                <h1>Autonomous Agents: Humans vs. Zombies</h1>
                 <p id="stats">
-                    <span>Timeframe:</span> 2 Weeks<br>
-                    <span>Role:</span> Game Developer and Designer<br>
-                    <span>Tools:</span> Visual Studio Code, PixiJS, Howler.JS<br>
-                    <span>Skills: </span> Javascript, HTML, CSS
+                    <span>Timeframe:</span> 2 Months<br>
+                    <span>Role:</span> Game Developer<br>
+                    <span>Tools:</span> Unity, Visual Studio<br>
+                    <span>Skills: </span> C#
                 </p>
                 <p id="description">
-                    A simple arcade-clicker game designed for the web with Javascript, PixiJS, and
-                    Howler.JS. The goal is to collect as many coins as possible while avoiding all of the obstacles that
-                    spawn in while you play. To play, just left-click anywhere on the game screen to jump from wall to
-                    wall.
-                    The block's jumping movement is physics based
-                    and it will also rotate in the air, always landing flush with the wall. Obstacles will spawn in
-                    with their hitboxes deactivated so that the player can
-                    plan their movement around the obstacles. After a short period of time each obstacle will then
-                    activate and move across the screen. Collision with an active obstacle will end the game unless the
-                    player has picked up a shield, which increases the player's health by one. After the player loses
-                    its shield, it will gain invincibility for a short period.<br><br>
+                    An interactive simulation designed in Unity where autonomous human and zombie
+                    "players" move independently through a system of steering forces. These forces are based on their
+                    desires to either flee from zombies or catch any humans. Both humans and zombies
+                    will also avoid obstacles, stay within the boundaries, and separate from each other if they are
+                    extremely close to prevent stacking. The simulation has defaults for the amount of humans, zombies,
+                    and obstacles but the player is able to add more in realtime. There are also options for multiple
+                    camera views and debug mode which gives more details about each object's movement during runtime.<br><br>
 
-                    Perfecting the block's movement as much as I could was the main
-                    challenge of this game and I went through two different iterations of jumping mechanics and rotation
-                    mechanics. At first for jumping, I started with the physics kinematics equation for delta position
-                    using an initial velocty and an acceleration, which resulted in an arch, but did not allow for
-                    jumping multiple times in the air all that easily. So I switched to a system where acceleration and
-                    velocty were calculated separately each frame so that each jump, velocity could be changed so the
-                    block restarts its arch. For rotation I initially started rotating the block constantly until it 
-                    hits a wall and then it would rotate quickly to be flush with that wall. This method didn't look 
-                    very nice and sometimes took longer than it should have to jump to the right rotation. I modified 
-                    the code to instead do 1 full rotation and stop. This still kept the look that I wanted while completely 
-                    removing all the rotation issues I was experiencing.
+
+                    Movement is done through forces instead of
+                    directly manipulating each "player's" velocity or position so that there can be multiple pushes or
+                    pulls trying to direct each "player" that all add to the net force that is ultimately what drives
+                    the movement. But because of this, every force needs to be given a proper weight and the entire
+                    collection of forces needs to have a maximum limit.
                 </p>
                 <p id="challenges">
-                <ul><b>Challenges:</b>
-                    <li>Perfecting the block's jump speed and force to feel fun, balanced, and not require too 
-                        many clicks.
-                    </li>
-                    <li>Implementing a rotation during each jump that adds to the visual flair but doesn't interrupt 
-                        the gameplay by having different rotations when landing on the walls.
-                    </li>
-                    <li>Setting up all the obstacles in the game to be randomly placed, to have a random speed, 
-                        and a random duration that are all within set parameters.</li>
-                </ul>
+                    <ul><b>Challenges:</b>
+                        <li>Learning and implementing Craig Reynolds' versions of pursue,
+                            evade, separation, obstacle avoidance, and boundary evasion steering forces.</li>
+                        <li>Balancing each of these forces and each object's properties so that humans still most
+                            importantly want to stay alive and zombies still want to convert humans, but they don't get stuck as
+                            often and rarely pass through obstacles.</li>
+                    </ul>
                 </p>
                 <p id="likes">
-                <ul><b>What I did well:</b>
-                    <li>The game starts out easier with less obstacles to dodge and gets harder as the player 
-                        collects more coins. Multiple tiers of difficulty are incorperated which come into effect 
-                        after certain coin requirements.
-                    </li>
-                    <li>The game is endless and allows for very high high-scores. It's fun to challenge other people 
-                        and see who is able to get the highest score.
-                    </li>
-                    <li>The rules are very simple to understand and can be understood through only playing the game.</li>
-                </ul>
+                    <ul><b>What I did well:</b>
+                        <li>Gave each of the forces acting on the "players" its own weight so that all forces are still present 
+                            but some have more priority than the others.
+                        </li>
+                        <li>Zombies chase the humans based on their predictions of where the humans will be. Both humans and 
+                            zombies have markers of their future positions after a set period of time at their current velocity. 
+                            These calculated positions are what the zombies chase. This also allows the humans to escape the zombies 
+                            in most cases with their fast, snappy movement.
+                        </li>
+                        <li>Both zombies and humans don't overlap and pile together into one when chasing or running away.
+                        </li>
+                        <li>All movement is restricted to the bounds of whatever gameobject is set as the play space.</li>
+                    </ul>
                 </p>
                 <p id="dislikes">
-                <ul><b>What I would change/improve:</b>
-                    <li>Increase the block's jump height while keeping the falling the velocity around the same.</li>
-                    <li>Give the block a 360 degree rotation everytime it jumps, and increase the speed of the rotation 
-                        if it's too close to the wall.
-                    </li>
-                    <li>Add more powerups for the player in addition to the shield.</li>
-                    <li>Add more obstacles with different movement patterns.</li>
-                </ul>
+                    <ul><b>What I would change/improve:</b>
+                        <li>Convert the basic shapes used for each of the objects into more interesting and meaningful models.</li>
+                        <li>Make it so the zombies avoid the obstacles as well as the humans do without giving them a larger max 
+                            net force and causing them to chase the humans faster.
+                        </li>
+                        <li>Add pausing/playing features and rewind functionality to the simulation.</li>
+                    </ul>
                 </p>
             </div>
 
             <div class="project-links">
-                <a href="https://people.rit.edu/nsw7227/235/project3/" class="button">Play Now</a>
+                <a href="https://github.com/IGME-202/HvZ_AIProject/tree/master/Wildofsky_HvZ/Assets/Scripts" class="button">See the Code</a>
             </div>
         </div>
     </main>
@@ -182,13 +181,13 @@
                     <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
                     <p>Phone: 937-925-2140</p>
                     <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                    <a href="mailto:wildofskynsw@gmail.com" class="icon">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Superflare" class="icon">
+                    <a href="https://github.com/nwildofsky" class="icon">
                         <i class="fab fa-github-square"></i>
                     </a>
                     <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
@@ -210,5 +209,4 @@
         </div>
     </footer>
 </body>
-
 </html>

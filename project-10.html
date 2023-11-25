@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treasure Room</title>
+    <title>Pokemon TCG Finder</title>
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -71,37 +71,27 @@
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/TR/TR_overlook.png" alt="Overloop of the scene from entrance">
+                    <img src="./media/PK/PK_rayquaza.png" alt="Searching the API for rayquaza">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/TR/TR_entrance.png" alt="The entrance and stairs">
+                    <img src="./media/PK/PK_name_search.png" alt="Focusing on a charizard card">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/TR/TR_torch.png" alt="A closeup of the torch and fire">
+                    <img src="./media/PK/PK_specific.png" alt="The card-specific page">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/TR/TR_chest.png" alt="The large treasure chest">
+                    <img src="./media/PK/PK_filter.png" alt="Filtering the search results">
                 </div>
             </div>
             <div class="slick-item">
                 <div class="img">
-                    <img src="./media/TR/TR_light.png" alt="Light coming from outside into the scene">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/TR/TR_back.png" alt="The gold and other objects behind the large chest">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/TR/TR_table_shelf.png" alt="A table and bookshelf full of potions, books, and scrolls">
+                    <img src="./media/PK/PK_mobile.png" alt="The site interface on mobile">
                 </div>
             </div>
         </div>
@@ -111,70 +101,80 @@
         <div id="content">
             <div id="tags">
                 <span>Solo Project</span>
-                <span>Custom Scene</span>
-                <span>3D Modeling</span>
+                <span>Application</span>
+                <span>Web Development</span>
+                <span>API</span>
             </div>
             <div id="details">
-                <h1>Treasure Room Scene</h1>
+                <h1>Pokemon TCG Card Finder</h1>
                 <p id="stats">
-                    <span>Timeframe:</span> 2 Months<br>
-                    <span>Role:</span> 3D Modeler and Level Designer<br>
-                    <span>Tools:</span> Maya, Surface Painter, Photoshop, Unity<br>
-                    <span>Skills: </span> 3D Modeling, Texturing, and Lighting
+                    <span>Timeframe:</span> 2 Weeks<br>
+                    <span>Role:</span> Developer and Designer<br>
+                    <span>Tools:</span> Visual Studio Code, Pokemon TCG API<br>
+                    <span>Skills: </span> Javascript, HTML, CSS
                 </p>
                 <p id="description">
-                    A showcase of my 3D modeling, UV setting, and texturing skills as well as an exercise of my
-                    knowledge of Unity and its lighting. I created all the 3D models and their UV sets with Autodesk Maya
-                    and textured them with Adobe Substance Painter. I had been using Maya for 3D modeling for a few
-                    months at
-                    this point but was completely new to Substance Painter and learned it through some tutorial videos
-                    and my own experimentation. This project also allowed me to try using Unity VFX Graph for the first
-                    time, which I used to create the fire effects in the scene. The scene itself is a fantasy-themed
-                    dungeon tresure room that a player might find through exploring if it were in a larger game.
+                    A website I designed and created that uses Javascript and the Pokemon TCG
+                    API that allows the user to search for any Pokemon card using multiple search options and filters.
+                    Once the user finds a card that they want to learn more about or see a clearer picture of, they can
+                    simply click on the card and they are taken to a new page that has a higher resolution picture of
+                    the card as well as all the important details of the card given in a much easier to read design. The
+                    website is mainly for users who already know a fair amount about Pokemon cards and are looking for
+                    something specific, but it helps users who might not know as much by restricting number inputs to
+                    the valid range and certain filters so that there are fewer invalid queries to the API. The site is
+                    also fully responsive with the exception of the filter popout not fitting the screens of some mobile
+                    phones.<br><br>
+
+                    You are able to search for cards by name, text on the card, health amount, attack damage, attack cost, 
+                    and retreat cost. Results can be specified even further by filtering the cards by card type, energy type, 
+                    and rarity. The API provides a lot of options for limiting the results of the API call but does not have 
+                    an easy way to limit the results with multiple parameters at a time. To correct this for my website, I 
+                    make multiple calls to the API each with a different parameter that the user specified, then combine the 
+                    results of all the individual calls that fit all of the parameters set and display them.<br><br>
+                    
+                    The page for individual cards that are selected is completely modular. It is one html file that adapts its 
+                    content based on the card clicked to get there. This can be done by adding the id of the selected card to 
+                    the url of this page after a '?' character, and then reading the id when the page loads and grabbing that card's 
+                    information. If you click the advanced button from this page, then you will be taken back to the main app 
+                    page and the last call made to the API will be done again.
                 </p>
                 <p id="challenges">
                 <ul><b>Challenges:</b>
-                    <li>Modeling and texturing each object for the scene at a fast pace while also keeping a 
-                        consistent level of quality.</li>
-                    <li>Modeling complex shapes and curves while also guaranteeing the geometry had no errors 
-                        when setting the UVs.
+                    <li>Giving proper search results when the API does not allow for all the search option combinations 
+                        that my website provides.
                     </li>
-                    <li>Learning how to use Adobe Substance Painter to texture all my models.</li>
-                    <li>Lighting the scene how I wanted it when each major change to the lighting entailed a long 
-                        baking process that would take hours.
+                    <li>Creating 1 separate page that displays the data for any card that is clicked on.</li>
+                    <li>Designing the application to be responsive and work on various mobile devices.</li>
+                    <li>Applying the selected sort method, filters, and search parameters to the data before 
+                        it is displayed on the app.
                     </li>
                 </ul>
                 </p>
                 <p id="likes">
                 <ul><b>What I did well:</b>
-                    <li>Chose the create models that fit well with the theme and were easy to duplicate and fill 
-                        up the scene in a natural way.
-                    </li>
-                    <li>Lead the player's eyes from the entrance to the most important aspect of the scene, 
-                        the main treasure chest.</li>
-                    <li>Created different textures for repeated models, like the books, for variation.</li>
-                    <li>Positioned each of the objects in a believable way so they don't look "placed" into the 
-                        scene.
-                    </li>
+                    <li>Gave the users a large number of ways to limit the search how they want to.</li>
+                    <li>Search results are dynamically displayed in a grid pattern that is responsive.</li>
+                    <li>Card text is displayed using graphics similar to the ones on the cards themselves.</li>
                 </ul>
                 </p>
                 <p id="dislikes">
                 <ul><b>What I would change/improve:</b>
-                    <li>I knew what kind of effect I wanted from the sky light entering the scene from the back, 
-                        the rays of light illuminating the backside of the treasure, but I should have done it 
-                        with windows rather than a strange opening in the wall.
+                    <li>Add the enter button as an alternative to pressing the search button in the app header.</li>
+                    <li>Utilize local storage to retain query data and search parameters so the API is called less often 
+                        and users don't have to re-enter the same parameters.
                     </li>
-                    <li>Make use of the large number of smaller objects placed in the scene and add collision 
-                        physics to the player and these items so they'd be able to knock them around.
+                    <li>Fix cases where a card will appear in the list on the main page but when selected the 
+                        website says there is no data for that card or it cannot find that card.
+                    </li>
+                    <li>Make the application even more useful by allowing users to create decks out of searched cards 
+                        or lists of cards they may have collected.
                     </li>
                 </ul>
                 </p>
             </div>
 
             <div class="project-links">
-                <a href="https://drive.google.com/file/d/1n75ZuNXjo6-LcNnbEofhe3pvPp4J0pdP/view?usp=sharing"
-                        class="button">Download &
-                        Play</a>
+                <a href="https://people.rit.edu/nsw7227/235/project2/" class="button">Try It Out</a>
             </div>
         </div>
     </main>
@@ -187,13 +187,13 @@
                     <!--<p>E-Mail: <a href="mailto:nsw7227@rit.edu">nsw7227@rit.edu</a></p>
                     <p>Phone: 937-925-2140</p>
                     <p>Documentation PDF: <a href="media/Portfolio_Documentation.pdf">Click Here</a></p>-->
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
+                    <a href="mailto:wildofskynsw@gmail.com" class="icon">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Superflare" class="icon">
+                    <a href="https://github.com/nwildofsky" class="icon">
                         <i class="fab fa-github-square"></i>
                     </a>
                     <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
