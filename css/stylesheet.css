@@ -1,4 +1,4 @@
-/* External CSS file for portfolio and documentation */
+/* External CSS file for portfolio */
 
 /* Navigation Bar */
 .navbar {
@@ -7,7 +7,6 @@
     top: 0;
     z-index: 16;
     background-color: rgb(15, 15, 15);
-    /* background: linear-gradient(45deg, rgb(0,203,255), rgb(0,117,255)); */
 }
 #home a {
     font-size: 1.3rem;
@@ -70,7 +69,6 @@ body {
 }
 main {
     background-color: #3d342f;
-    ;
     padding: .5rem 0;
 }
 .grid, .slick-carousel, main, footer, nav {
@@ -120,30 +118,6 @@ h1, h2, h3, p {
     font-size: 1rem;
     margin: 1.5rem auto 0;
 }
-/* Gallery Carousel */
-/* #carouselExampleCaptions {
-    width: 100%;
-    margin: 3rem auto;
-}
-.carousel-inner {
-    border-radius: .5rem;
-}
-.carousel-control-prev, .carousel-control-next, .carousel-caption {
-    display: none !important;
-}
-#carouselExampleCaptions:hover > .carousel-control-prev, #carouselExampleCaptions:hover > .carousel-control-next {
-    display: flex !important;
-}
-#carouselExampleCaptions:hover .carousel-caption {
-    display: block !important;
-}
-#carouselExampleCaptions:hover .d-block {
-    filter: brightness(70%);
-}
-.text-shadow {
-    text-shadow: 0 2px 20px black;
-} */
-
 /* Slick carousel */
 .slick-carousel {
     width: 100%;
@@ -321,9 +295,6 @@ h1, h2, h3, p {
 #projects .details {
     margin-left: 0;
 }
-#first-project {
-    margin-top: 1rem;
-}
 .line-gradient {
     width: 90%;
     height: 3px;
@@ -438,15 +409,12 @@ label {
 }
 .button:focus::before {
     opacity: 1;
-    font-size: 1.1rem;
 }
 .button:hover::before {
     opacity: 1;
-    font-size: 1.1rem;
 }
 .button:active::before {
     opacity: 1;
-    font-size: 1.1rem;
 }
 .button:focus {
     color: black;
@@ -477,55 +445,7 @@ label {
 #contact-info .icon:active {
     color: rgb(0, 162, 255);
 }
-/* Unsuccessful attempt at making gradient icons work on IOS safari */
-/*@supports (-webkit-text-fill-color: transparent)
-    {
-        #contact-info .icon {
-            background: -webkit-linear-gradient(315deg, rgb(255,170,0), rgb(255,67,0));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(255,255,255,0);
-        }
-        #contact-info .icon:focus {
-            background: -webkit-linear-gradient(315deg, rgb(0,203,255), rgb(0,117,255));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(255,255,255,0);
-        }
-        #contact-info .icon:hover {
-            background: -webkit-linear-gradient(315deg, rgb(0,203,255), rgb(0,117,255));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(255,255,255,0);
-        }
-        #contact-info .icon:active {
-            background: -webkit-linear-gradient(315deg, rgb(0,203,255), rgb(0,117,255));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(255,255,255,0);
-        }
-    }*/
 
-/* Documentation Specific Styles */
-.documentation {
-    align-items: flex-start;
-}
-.documentation ul {
-    color: white;
-    margin: 0;
-}
-.documentation img {
-    margin: 0 auto;
-    width: 50% !important;
-}
-.documentation p {
-    margin: 2.5rem 0 1rem !important;
-}
-.documentation .sources {
-    margin: .3rem 0 !important;
-}
-.documentation .notes {
-    margin-bottom: .7rem;
-}
-.documentation #back_button {
-    margin: 1.5rem auto;
-}
 /* MEDIA QUERIES */
 @media (min-width: 410px)
 {
@@ -539,9 +459,6 @@ label {
 }
 @media (min-width: 570px)
 {
-    #carouselExampleCaptions {
-        width: 80%;
-    }
     #contact-wrapper {
         flex-flow: row nowrap;
     }
@@ -555,9 +472,6 @@ label {
     .nav-link {
         padding: 0 .7rem !important;
     }
-    /* .nav-border {
-        border-right: 2.2px solid white;
-    } */
     #resume-content {
         width: 70%;
     }
@@ -598,12 +512,6 @@ label {
     }
     #contact-info {
         margin-left: 12rem;
-    }
-    #carouselExampleCaptions {
-        width: 65%;
-    }
-    .d-block {
-        height: 32vw;
     }
     .flex {
         margin: 4rem auto;
@@ -660,15 +568,6 @@ label {
 }
 @media (min-width: 1280px)
 {
-    #carouselExampleCaptions {
-        width: 47%;
-    }
-    .d-block {
-        height: 25vw;
-    }
-    .grid img {
-        width: 100%;
-    }
     #resume-content {
         width: 50%;
     }
