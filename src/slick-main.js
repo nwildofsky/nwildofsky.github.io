@@ -1,7 +1,18 @@
-const videos = document.querySelectorAll('video');
+// Mark a slide as the centered one (or not) and play or pause its video to match
+function setCentered(slide, isCentered) {
+    const video = slide.querySelector('video');
+    slide.classList.toggle('centered', isCentered);
+    if (isCentered) {
+        // play() rejects when a quick pause() interrupts it, which is harmless
+        video.play().catch(() => {});
+    }
+    else {
+        video.pause();
+    }
+}
+
 $('.slick-carousel').on('init', function (event, slick) {
-    slick.$slides[0].querySelector('video').play();
-    slick.$slides[0].classList.add('centered');
+    setCentered(slick.$slides[0], true);
 });
 
 $('.slick-carousel').slick({
@@ -16,7 +27,6 @@ $('.slick-carousel').slick({
     infinite: true,
     pauseOnHover: true,
     variableWidth: true,
-    //adaptiveHeight: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -30,30 +40,19 @@ $('.slick-carousel').slick({
     ]
 });
 
-$('.slick-carousel').on('beforeChange', focusCenter);
-$('.slick-carousel').on('afterChange', setLinks)
-
-function focusCenter(event, slick, currentSlide, nextSlide) {
-    if (currentSlide != nextSlide /*&& (Math.abs(nextSlide - currentSlide) == 1 || Math.abs(nextSlide - currentSlide) == videos.length - 1)*/) {
-        slick.$slides[currentSlide % videos.length].querySelector('video').pause();
-        slick.$slides[currentSlide % videos.length].classList.remove('centered');
-        slick.$slides[currentSlide % videos.length].querySelector('a').href = 'javascript:void(0);';
-        slick.$slides[nextSlide % videos.length].querySelector('video').play();
-        slick.$slides[nextSlide % videos.length].classList.add('centered');
+$('.slick-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    if (currentSlide != nextSlide) {
+        setCentered(slick.$slides[currentSlide], false);
+        setCentered(slick.$slides[nextSlide], true);
     }
-}
+});
 
-function setLinks(event, slick, currentSlide) {
-    slick.$slides[currentSlide].querySelector('a').href = getHrefFromIndex(currentSlide);
-}
-
-function getHrefFromIndex(index) {
-    let href = '';
-    if (index == 0) {
-        href = '#projects';
+// Each slide links to its project in the markup, but only the centered slide may follow it.
+// Clicking any other slide just brings it to the center (focusOnSelect). This listener captures
+// the click so it runs before Slick re-centers the clicked slide.
+document.querySelector('.slick-carousel').addEventListener('click', function (event) {
+    const link = event.target.closest('a');
+    if (link && !link.closest('.slick-slide').classList.contains('slick-center')) {
+        event.preventDefault();
     }
-    else if (index > 0) {
-        href = '#project-' + (index+1)
-    }
-    return href;
-}
+}, true);
