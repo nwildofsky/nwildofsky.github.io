@@ -24,6 +24,8 @@
     --text-soft: #e3e3e3;
     --text-nav: rgb(204, 204, 204);
     --on-accent: black;
+
+    --nav-height: 58px;
 }
 
 /* Basic colors and fonts */
@@ -79,8 +81,8 @@ h1, h2, h3, p {
 
 /* Contact Me Section */
 #contact {
-    margin: -23px auto 2rem;
-    padding-top: 58px;
+    margin: 35px auto 2rem;
+    scroll-margin-top: var(--nav-height);
     text-align: center;
 }
 #contact h1 {

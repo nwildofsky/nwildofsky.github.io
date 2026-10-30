@@ -6,16 +6,17 @@ header {
 
 /* Adjust the landing of nav links to the proper place */
 #projects {
-    padding-top: 58px;
-    margin-top: -58px;
+    display: flow-root;
+    scroll-margin-top: var(--nav-height);
 }
-.linked-project {
-    padding-top: 58px !important;
-    margin-top: -38px !important;
+.flex.linked-project {
+    margin-top: 20px;
+    scroll-margin-top: var(--nav-height);
 }
 #resume {
-    padding-top: 58px;
-    margin: -23px auto 0;
+    display: flow-root;
+    margin: 35px auto 0;
+    scroll-margin-top: var(--nav-height);
 }
 main {
     padding: .5rem 0;
@@ -311,8 +312,9 @@ main {
     .flex {
         margin: 4rem auto;
     }
-    .linked-project {
-        padding-top: 88px !important;
+    .flex.linked-project {
+        margin-top: 50px;
+        scroll-margin-top: calc(var(--nav-height) + 30px);
     }
 
     #projects .flex {
@@ -385,7 +387,8 @@ main {
     #projects .flex, #projects .flipped-project, .line-gradient, .project-links {
         width: 80%;
     }
-    .linked-project {
-        padding-top: 100px !important;
+    .flex.linked-project {
+        margin-top: 62px;
+        scroll-margin-top: calc(var(--nav-height) + 42px);
     }
 }
