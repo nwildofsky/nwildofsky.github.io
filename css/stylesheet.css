@@ -235,9 +235,6 @@ main {
 #projects p {
     font-size: 1rem;
 }
-#projects .details {
-    margin-left: 0;
-}
 .line-gradient {
     width: 90%;
     height: 3px;
@@ -318,7 +315,7 @@ main {
         padding-top: 88px !important;
     }
 
-    #projects div {
+    #projects .flex {
         display: grid;
         grid-template-columns: .4fr .6fr;
         grid-template-rows: .1fr .8fr .1fr;
@@ -357,7 +354,8 @@ main {
     }
     .project-links {
         grid-area: link;
-        display: flex !important;
+        width: 90%;
+        column-gap: 2rem;
     }
     .project-links .button {
         max-width: fit-content;
@@ -384,7 +382,7 @@ main {
     #projects img {
         height: 100%;
     }
-    #projects div, #projects .flipped-project {
+    #projects .flex, #projects .flipped-project, .line-gradient, .project-links {
         width: 80%;
     }
     .linked-project {
