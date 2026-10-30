@@ -166,8 +166,11 @@ ul, li {
 ul {
     padding-left: 2.5rem;
 }
-ul b {
-    margin-left: -2.5rem;
+.list-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: inherit;
     color: var(--blue-label);
 }
 .project-links {
