@@ -5,69 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wall Jump Frenzy</title>
-    <!-- Bootsrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-    <!-- Google Font -->
+    <!-- Fonts: Sora (headings) and DM Sans (text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <!-- My Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Bootstrap Scripts for Navbar-->
+    <!-- Menu button of the top bar -->
+    <script type="module" src="./src/nav.js"></script>
+    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <!-- Slick Scripts for Carousel -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="module" src="./src/slick-project.js"></script>
 </head>
 
 <body>
+    <!-- ===== TOP NAVIGATION BAR (the same on every page; project pages link back to index.html) ===== -->
+    <nav id="site-nav" aria-label="Main">
+        <a class="site-nav-brand" href="./index.html">Nathan Wildofsky</a>
+        <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+        <ul class="site-nav-links" id="site-nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#projects">Projects</a></li>
+            <li><a href="./index.html#about">About Me</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li>
+                <a class="site-nav-resume-link" href="./media/NWildofsky_Resume.pdf">
+                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div id="home" data-toggle="collapse" data-target=".navbar-collapse.show">
-                <a class="navbar-brand" href="./index.html">Nathan Wildofsky</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        <a class="nav-link" href="./index.html">About Me</a>
-                    </li>
-                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        <a class="nav-link" href="./index.html#projects">Projects</a>
-                    </li>
-                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        <a class="nav-link" href="./index.html#resume">Resume</a>
-                    </li>
-                    <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                        <a class="nav-link" href="#contact">Contact Me</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
         <div class="slick-carousel">
             <div class="slick-item">
                 <div class="img">
@@ -172,41 +149,30 @@
             </div>
 
             <div class="project-links">
-                <a href="https://people.rit.edu/nsw7227/235/project3/" class="button">Play Now</a>
+                <a href="https://people.rit.edu/nsw7227/235/project3/" class="button button-primary">Play Now</a>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div id="contact">
-            <h1>Contact Me!</h1>
-            <div id="contact-wrapper">
-                <div id="contact-info">
-                    <a href="mailto:nsw7227@rit.edu" class="icon">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nwildofsky/" class="icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Superflare" class="icon">
-                        <i class="fab fa-github-square"></i>
-                    </a>
-                    <p>Phone: <a href="tel:9379252140">937-925-2140</a></p>
-                </div>
-                <div id="form">
-                    <form
-                        action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSc3q5mThzK3OKhMMbQpZ6J9xwnAq2IvWFdXDhVAUHu-SCwh8g/formResponse">
-                        <label for="email">Email Address</label><br>
-                        <input type="text" id="email" name="emailAddress" required placeholder="Your email"><br>
-                        <label for="name">Name</label><br>
-                        <input type="text" id="name" name="entry.2005620554" required placeholder="Your name"><br>
-                        <label for="message">Message</label><br>
-                        <textarea id="message" name="entry.839337160" required
-                            placeholder="Your message"></textarea><br>
-                        <button type="submit" class="button">Submit</button>
-                    </form>
-                </div>
-            </div>
+    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <footer id="contact" class="site-footer">
+        <div class="contact-text">
+            <h2 class="contact-heading">Contact Me!</h2>
+            <p class="contact-details">nsw7227@rit.edu &middot; Phone: <a href="tel:9379252140">937-925-2140</a></p>
+        </div>
+        <div class="contact-buttons">
+            <a class="button button-primary" href="mailto:nsw7227@rit.edu">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-email"></use></svg>Email
+            </a>
+            <a class="button" href="https://www.linkedin.com/in/nwildofsky/">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-linkedin"></use></svg>LinkedIn
+            </a>
+            <a class="button" href="https://github.com/Superflare">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-github"></use></svg>GitHub
+            </a>
+            <a class="button" href="./media/NWildofsky_Resume.pdf">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
+            </a>
         </div>
     </footer>
 </body>

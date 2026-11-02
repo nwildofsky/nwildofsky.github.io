@@ -145,24 +145,24 @@ main {
 #tags span {
     font-size: 1.1rem;
     font-weight: 400;
-    background: var(--grad-orange-text);
+    background: var(--gradient-title);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 #stats {
     margin-bottom: 2rem;
-    color: var(--text-soft);
+    color: var(--color-text);
 }
 #stats span {
     font-weight: 600;
-    color: var(--blue-label);
+    color: var(--color-accent-2);
 }
 h1 {
-    color: var(--blue);
+    color: var(--color-accent-2);
     font-size: 2rem;
 }
 ul, li {
-    color: var(--text);
+    color: var(--color-text);
 }
 ul {
     padding-left: 2.5rem;
@@ -172,7 +172,7 @@ ul {
     font-size: 1rem;
     font-weight: bold;
     line-height: inherit;
-    color: var(--blue-label);
+    color: var(--color-accent-2);
 }
 .project-links {
     margin-top: 3rem;
