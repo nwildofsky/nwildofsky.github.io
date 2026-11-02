@@ -1,0 +1,16 @@
+<!-- Browser tab icon: a dark grey rounded square with the initials NW in the site's heading font (Sora Bold, SIL Open Font License,
+     drawn as shapes so the icon needs no font), filled with the same amber-to-orange gradient as the title in the hero.
+     Edit the colors below to change it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <defs>
+        <linearGradient id="initials-gradient" gradientUnits="userSpaceOnUse" x1="82" y1="0" x2="1883" y2="0">
+            <stop offset="0" stop-color="#ffb020"/>
+            <stop offset="1" stop-color="#ff5a1f"/>
+        </linearGradient>
+    </defs>
+    <rect width="32" height="32" rx="7" fill="#2a2725"/>
+    <g transform="translate(1.27 21.47) scale(0.01499)" fill="url(#initials-gradient)">
+        <path d="M82,0L82,-730 351,-730 626,-133 660,-133 640,-115 640,-730 794,-730 794,0 523,0 248,-597 214,-597 234,-615 234,0z"/>
+        <path d="M1034,0L854,-730 1023,-730 1164,-110 1129,-133 1220,-133 1181,-110 1290,-703 1426,-703 1283,0zM1469,0L1315,-703 1458,-703 1584,-110 1546,-133 1633,-133 1600,-110 1723,-730 1883,-730 1723,0z"/>
+    </g>
+</svg>

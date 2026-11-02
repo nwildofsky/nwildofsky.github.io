@@ -266,6 +266,9 @@
    2. PROJECTS - the card grid (#project-grid, one .project-card per project)
    Shared pieces (.page-section, .section-heading, .tag-pill, .button) are in base.css
    ========================================================================== */
+#projects {
+    scroll-margin-top: var(--nav-height);   /* the Projects link lands the section just below the sticky top bar */
+}
 #project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));

@@ -32,6 +32,7 @@ function makeVideo(thumb, thumbImage) {
     video.playsInline = true;
     video.poster = thumbImage.getAttribute('src');
     video.src = thumb.dataset.video;
+    video.setAttribute('aria-label', thumb.textContent.trim());   // the button's hidden word ("Video") names the player too
     return video;
 }
 

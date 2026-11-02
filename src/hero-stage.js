@@ -3,7 +3,7 @@
 // What it does: shows one project at a time (a muted looping video, the project's name and
 // one-line blurb, and a "Learn More" button). The rail under it has one thumbnail per project.
 // The stage moves to the next project every few seconds (the time is --hero-rotate-time in
-// stylesheet.css; the thumbnail's progress bar is what counts it down).
+// home.css; the thumbnail's progress bar is what counts it down).
 //
 // What it reads from the HTML (it never contains visible text of its own):
 //   - every .project-card inside #project-grid: .project-card-title, .project-card-blurb, its first
