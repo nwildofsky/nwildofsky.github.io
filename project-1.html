@@ -11,89 +11,113 @@
     <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Menu button of the top bar -->
-    <script type="module" src="./src/nav.js"></script>
-    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="module" src="./src/slick-project.js"></script>
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
 </head>
 <body>
-    <!-- ===== TOP NAVIGATION BAR (the same on every page; project pages link back to index.html) ===== -->
-    <nav id="site-nav" aria-label="Main">
-        <a class="site-nav-brand" href="./index.html">Nathan Wildofsky</a>
-        <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
-        <ul class="site-nav-links" id="site-nav-links">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#projects">Projects</a></li>
-            <li><a href="./index.html#about">About Me</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-            <li>
-                <a class="site-nav-resume-link" href="./media/NWildofsky_Resume.pdf">
-                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
-                </a>
-            </li>
-        </ul>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <span class="project-bar-count">1 of 10</span>
+        <div class="project-bar-pager">
+            <a class="button" href="./project-10.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./project-2.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
     </nav>
 
-    <header>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_start.webp" alt="The beginning part of the level" width="1921" height="1081">
-                </div>
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <!-- Video: its picture is only the preview shown before it plays -->
+                    <li>
+                        <button class="project-media-thumb" type="button" data-video="./media/MF/mystic_forest.mp4">
+                            <img src="./media/MF/mystic_forest-poster.webp" alt="" width="1280" height="720">
+                            <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+                            <span class="visually-hidden">Video</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_start.webp" alt="The beginning part of the level" width="1921" height="1081">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_fall.webp" alt="Falling into the darker forest" width="1921" height="1085">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_hub.webp" alt="Room with the end door" width="1921" height="1083">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_puzzle.webp" alt="A swinging light cage puzzle" width="1921" height="1083">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_choice.webp" alt="Wall sliding" width="1919" height="1079">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/MF/MF_dark.webp" alt="A dark part of the level with no light" width="1921" height="1079">
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_fall.webp" alt="Falling into the darker forest" width="1921" height="1085">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_hub.webp" alt="Room with the end door" width="1921" height="1083">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_puzzle.webp" alt="A swinging light cage puzzle" width="1921" height="1083">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_choice.webp" alt="Wall sliding" width="1919" height="1079">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/MF/MF_dark.webp" alt="A dark part of the level with no light" width="1921" height="1079">
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-group"><span class="kind-dot"></span>Group Project</li>
+                    <li class="chip">Game</li>
+                    <li class="chip">2D</li>
+                    <li class="chip">Platformer</li>
+                </ul>
+                <h1 class="project-title">Mystic Forest</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>1 Month</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Level Designer(Level 4) and Gameplay Programmer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Unity</li>
+                                <li class="chip">Visual Studio</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">C#</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/15YldzE471wogeznRd8UhUNgkrEF6p4WS/view?usp=sharing" class="button button-primary">Download & Play</a>
                 </div>
             </div>
         </div>
-    </header>
 
-    <main>
-        <div id="content">
-            <div id="tags">
-                <span>Group Project</span>
-                <span>Game</span>
-                <span>2D</span>
-                <span>Platformer</span>
-            </div>
-            <div id="details">
-                <h1>Mystic Forest</h1>
-                <p id="stats">
-                    <span>Timeframe:</span> 1 Month<br>
-                    <span>Role:</span> Level Designer(Level 4) and Gameplay Programmer<br>
-                    <span>Tools:</span> Unity, Visual Studio<br>
-                    <span>Skills: </span> C#
-                </p>
-                <p id="description">
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
                     A 2D platformer developed in Unity and focused on level design. Made alongside a team of 5
                     where every member was tasked to create their own level that flows nicely into all the other
                     levels created by the team. I created the fourth level around the concept of entering the
@@ -109,7 +133,8 @@
                     The level uses a tilemap for all of the base ground, wall, and spike sprites. Additional sprites are placed on top 
                     of that as their own game objects. My level also uses Unity's newer 2D lights which are optimized better for 2D but 
                     aren't currently supported with WebGL.
-                </p>
+            </p>
+            <div class="project-lists">
                 <section id="challenges">
                     <h2 class="list-title">Challenges:</h2>
                     <ul>
@@ -139,12 +164,13 @@
                     </ul>
                 </section>
             </div>
-
-            <div class="project-links">
-                <a href="https://drive.google.com/file/d/15YldzE471wogeznRd8UhUNgkrEF6p4WS/view?usp=sharing"
-                    class="button button-primary">Download & Play</a>
-            </div>
         </div>
+
+        <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
+        <nav class="project-pager">
+            <a class="button" href="./project-10.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./project-2.html">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </nav>
     </main>
 
     <!-- ===== CONTACT FOOTER (the same on every page) ===== -->

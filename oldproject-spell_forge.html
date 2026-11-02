@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,83 +11,94 @@
     <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Menu button of the top bar -->
-    <script type="module" src="./src/nav.js"></script>
-    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="module" src="./src/slick-project.js"></script>
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
 </head>
-
 <body>
-    <!-- ===== TOP NAVIGATION BAR (the same on every page; project pages link back to index.html) ===== -->
-    <nav id="site-nav" aria-label="Main">
-        <a class="site-nav-brand" href="./index.html">Nathan Wildofsky</a>
-        <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
-        <ul class="site-nav-links" id="site-nav-links">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#projects">Projects</a></li>
-            <li><a href="./index.html#about">About Me</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-            <li>
-                <a class="site-nav-resume-link" href="./media/NWildofsky_Resume.pdf">
-                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
-                </a>
-            </li>
-        </ul>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
     </nav>
 
-    <header>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/SP/SP_deck.png" alt="The starting setup">
-                </div>
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/SP/SP_deck.png" alt="The starting setup">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/SP/SP_rules.png" alt="The rules document in the game">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/SP/SP_cards.png" alt="Examples of cards in the deck">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/SP/SP_hand.png" alt="An example hand">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/SP/SP_spell.png" alt="An example of a low complexity spell">
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/SP/SP_rules.png" alt="The rules document in the game">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/SP/SP_cards.png" alt="Examples of cards in the deck">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/SP/SP_hand.png" alt="An example hand">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/SP/SP_spell.png" alt="An example of a low complexity spell">
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-group"><span class="kind-dot"></span>Group Project</li>
+                    <li class="chip">Card Game</li>
+                </ul>
+                <h1 class="project-title">Spell Forge</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>5 Weeks</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Card and Game Designer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Tabletop Simulator</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Teamwork</li>
+                                <li class="chip">Communication</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://docs.google.com/document/d/1v1tAsulCVebFgmcwSemUM9Tq6d9CYM1dECRenYYKQ4E/edit?usp=sharing" class="button button-primary">View Rules</a>
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2592743291" class="button">See on Steam</a>
                 </div>
             </div>
         </div>
-    </header>
 
-    <main>
-        <div id="content">
-            <div id="tags">
-                <span>Group Project</span>
-                <span>Card Game</span>
-            </div>
-            <div id="details">
-                <h1>Spell Forge</h1>
-                <p id="stats">
-                    <span>Timeframe:</span> 5 Weeks<br>
-                    <span>Role:</span> Card and Game Designer<br>
-                    <span>Tools:</span> Tabletop Simulator<br>
-                    <span>Skills:</span> Teamwork, Communication 
-                </p>
-                <p id="description">
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
                     A card game best described as a mix between blackjack and poker. Created for tabletop simulator,
                     Spell Forge is a game where you try to build the most powerful "spell" in your hand while also
                     keeping it within the complexity limit that was set for that round. Even further, additional power is added
@@ -110,7 +120,8 @@
                     for getting any flushes or straights. Doing this was a lot easier with more cards and so for this strategy, lower 
                     complexity cards are more favorable. So with all of these changes all the cards have their proper uses and feel more 
                     balanced than in the beginning.
-                </p>
+            </p>
+            <div class="project-lists">
                 <section id="challenges">
                 <h2 class="list-title">Challenges:</h2>
                 <ul>
@@ -141,11 +152,6 @@
                 </ul>
                 </section>
             </div>
-
-            <div class="project-links">
-                <a href="https://docs.google.com/document/d/1v1tAsulCVebFgmcwSemUM9Tq6d9CYM1dECRenYYKQ4E/edit?usp=sharing" class="button button-primary">View Rules</a>
-                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2592743291" class="button button-primary">See on Steam</a>
-            </div>
         </div>
     </main>
 
@@ -171,5 +177,4 @@
         </div>
     </footer>
 </body>
-
 </html>

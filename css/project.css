@@ -1,187 +1,293 @@
-header {
-    padding-bottom: 3rem;
+/*
+    Styles for the project pages, on top of base.css. Order follows the page, top to bottom:
+        1. Top bar (the only bar on a project page)
+        2. Page layout
+        3. Header, left: media gallery
+        4. Header, right: tags, title, facts, link buttons
+        5. Writeup: description and the three lists
+        6. Previous / Next at the bottom
+*/
+
+
+/* ==========================================================================
+   1. TOP BAR - All projects, "n of N", Previous and Next
+   ========================================================================== */
+.project-bar {
+    position: sticky;
+    top: 0;
+    z-index: 16;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: var(--nav-height);
+    padding-inline: var(--page-gutter);
+    border-bottom: 1px solid var(--color-line);
+    background-color: color-mix(in srgb, var(--color-bg) 90%, transparent);
+    backdrop-filter: blur(10px);
+}
+.project-bar .button {
+    padding: 7px 11px;
+    font-size: 13px;
+}
+.project-bar-count {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font: 500 12px var(--font-body);
+}
+.project-bar-pager {
+    display: flex;
+    gap: 6px;
 }
 
-main {
-    padding: .5rem 0 2rem;
+
+/* ==========================================================================
+   2. PAGE LAYOUT
+   ========================================================================== */
+.project-page {
+    display: grid;
+    gap: 30px;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 28px var(--page-gutter) 48px;
+}
+.project-header {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    align-items: start;
+    gap: 28px;
 }
 
-/* Slick carousel */
-.slick-carousel {
+
+/* ==========================================================================
+   3. MEDIA GALLERY (src/gallery.js fills .project-media-main from the thumbnails)
+   ========================================================================== */
+.project-media {
+    display: grid;
+    gap: 8px;
+}
+.project-media-main {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+}
+.project-media-main img,
+.project-media-main video {
+    display: block;
     width: 100%;
-    height: 375px;
-    margin: 4rem auto 0;
-}
-.slick-list {
     height: 100%;
 }
-.slick-item {
+.project-media-main img {
+    object-fit: cover;
+}
+.project-media-main video {
+    object-fit: contain;
+}
+.project-media-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.project-media-thumb {
     position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid var(--color-line);
+    border-radius: 7px;
+    background-color: var(--color-surface);
+    opacity: .7;
+    cursor: pointer;
+    transition: opacity .2s ease;
 }
-.slick-item .img {
-    display: flex;
-    justify-content: center;
-    opacity: 0.3;
-    margin: 2rem 1.5rem 0;
-    transition: all 300ms ease;
-}
-.slick-item img {
-    border-radius: 15px;
-    width: 500px;
-    height: auto;
-    transition: all 300ms ease;
-}
-.slick-center .img {
+.project-media-thumb:hover {
     opacity: 1;
-    transform: scale(1.2);
-    z-index: 1;
-    position: relative;
 }
-.slick-center .img:before {
-    box-shadow: -40px 0 35px -30px black inset;
-    content: ' ';
-    height: 84%;
-    left: -81px;
+.project-media-thumb[aria-pressed="true"] {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+    opacity: 1;
+}
+.project-media-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Play symbol on the video's thumbnail */
+.project-media-play {
     position: absolute;
-    top: 8%;
-    width: 80px;
-    pointer-events: none;
-}
-.slick-center .img:after {
-    box-shadow: 40px 0 35px -30px black inset;
-    content: ' ';
-    height: 84%;
-    right: -81px;
-    position: absolute;
-    top: 8%;
-    width: 80px;
-    pointer-events: none;
-}
-.slick-prev {
-    top: 102% !important;
-    left: 47.5% !important;
-}
-.slick-next {
-    top: 102% !important;
-    right: 47.5% !important;
-}
-.slick-prev:before, .slick-next:before {
-    font-size: 25px !important;
-    line-height: 0 !important;
-}
-
-@media (max-width: 992px) {
-    .slick-prev {
-        left: 46% !important;
-    }
-    .slick-next {
-        right: 46% !important;
-    }
-}
-@media (max-width: 800px) {
-    .slick-carousel {
-        height: 315px;
-    }
-    .slick-item .img {
-        margin: 2rem 1.2rem 0;
-    }
-    .slick-item img {
-        width: 400px;
-    }
-    .slick-prev {
-        left: 44% !important;
-    }
-    .slick-next {
-        right: 44% !important;
-    }
-}
-@media (max-width: 570px) {
-    .slick-carousel {
-        height: 255px;
-    }
-    .slick-item .img {
-        margin: 2rem 0 0;
-    }
-    .slick-item img {
-        width: 300px;
-    }
-    .slick-prev {
-        left: 42% !important;
-    }
-    .slick-next {
-        right: 42% !important;
-    }
-}
-@media (max-width: 410px) {
-    .slick-carousel {
-        height: 240px;
-    }
-    .slick-item .img {
-        margin: 2rem 0 0;
-    }
-    .slick-item img {
-        width: 280px;
-    }
-    .slick-prev {
-        left: 40% !important;
-    }
-    .slick-next {
-        right: 40% !important;
-    }
-}
-
-/* Project Details */
-#content {
-    width: 85%;
-    max-width: 1280px;
+    inset: 0;
+    width: 28px;
+    height: 28px;
     margin: auto;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(21, 18, 16, .65);
+    color: var(--color-text);
 }
-#tags {
+
+
+/* ==========================================================================
+   4. SUMMARY - tags, title, facts table and link buttons
+   ========================================================================== */
+.project-summary {
+    display: grid;
+    gap: 14px;
+}
+.project-tags {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    column-gap: .7rem;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-#tags span {
-    font-size: 1.1rem;
-    font-weight: 400;
-    background: var(--gradient-title);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.chip-kind {
+    gap: 6px;
 }
-#stats {
-    margin-bottom: 2rem;
-    color: var(--color-text);
+.project-title {
+    margin: 0;
+    font: 700 clamp(26px, 3.4vw, 38px)/1.08 var(--font-display);
+    letter-spacing: -.02em;
+    text-wrap: balance;
 }
-#stats span {
-    font-weight: 600;
-    color: var(--color-accent-2);
+/* Facts table: Timeframe and Role side by side, then Tools, then Skills */
+.project-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    background-color: var(--color-line);   /* shows through the 1px gaps as the dividers */
 }
-h1 {
-    color: var(--color-accent-2);
-    font-size: 2rem;
+.project-fact {
+    display: grid;
+    align-content: start;
+    gap: 7px;
+    min-width: 0;
+    padding: 11px 13px;
+    background-color: var(--color-surface);
+    font-size: 14px;
 }
-ul, li {
-    color: var(--color-text);
+.project-fact-wide {
+    grid-column: 1 / -1;
 }
-ul {
-    padding-left: 2.5rem;
+.project-fact dt {
+    color: var(--color-text-muted);
+    font: 600 12.5px/1.3 var(--font-body);
+}
+.project-fact dd {
+    margin: 0;
+}
+.project-fact-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.project-fact .chip {
+    border-color: var(--color-line);
+    background-color: var(--color-chip-dark);
+}
+/* Link buttons (Download & Play, See the Code...); the first one is the primary button */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+/* ==========================================================================
+   5. WRITEUP - description, then Challenges / What I did well / What I would change
+   ========================================================================== */
+.project-writeup {
+    display: grid;
+    gap: 40px;
+}
+#description {
+    max-width: 76ch;
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+}
+.project-lists {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 40px;
 }
 .list-title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: inherit;
-    color: var(--color-accent-2);
+    margin: 0 0 10px;
+    font: 600 17px/1.3 var(--font-display);
 }
-.project-links {
-    margin-top: 3rem;
+.project-lists ul {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 1.1em;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.project-lists li::marker {
+    color: var(--color-text-muted);
 }
 
-/* MEDIA QUERIES */
-@media (min-width: 570px)
-{
-    h1 {
-        font-size: 2.5rem;
+
+/* ==========================================================================
+   6. PREVIOUS / NEXT PROJECT at the bottom of the page
+   ========================================================================== */
+.project-pager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-line);
+}
+
+
+/* ==========================================================================
+   TABLET (960px and below) AND PHONE (760px and below)
+   ========================================================================== */
+@media (max-width: 960px) {
+    .project-lists {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+}
+@media (max-width: 760px) {
+    .project-header {
+        grid-template-columns: 1fr;
+    }
+    .project-bar-count {
+        display: none;
+    }
+    .project-bar-pager {
+        margin-left: auto;
+    }
+    /* Previous and Next show only their arrows; the words stay for screen readers */
+    .project-bar .button-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+    .project-bar .button {
+        padding: 8px 10px;
     }
 }

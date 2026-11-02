@@ -11,104 +11,130 @@
     <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Menu button of the top bar -->
-    <script type="module" src="./src/nav.js"></script>
-    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="module" src="./src/slick-project.js"></script>
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
 </head>
 <body>
-    <!-- ===== TOP NAVIGATION BAR (the same on every page; project pages link back to index.html) ===== -->
-    <nav id="site-nav" aria-label="Main">
-        <a class="site-nav-brand" href="./index.html">Nathan Wildofsky</a>
-        <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
-        <ul class="site-nav-links" id="site-nav-links">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#projects">Projects</a></li>
-            <li><a href="./index.html#about">About Me</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-            <li>
-                <a class="site-nav-resume-link" href="./media/NWildofsky_Resume.pdf">
-                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
-                </a>
-            </li>
-        </ul>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <span class="project-bar-count">4 of 10</span>
+        <div class="project-bar-pager">
+            <a class="button" href="./project-3.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./project-5.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
     </nav>
 
-    <header>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_1.webp" alt="Render of shapes with colors in the frame" width="1600" height="896">
-                </div>
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <!-- Video: its picture is only the preview shown before it plays -->
+                    <li>
+                        <button class="project-media-thumb" type="button" data-video="./media/BRE/bre_demo.mp4">
+                            <img src="./media/BRE/bre_demo-poster.webp" alt="" width="1280" height="720">
+                            <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+                            <span class="visually-hidden">Video</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_1.webp" alt="Render of shapes with colors in the frame" width="1600" height="896">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_2.webp" alt="Render of 3D models of different shapes with their normals displayed" width="1600" height="898">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_3.webp" alt="Render of 3D models colored only by the lighting in the scene" width="1600" height="899">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_4.webp" alt="Render of 3D models with lighting and texture" width="1598" height="897">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_5.webp" alt="Render of 3D models with normal maps that affect lighting and a skybox" width="1598" height="896">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_progress_6.webp" alt="Render of spheres showcasing PBR lighting quality" width="1600" height="905">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_final.webp" alt="Final version of the engine rendering a winter snowglobe scene" width="1600" height="900">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_rotate.webp" alt="Example of the UI being used to alter Entities in the scene" width="1601" height="900">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/BRE/bre_change_lighting.webp" alt="Example of the UI being used to alter lighting in the scene" width="1604" height="900">
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_2.webp" alt="Render of 3D models of different shapes with their normals displayed" width="1600" height="898">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_3.webp" alt="Render of 3D models colored only by the lighting in the scene" width="1600" height="899">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_4.webp" alt="Render of 3D models with lighting and texture" width="1598" height="897">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_5.webp" alt="Render of 3D models with normal maps that affect lighting and a skybox" width="1598" height="896">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_progress_6.webp" alt="Render of spheres showcasing PBR lighting quality" width="1600" height="905">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_final.webp" alt="Final version of the engine rendering a winter snowglobe scene" width="1600" height="900">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_rotate.webp" alt="Example of the UI being used to alter Entities in the scene" width="1601" height="900">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                <img src="./media/BRE/bre_change_lighting.webp" alt="Example of the UI being used to alter lighting in the scene" width="1604" height="900">
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-solo"><span class="kind-dot"></span>Solo Project</li>
+                    <li class="chip">Application</li>
+                    <li class="chip">3D</li>
+                    <li class="chip">Graphics Programming</li>
+                </ul>
+                <h1 class="project-title">Basic Rendering Engine</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>3 Months</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Feature Developer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Visual Studio</li>
+                                <li class="chip">Dear ImGui</li>
+                                <li class="chip">DirectX 11</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">C++</li>
+                                <li class="chip">HLSL</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://github.com/nwildofsky/IGM-540/tree/Class-Code/Final-Shadows" class="button button-primary">See the Code</a>
                 </div>
             </div>
         </div>
-    </header>
 
-    <main>
-        <div id="content">
-            <div id="tags">
-                <span>Solo Project</span>
-                <span>Application</span>
-                <span>3D</span>
-                <span>Graphics Programming</span>
-            </div>
-            <div id="details">
-                <h1>Basic Rendering Engine</h1>
-                <p id="stats">
-                    <span>Timeframe:</span> 3 Months<br>
-                    <span>Role:</span> Feature Developer<br>
-                    <span>Tools:</span> Visual Studio, Dear ImGui, DirectX 11<br>
-                    <span>Skills: </span> C++, HLSL
-                </p>
-                <p id="description">
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
                     A custom rendering engine built with C++ and utilizing DirectX 11. This was a semester-long class
                     project where every new feature was added one assignment at a time. Features individually worked on
                     and implemented are: a virtual camera, camera controls, skyboxes, Dear ImGui UI for runtime modification,
@@ -150,7 +176,8 @@
                     operation to a per request operation. I locked the movement and rotation of light objects when the lights are set to cast
                     shadows. The user can then turn off that light's shadows, reposition it, and turn the shadows back on and the shadow maps
                     will update at that moment to the new light direction.
-                </p>
+            </p>
+            <div class="project-lists">
                 <section id="challenges">
                     <h2 class="list-title">Challenges:</h2>
                     <ul>
@@ -180,11 +207,13 @@
                     </ul>
                 </section>
             </div>
-
-            <div class="project-links">
-                <a href="https://github.com/nwildofsky/IGM-540/tree/Class-Code/Final-Shadows" class="button button-primary">See the Code</a>
-            </div>
         </div>
+
+        <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
+        <nav class="project-pager">
+            <a class="button" href="./project-3.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./project-5.html">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </nav>
     </main>
 
     <!-- ===== CONTACT FOOTER (the same on every page) ===== -->

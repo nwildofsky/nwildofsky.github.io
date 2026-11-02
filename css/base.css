@@ -10,7 +10,6 @@
         7. Chips and icon links
         8. Top navigation bar
         9. Contact footer
-        10. Temporary rules for the pages that are not redesigned yet
 */
 
 
@@ -28,6 +27,7 @@
     --color-accent: #ffa726;
     --color-accent-2: #2db8ff;
     --color-on-accent: #1a1008;
+    --color-chip-dark: color-mix(in srgb, var(--color-bg) 78%, #000);   /* chips inside grey tables */
     --color-kind-group: #2db8ff;
     --color-kind-solo: #ff6b4a;
     --color-kind-professional: #ffa726;
@@ -97,6 +97,13 @@ a:hover {
 img, svg {
     vertical-align: middle;
 }
+/* A picture inside a button (gallery thumbnails, hero rail) cannot be picked up and dragged, so a
+   click where the mouse moves a little is still a click */
+button img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
 button {
     font-family: inherit;
 }
@@ -104,6 +111,20 @@ button {
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+
+/* Text that only screen readers read (for example the word beside an icon-only button) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 
@@ -177,11 +198,21 @@ button {
 .button:hover .button-arrow {
     transform: translateX(3px);
 }
+/* A back arrow slides 3px to the left */
+.button .button-arrow-back {
+    transition: transform .15s ease;
+}
+.button:hover .button-arrow-back {
+    transform: translateX(-3px);
+}
 @media (prefers-reduced-motion: reduce) {
     .button:hover {
         transform: none;
     }
     .button:hover .button-arrow {
+        transform: none;
+    }
+    .button:hover .button-arrow-back {
         transform: none;
     }
 }
@@ -231,16 +262,19 @@ button {
 .tag-pill-keyword {
     background-color: color-mix(in srgb, var(--color-bg) 90%, transparent);
 }
-.tag-pill-dot {
+.kind-dot {
+    flex: none;
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background-color: var(--color-text-muted);
 }
-.tag-pill-kind-group .tag-pill-dot {
+.tag-pill-kind-group .kind-dot,
+.chip-kind-group .kind-dot {
     background-color: var(--color-kind-group);
 }
-.tag-pill-kind-solo .tag-pill-dot {
+.tag-pill-kind-solo .kind-dot,
+.chip-kind-solo .kind-dot {
     background-color: var(--color-kind-solo);
 }
 /* Filled amber pill for professional work (not used until the first professional project is added) */
@@ -293,7 +327,7 @@ button {
 
 
 /* ==========================================================================
-   8. TOP NAVIGATION BAR (#site-nav, the same on every page)
+   8. TOP NAVIGATION BAR (#site-nav, on the home page only; project pages have their own bar)
    ========================================================================== */
 #site-nav {
     position: sticky;
@@ -423,16 +457,3 @@ button {
     }
 }
 
-
-/* ==========================================================================
-   10. TEMPORARY: used by the old index and project pages until they are rebuilt
-   ========================================================================== */
-/* Row of link buttons (rounds 3 and 5 replace the blocks that use this) */
-.project-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 1rem;
-    row-gap: 1rem;
-    justify-content: center;
-}

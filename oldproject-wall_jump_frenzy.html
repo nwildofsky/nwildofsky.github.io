@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,79 +11,93 @@
     <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Menu button of the top bar -->
-    <script type="module" src="./src/nav.js"></script>
-    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="module" src="./src/slick-project.js"></script>
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
 </head>
-
 <body>
-    <!-- ===== TOP NAVIGATION BAR (the same on every page; project pages link back to index.html) ===== -->
-    <nav id="site-nav" aria-label="Main">
-        <a class="site-nav-brand" href="./index.html">Nathan Wildofsky</a>
-        <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
-        <ul class="site-nav-links" id="site-nav-links">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#projects">Projects</a></li>
-            <li><a href="./index.html#about">About Me</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-            <li>
-                <a class="site-nav-resume-link" href="./media/NWildofsky_Resume.pdf">
-                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
-                </a>
-            </li>
-        </ul>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
     </nav>
 
-    <header>
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/WJF/WJ_title.png" alt="The game title screen">
-                </div>
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/WJF/WJ_title.png" alt="The game title screen">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/WJF/WJ_begin.png" alt="A frame of the game with minimal obstacles">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/WJF/WJ_difficult.png" alt="A frame of the game with multiple obstacles">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/WJF/WJ_lost.png" alt="The game over screen">
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/WJF/WJ_begin.png" alt="A frame of the game with minimal obstacles">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/WJF/WJ_difficult.png" alt="A frame of the game with multiple obstacles">
-                </div>
-            </div>
-            <div class="slick-item">
-                <div class="img">
-                    <img src="./media/WJF/WJ_lost.png" alt="The game over screen">
-                </div>
-        </div>
-    </header>
 
-    <main>
-        <div id="content">
-            <div id="tags">
-                <span>Solo Project</span>
-                <span>Web Game</span>
-                <span>2D</span>
-                <span>Arcade</span>
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-solo"><span class="kind-dot"></span>Solo Project</li>
+                    <li class="chip">Web Game</li>
+                    <li class="chip">2D</li>
+                    <li class="chip">Arcade</li>
+                </ul>
+                <h1 class="project-title">Wall Jump Frenzy</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>2 Weeks</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Game Developer and Designer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Visual Studio Code</li>
+                                <li class="chip">PixiJS</li>
+                                <li class="chip">Howler.JS</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Javascript</li>
+                                <li class="chip">HTML</li>
+                                <li class="chip">CSS</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://people.rit.edu/nsw7227/235/project3/" class="button button-primary">Play Now</a>
+                </div>
             </div>
-            <div id="details">
-                <h1>Wall Jump Frenzy</h1>
-                <p id="stats">
-                    <span>Timeframe:</span> 2 Weeks<br>
-                    <span>Role:</span> Game Developer and Designer<br>
-                    <span>Tools:</span> Visual Studio Code, PixiJS, Howler.JS<br>
-                    <span>Skills: </span> Javascript, HTML, CSS
-                </p>
-                <p id="description">
+        </div>
+
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
                     A simple arcade-clicker game designed for the web with Javascript, PixiJS, and
                     Howler.JS. The goal is to collect as many coins as possible while avoiding all of the obstacles that
                     spawn in while you play. To play, just left-click anywhere on the game screen to jump from wall to
@@ -108,7 +121,8 @@
                     very nice and sometimes took longer than it should have to jump to the right rotation. I modified 
                     the code to instead do 1 full rotation and stop. This still kept the look that I wanted while completely 
                     removing all the rotation issues I was experiencing.
-                </p>
+            </p>
+            <div class="project-lists">
                 <section id="challenges">
                 <h2 class="list-title">Challenges:</h2>
                 <ul>
@@ -147,10 +161,6 @@
                 </ul>
                 </section>
             </div>
-
-            <div class="project-links">
-                <a href="https://people.rit.edu/nsw7227/235/project3/" class="button button-primary">Play Now</a>
-            </div>
         </div>
     </main>
 
@@ -176,5 +186,4 @@
         </div>
     </footer>
 </body>
-
 </html>
