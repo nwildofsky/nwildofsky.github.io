@@ -159,219 +159,239 @@
     </header>
 
     <main>
-        <div id="projects">
-            <h1>Projects</h1>
-            <div class="flex" id="project-1">
-                <h2>Mystic Forest</h2>
-                <img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy">
-                <p>
-                    A 2D platformer developed in Unity and focused on level design. Made alongside a team of 4
-                    where every member was tasked to create their own level that flows nicely into all the other
-                    levels created by the team. I created the fourth level around the concept of entering the
-                    dark forest and using lights placed in the level to make your way through the darkness.
-                    In addition to creating a level, I also programmed the mechanics of the game. These include:
-                    moving, jumping, wall sliding, wall jumping, and dashing. Players can also dash
-                    into certain tiles to break them and activate lights and switches to progress through each level.
-                </p>
-                <div class="project-links">
-                    <a href="./project-1.html" class="button button-primary">Learn More</a>
-                    <a href="https://drive.google.com/file/d/15YldzE471wogeznRd8UhUNgkrEF6p4WS/view?usp=sharing"
-                        class="button button-primary">Download & Play</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+        <!-- ===== PROJECTS =====
+             One project-card block per project, in the order they should appear.
+             To add a project: copy a whole article block, then change its id (project-N), the links, the image,
+             the title, the blurb and the pills.
+             Pills: the Group/Solo pill matches the project page's "Group Project"/"Solo Project" tag. The three
+             keyword pills are the project's first type tag, first tool and first skill (skip Teamwork and Communication).
+             Professional project: in its card, replace the Group/Solo pill with this pill:
+                 <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-check"></use></svg>Professional &middot; Shipped</span>
+        -->
+        <section id="projects" class="page-section">
+            <h2 class="section-heading">Projects</h2>
+            <div id="project-grid">
 
-            <div class="flex linked-project flipped-project" id="project-2">
-                <h2>Starsector Mod: Dead Man's Riot Quest</h2>
-                <img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy">
-                <p>
-                    A quest mod of the game Starsector created for a class project and published publicly to NexusMods.
-                    Explore an unknown solar system and find out what the mega corporation Tri-tachyon has been keeping
-                    hidden for many years. Pick a side in the ongoing battle once there, put an end to the whole operation,
-                    and leave with a new and dangerous weapon to add to your arsenal. Starsector is a fairly unknown open world
-                    space RPG that is technically still pre-release, but has been worked on for over 10 years. Starsector has an
-                    active modding community and plenty of helpful resources within its wiki, discord, and forums. Even still,
-                    learning the codebase, working within it, and fixing all resulting errors by the end were quite the challenge.
-                    This was a group project with a group of 4. My role was map implementation and asset design, but I also helped
-                    a lot with mission sequencing and fixing errors in the code.
-                </p>
-                <div class="project-links">
-                    <a href="./project-2.html" class="button button-primary">Learn More</a>
-                    <a href="https://www.nexusmods.com/starsector/mods/104" class="button button-primary">View & Download</a>
-                    <a href="https://fractalsoftworks.com/category/releases/" class="button button-primary">Get Starsector</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-1">
+                    <div class="project-card-image">
+                        <a href="./project-1.html"><img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Game</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Mystic Forest</h3>
+                        <p class="project-card-blurb">A 2D platformer focused on level design</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-1.html" class="button button-primary">Learn More</a>
+                            <a href="https://drive.google.com/file/d/15YldzE471wogeznRd8UhUNgkrEF6p4WS/view?usp=sharing" class="button">Download & Play</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project" id="project-3">
-                <h2>Racecar Evolution</h2>
-                <img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy">
-                <p>
-                    An interactive simulation showcasing a genetic algorithm of a racecar learning to drive on a track.
-                    Users first create a looped racetrack using the built-in track creator, then once they hit play the
-                    simulation will start. During the simulation, batches of racecar AI are placed into the simulation in
-                    generations. Each racecar agent starts with a randomized set of instructions to complete the track, and 
-                    as each generation ends a new generation is made by "evolving" the previous generation. This means selecting
-                    a certain number cars that had the best run and using their set of instructions or "chromosome" as the basis of
-                    the new generation. This process is set to continue until an agent is found who completed the track at a high 
-                    level of quality. This project was my introduction to genetic algorithms and can certainly be improved, but 
-                    remains a good display of the algorithm's process and adaptability.
-                </p>
-                <div class="project-links">
-                    <a href="./project-3.html" class="button button-primary">Learn More</a>
-                    <!--<a href="" class="button button-primary">Download & Play</a>-->
-                    <a href="https://github.com/nwildofsky/GameAI/tree/main/FinalProject/Assets/Scripts" class="button button-primary">See the Code</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-2">
+                    <div class="project-card-image">
+                        <a href="./project-2.html"><img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Mod</li>
+                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
+                            <li class="tag-pill tag-pill-keyword">Java</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Starsector Mod: Dead Man's Riot Quest</h3>
+                        <p class="project-card-blurb">A zombie quest mod for the game Starsector</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-2.html" class="button button-primary">Learn More</a>
+                            <a href="https://www.nexusmods.com/starsector/mods/104" class="button">View & Download</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project flipped-project" id="project-4">
-                <h2>Basic Rendering Engine</h2>
-                <img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy">
-                <p>
-                    A custom rendering engine built with C++ and utilizing DirectX 11. This was a semester-long class
-                    project where every new feature was added one assignment at a time. Features individually worked on
-                    and implemented are: virtual camera, camera controls, skyboxes, Dear ImGui UI for runtime modification,
-                    custom pixel and vertex shaders written in hlsl, game entities with associated transforms, meshes, and
-                    PBR materials, multiple light types, and shadow maps. The project also makes use of the professor's own
-                    SimpleShader library which makes the process of implementing and integrating shaders into a DirectX application
-                    a lot more convenient. I really enjoyed working on this project and put all my effort into making the engine
-                    as functional as possible but also structuring the code in a organized and understandable way. As such,
-                    this project serves as the best example of my skill with C++.
-                </p>
-                <div class="project-links">
-                    <a href="./project-4.html" class="button button-primary">Learn More</a>
-                    <a href="https://github.com/nwildofsky/IGM-540/tree/Class-Code/Final-Shadows" class="button button-primary">See the Code</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-3">
+                    <div class="project-card-image">
+                        <a href="./project-3.html"><img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Simulation</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Racecar Evolution</h3>
+                        <p class="project-card-blurb">A genetic algorithm simulation where AI cars learn to drive</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-3.html" class="button button-primary">Learn More</a>
+                            <a href="https://github.com/nwildofsky/GameAI/tree/main/FinalProject/Assets/Scripts" class="button">See the Code</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project" id="project-5">
-                <h2>Talisman of Ethshar</h2>
-                <img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy">
-                <p>
-                    A connect-the-dots style puzzle game crafted in Unity and inspired by the Ethshar universe.
-                    Talisman of Ethshar consists of 15 levels of increasingly difficult puzzles where you are tasked
-                    with recreating the "talisman" image in the bottom right by connecting the dots one-by-one.
-                    You can start your line at any dot and can connect to any dot from there but you cannot go back
-                    across a line you've already drawn. As you progress through the game, new mechanics are introduced
-                    that keep the puzzles fresh, fun, and challenging. This was a group project and my responsibilities
-                    were designing most of the puzzles, creating the look and feel of the game, and programming the
-                    functionality
-                    for connecting dots and checking if the puzzle has been correctly solved.
-                </p>
-                <div class="project-links">
-                    <a href="./project-5.html" class="button button-primary">Learn More</a>
-                    <a href="https://play.unity.com/mg/other/talisman-of-ethshar" class="button button-primary">Play Now</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-4">
+                    <div class="project-card-image">
+                        <a href="./project-4.html"><img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Application</li>
+                            <li class="tag-pill tag-pill-keyword">Visual Studio</li>
+                            <li class="tag-pill tag-pill-keyword">C++</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Basic Rendering Engine</h3>
+                        <p class="project-card-blurb">A custom-built rendering engine in C++ with many basic features</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-4.html" class="button button-primary">Learn More</a>
+                            <a href="https://github.com/nwildofsky/IGM-540/tree/Class-Code/Final-Shadows" class="button">See the Code</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project flipped-project" id="project-6">
-                <h2>Dresden Files: Skyline</h2>
-                <img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy">
-                <p>
-                    A 3D Murder Mystery game built in Unity and set in the Dresden Files universe. Players are able
-                    to search multiple open scenes for any clues that will help them decifer the strange unexplained
-                    murder before them. Then, speak with the suspects to see every side of the story and piece together
-                    what really happened. This was a group project and my contribution was mainly the level design, the
-                    sequencing of the series of events, and some of the functionality of interacting with clues and
-                    tracking the players' interactions.
-                </p>
-                <div class="project-links">
-                    <a href="./project-6.html" class="button button-primary">Learn More</a>
-                    <a href="https://drive.google.com/file/d/1F9yBTlMsCIBalvKFb1fpcEf-zaiL93N4/view?usp=sharing" class="button button-primary">Download & Play</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-5">
+                    <div class="project-card-image">
+                        <a href="./project-5.html"><img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Game</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Talisman of Ethshar</h3>
+                        <p class="project-card-blurb">A challenging puzzle game set in the Ethshar universe</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-5.html" class="button button-primary">Learn More</a>
+                            <a href="https://play.unity.com/mg/other/talisman-of-ethshar" class="button">Play Now</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project" id="project-7">
-                <h2>Investment Andes</h2>
-                <img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy">
-                <p>
-                    A fast-paced and high stakes card game intended for play in tabletop simulator. Make smart
-                    investments into buildings that you think will give you the most benefit and use any action
-                    cards you get to give yourself an advantage over the other players. The game only continues
-                    while there is still money left in the deck, so once the economy dries up, the player with the
-                    most money wins. Investment Andes was a group project and my contribution, along with my other
-                    teammates, was the balancing of the game, the ideas for buildings and action cards, and the rules
-                    of the game.
-                </p>
-                <div class="project-links">
-                    <a href="./project-7.html" class="button button-primary">Learn More</a>
-                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2413986966" class="button button-primary">See on Steam</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-6">
+                    <div class="project-card-image">
+                        <a href="./project-6.html"><img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Game</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Dresden Files: Skyline</h3>
+                        <p class="project-card-blurb">A Murder Mystery set in the Dresden Files universe</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-6.html" class="button button-primary">Learn More</a>
+                            <a href="https://drive.google.com/file/d/1F9yBTlMsCIBalvKFb1fpcEf-zaiL93N4/view?usp=sharing" class="button">Download & Play</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project flipped-project" id="project-8">
-                <h2>Autonomous Agents: Humans vs. Zombies</h2>
-                <img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy">
-                <p>
-                    An interactive simulation designed in Unity where autonomous human and zombie
-                    "players" move independently through a system of steering forces. These forces are based on their
-                    desires to either flee from zombies or catch any humans. Both humans and zombies
-                    will also avoid obstacles, stay within the boundaries, and separate from each other if they are
-                    extremely close to prevent stacking. The simulation has defaults for the amount of humans, zombies,
-                    and obstacles but the player is able to add more in realtime. There are also options for multiple
-                    camera views and debug mode which gives more details about each object's movement during runtime.
-                </p>
-                <div class="project-links">
-                    <a href="./project-8.html" class="button button-primary">Learn More</a>
-                    <a href="https://github.com/IGME-202/HvZ_AIProject/tree/master/Wildofsky_HvZ/Assets/Scripts" class="button button-primary">See the Code</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-7">
+                    <div class="project-card-image">
+                        <a href="./project-7.html"><img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Card Game</li>
+                            <li class="tag-pill tag-pill-keyword">Tabletop Simulator</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Investment Andes</h3>
+                        <p class="project-card-blurb">A high stakes and quick paced card game</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-7.html" class="button button-primary">Learn More</a>
+                            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2413986966" class="button">See on Steam</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project" id="project-9">
-                <h2>Quake Tracker</h2>
-                <img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy">
-                <p>
-                    A web application I designed that by default shows you the earthquakes that have occurred in the
-                    world
-                    in the past 6 hours, but also allows you to search a large database of recorded earthquakes with
-                    various
-                    parameters. I used the USGS Earthquake Catalog API as the database for the application and mapped
-                    the data
-                    received from the API with Mapbox. Earthquakes are dynamically sized proportionate to their
-                    magnitude, and
-                    can each be selected and focused on. The earthquakes can also be saved to another page for quick
-                    access or
-                    for going to the official site for that earthquake and seeing more information. You can search and
-                    filter
-                    earthquake results by the time of the quake, its magnitude, its depth, and by location. I also made
-                    it so
-                    the whole site is responsive and can be viewed and used on almost all devices.
-                </p>
-                <div class="project-links">
-                    <a href="./project-9.html" class="button button-primary">Learn More</a>
-                    <a href="https://people.rit.edu/nsw7227/330/project-1" class="button button-primary">Try It Out</a>
-                </div>
-            </div>
-            <div class="line-gradient"></div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-8">
+                    <div class="project-card-image">
+                        <a href="./project-8.html"><img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Interactive Simulation</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Autonomous Agents: Humans vs. Zombies</h3>
+                        <p class="project-card-blurb">Interactive AI simulation built in Unity with C#</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-8.html" class="button button-primary">Learn More</a>
+                            <a href="https://github.com/IGME-202/HvZ_AIProject/tree/master/Wildofsky_HvZ/Assets/Scripts" class="button">See the Code</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="flex linked-project flipped-project" id="project-10">
-                <h2>Pokemon TCG Card Finder</h2>
-                <img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy">
-                <p>
-                    A website I designed and created that uses Javascript and the Pokemon TCG
-                    API that allows the user to search for any Pokemon card using multiple search options and filters.
-                    Once the user finds a card that they want to learn more about or see a clearer picture of, they can
-                    simply click on the card and they are taken to a new page that has a higher resolution picture of
-                    the card as well as all the important details of the card given in a much easier to read design. The
-                    website is mainly for users who already know a fair amount about Pokemon cards and are looking for
-                    something specific, but it helps users who might not know as much by restricting number inputs to
-                    the valid range and certain filters so that there are fewer invalid queries to the API. The site is
-                    also fully responsive with the exception of the filter popout not fitting the screens of some mobile
-                    phones.
-                </p>
-                <div class="project-links">
-                    <a href="./project-10.html" class="button button-primary">Learn More</a>
-                    <a href="https://people.rit.edu/nsw7227/235/project2/" class="button button-primary">Try It Out</a>
-                </div>
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-9">
+                    <div class="project-card-image">
+                        <a href="./project-9.html"><img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Application</li>
+                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
+                            <li class="tag-pill tag-pill-keyword">Javascript</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Quake Tracker</h3>
+                        <p class="project-card-blurb">A web app that maps earthquake data from the USGS</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-9.html" class="button button-primary">Learn More</a>
+                            <a href="https://people.rit.edu/nsw7227/330/project-1" class="button">Try It Out</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project card: copy this whole block to add a project -->
+                <article class="project-card" id="project-10">
+                    <div class="project-card-image">
+                        <a href="./project-10.html"><img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
+                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Application</li>
+                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
+                            <li class="tag-pill tag-pill-keyword">Javascript</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Pokemon TCG Card Finder</h3>
+                        <p class="project-card-blurb">A web app for searching the database of Pokemon Cards</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-10.html" class="button button-primary">Learn More</a>
+                            <a href="https://people.rit.edu/nsw7227/235/project2/" class="button">Try It Out</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="line-gradient"></div>
-        </div>
+        </section>
     </main>
 
     <!-- ===== CONTACT FOOTER (the same on every page) ===== -->

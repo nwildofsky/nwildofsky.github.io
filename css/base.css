@@ -5,9 +5,11 @@
         2. Reset and page basics
         3. Icons
         4. Buttons
-        5. Top navigation bar
-        6. Contact footer
-        7. Temporary rules for the pages that are not redesigned yet
+        5. Section headings
+        6. Tag pills
+        7. Top navigation bar
+        8. Contact footer
+        9. Temporary rules for the pages that are not redesigned yet
 */
 
 
@@ -25,6 +27,9 @@
     --color-accent: #ffa726;
     --color-accent-2: #2db8ff;
     --color-on-accent: #1a1008;
+    --color-kind-group: #2db8ff;
+    --color-kind-solo: #ff6b4a;
+    --color-kind-professional: #ffa726;
 
     /* Gradients */
     --gradient-title: linear-gradient(90deg, #ffb020, #ff5a1f);
@@ -42,6 +47,8 @@
     --nav-height: 56px;
     --page-gutter: clamp(16px, 4.2vw, 52px);
     --radius-button: 8px;
+    --radius-card: 12px;
+    --radius-pill: 6px;
 }
 
 
@@ -169,7 +176,75 @@ button {
 
 
 /* ==========================================================================
-   5. TOP NAVIGATION BAR (#site-nav, the same on every page)
+   5. SECTION HEADINGS
+      A page section is <section class="page-section"> with an <h2 class="section-heading"> inside.
+   ========================================================================== */
+.page-section {
+    padding: 48px var(--page-gutter) 0;
+}
+.section-heading {
+    margin: 0 0 18px;
+    font: 600 clamp(22px, 2.6vw, 28px)/1.1 var(--font-display);
+    letter-spacing: -.015em;
+}
+/* The short amber-to-cyan rule under the heading */
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 76px;
+    height: 3px;
+    margin-top: 9px;
+    border-radius: 2px;
+    background-image: var(--gradient-rule);
+}
+
+
+/* ==========================================================================
+   6. TAG PILLS - small solid labels that sit on top of a card image
+      .tag-pill-kind          Group / Solo (colored dot) or Professional
+      .tag-pill-keyword       type, tool and language keywords
+   ========================================================================== */
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font: 600 12px/1 var(--font-body);
+    white-space: nowrap;
+}
+.tag-pill-keyword {
+    background-color: color-mix(in srgb, var(--color-bg) 90%, transparent);
+}
+.tag-pill-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-text-muted);
+}
+.tag-pill-kind-group .tag-pill-dot {
+    background-color: var(--color-kind-group);
+}
+.tag-pill-kind-solo .tag-pill-dot {
+    background-color: var(--color-kind-solo);
+}
+/* Filled amber pill for professional work (not used until the first professional project is added) */
+.tag-pill-professional {
+    border-color: transparent;
+    background-color: var(--color-kind-professional);
+    color: var(--color-on-accent);
+}
+.tag-pill-professional .icon {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* ==========================================================================
+   7. TOP NAVIGATION BAR (#site-nav, the same on every page)
    ========================================================================== */
 #site-nav {
     position: sticky;
@@ -260,7 +335,7 @@ button {
 
 
 /* ==========================================================================
-   6. CONTACT FOOTER (#contact, the same on every page)
+   8. CONTACT FOOTER (#contact, the same on every page)
    ========================================================================== */
 .site-footer {
     display: grid;
@@ -301,7 +376,7 @@ button {
 
 
 /* ==========================================================================
-   7. TEMPORARY: used by the old index and project pages until they are rebuilt
+   9. TEMPORARY: used by the old index and project pages until they are rebuilt
    ========================================================================== */
 /* Row of link buttons (rounds 3 and 5 replace the blocks that use this) */
 .project-links {

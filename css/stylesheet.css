@@ -4,13 +4,8 @@ header {
     padding-bottom: 7rem;
 }
 
-/* Adjust the landing of nav links to the proper place */
+/* Adjust the landing of the Projects nav link to the proper place */
 #projects {
-    display: flow-root;
-    scroll-margin-top: var(--nav-height);
-}
-.flex.linked-project {
-    margin-top: 20px;
     scroll-margin-top: var(--nav-height);
 }
 main {
@@ -204,46 +199,108 @@ main {
     }
 }
 
-/* Projects Section */
-.flex {
+/* ==========================================================================
+   PROJECTS - the card grid (#project-grid, one .project-card per project)
+   Shared pieces (.page-section, .section-heading, .tag-pill, .button) are in base.css
+   ========================================================================== */
+#project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+}
+.project-card {
     display: flex;
-    flex-flow: column nowrap;
-    margin: 1.5rem auto;
-    align-items: center;
-    width: 70%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background-color: var(--color-surface);
+    scroll-margin-top: calc(var(--nav-height) + 16px);
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-#projects img {
+/* Hover: lifts 3px, cyan border and a soft cyan glow; the image zooms 5% */
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-accent-2) 70%, transparent);
+    box-shadow: 0 12px 40px -14px color-mix(in srgb, var(--color-accent-2) 30%, transparent);
+}
+
+/* Image with the pills on top of it */
+.project-card-image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+.project-card-image a {
+    display: block;
+    height: 100%;
+}
+.project-card-image img {
     width: 100%;
-    height: auto;
-    border-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
 }
-#projects h1 {
-    margin: 1.3rem auto 0;
-    text-align: center;
-    color: var(--color-accent-2);
-    font-size: 1.7rem;
+.project-card:hover .project-card-image img {
+    transform: scale(1.05);
 }
-#projects h2 {
-    color:  var(--color-accent-2);
-    font-size: 1.4rem;
-    font-weight: 400;
+.project-card-image .tag-pill-kind {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    pointer-events: none;   /* clicks go through to the image link */
 }
-#projects h2, #projects p {
-    margin: 2rem auto;
+.tag-pill-keywords {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;   /* clicks go through to the image link */
 }
-#projects p {
-    font-size: 1rem;
+
+/* Title, one-line blurb and the two buttons */
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 14px 16px 16px;
 }
-.line-gradient {
-    width: 90%;
-    height: 3px;
-    border-radius: .2rem;
-    margin: 0 auto;
-    background: var(--gradient-button);
+.project-card-title {
+    margin: 0 0 6px;
+    font: 600 17px/1.25 var(--font-display);
 }
-.project-links {
-    margin: auto;
+.project-card-blurb {
+    margin: 0 0 14px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.45;
 }
+.project-card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+.project-card .button {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card:hover,
+    .project-card:hover .project-card-image img {
+        transform: none;
+    }
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 410px)
 {
@@ -282,64 +339,6 @@ main {
     #about p {
         font-size: 1.4vw;
     }
-    #projects h1 {
-        margin: 1.3rem auto 4rem;
-        font-size: 2rem;
-    }
-    .flex {
-        margin: 4rem auto;
-    }
-    .flex.linked-project {
-        margin-top: 50px;
-        scroll-margin-top: calc(var(--nav-height) + 30px);
-    }
-
-    #projects .flex {
-        display: grid;
-        grid-template-columns: .4fr .6fr;
-        grid-template-rows: .1fr .8fr .1fr;
-        grid-template-areas:
-            "img title"
-            "img details"
-            "img link";
-        width: 90%;
-        grid-column-gap: 2rem;
-    }
-    #projects .flipped-project {
-        display: grid;
-        grid-template-columns: .6fr .4fr;
-        grid-template-rows: .1fr .8fr .1fr;
-        grid-template-areas:
-            "title img"
-            "details img"
-            "link img";
-        width: 90%;
-        grid-column-gap: 2rem;
-    }
-    #projects img {
-        grid-area: img;
-        width: 100%;
-        height: 80%;
-        object-fit: cover;
-    }
-    #projects h2 {
-        grid-area: title;
-        font-size: 1.6rem;
-        margin: 0;
-    }
-    #projects p {
-        grid-area: details;
-        margin: 1rem auto;
-    }
-    .project-links {
-        grid-area: link;
-        width: 90%;
-        column-gap: 2rem;
-    }
-    .project-links .button {
-        max-width: fit-content;
-    }
-
 }
 @media (min-width: 1280px)
 {
@@ -354,15 +353,5 @@ main {
     }
     #about p {
         font-size: 1.1rem;
-    }
-    #projects img {
-        height: 100%;
-    }
-    #projects .flex, #projects .flipped-project, .line-gradient, .project-links {
-        width: 80%;
-    }
-    .flex.linked-project {
-        margin-top: 62px;
-        scroll-margin-top: calc(var(--nav-height) + 42px);
     }
 }
