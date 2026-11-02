@@ -7,9 +7,10 @@
         4. Buttons
         5. Section headings
         6. Tag pills
-        7. Top navigation bar
-        8. Contact footer
-        9. Temporary rules for the pages that are not redesigned yet
+        7. Chips and icon links
+        8. Top navigation bar
+        9. Contact footer
+        10. Temporary rules for the pages that are not redesigned yet
 */
 
 
@@ -168,8 +169,18 @@ button {
 .button-primary:hover::before {
     opacity: 1;
 }
+/* A forward arrow inside a button slides 3px to the right on hover */
+.button .button-arrow {
+    transition: transform .15s ease;
+}
+.button:hover .button-arrow {
+    transform: translateX(3px);
+}
 @media (prefers-reduced-motion: reduce) {
     .button:hover {
+        transform: none;
+    }
+    .button:hover .button-arrow {
         transform: none;
     }
 }
@@ -244,7 +255,44 @@ button {
 
 
 /* ==========================================================================
-   7. TOP NAVIGATION BAR (#site-nav, the same on every page)
+   7. CHIPS AND ICON LINKS
+      .chip       small label for skills and tools (a li or span)
+      .icon-link  round button with just an icon, needs an aria-label
+   ========================================================================== */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 8px;
+    border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface-raised);
+    color: var(--color-text);
+    font: 500 12.5px/1 var(--font-body);
+    white-space: nowrap;
+}
+.icon-link {
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    color: var(--color-text);
+    transition: border-color .15s ease, color .15s ease;
+}
+.icon-link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
+}
+.icon-link .icon {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* ==========================================================================
+   8. TOP NAVIGATION BAR (#site-nav, the same on every page)
    ========================================================================== */
 #site-nav {
     position: sticky;
@@ -335,7 +383,7 @@ button {
 
 
 /* ==========================================================================
-   8. CONTACT FOOTER (#contact, the same on every page)
+   9. CONTACT FOOTER (#contact, the same on every page)
    ========================================================================== */
 .site-footer {
     display: grid;
@@ -376,7 +424,7 @@ button {
 
 
 /* ==========================================================================
-   9. TEMPORARY: used by the old index and project pages until they are rebuilt
+   10. TEMPORARY: used by the old index and project pages until they are rebuilt
    ========================================================================== */
 /* Row of link buttons (rounds 3 and 5 replace the blocks that use this) */
 .project-links {

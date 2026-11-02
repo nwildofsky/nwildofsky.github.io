@@ -1,206 +1,269 @@
-/* External CSS file for portfolio */
+/*
+    Styles for index.html, on top of base.css. Order follows the page:
+        1. Hero (#hero)
+        2. Projects (#project-grid)
+        3. About (#about)
+*/
 
-header {
-    padding-bottom: 7rem;
-}
-
-/* Adjust the landing of the Projects nav link to the proper place */
-#projects {
-    scroll-margin-top: var(--nav-height);
-}
-main {
-    padding: .5rem 0;
-}
-/* About Me Section */
-.grid {
-    display: grid;
-    width: 80%;
-}
-#about {
-    margin: 2rem auto;
-    scroll-margin-top: var(--nav-height);
-    grid-template-areas:
-        "name"
-        "tag-line"
-        "profile"
-        "about";
-}
-#about img {
-    grid-area: profile;
-    width: 100%;
-    height: auto;
-    border-radius: 1.5rem;
-    margin-top: 1rem;
-}
-#about h1 {
-    grid-area: name;
-    margin: 0;
-    font-size: 1.7rem;
-    font-weight: 400;
-    align-self: end;
-}
-#about h2 {
-    grid-area: tag-line;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin: 0;
-    align-self: start;
-    background: var(--gradient-title);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-#about p {
-    grid-area: about;
-    font-size: 1rem;
-    margin: 1.5rem auto 0;
-}
-/* Slick carousel */
-.slick-carousel {
-    width: 100%;
-    margin: 4rem auto 0;
-}
-.slick-slide {
-    display: block;
-}
-.slick-item {
-    position: relative;
-}
-.slick-item a {
-    opacity: 0.3;
-    display: flex;
-    justify-content: center;
-    transition: all 300ms ease;
-    margin: 4rem 2.2rem 0;
-}
-.slick-item a video {
-    border-radius: 24px;
-    width: 700px;
-}
-.centered a {
-    opacity: 1;
-    transform: scale(1.2);
-    position: relative;
-    z-index: 1;
-}
-.centered a:before {
-    box-shadow: -40px 0 35px -30px black inset;
-    content: ' ';
-    height: 84%;
-    left: -81px;
-    position: absolute;
-    top: 8%;
-    width: 80px;
-    pointer-events: none;
-}
-.centered a:after {
-    box-shadow: 40px 0 35px -30px black inset;
-    content: ' ';
-    height: 84%;
-    right: -81px;
-    position: absolute;
-    top: 8%;
-    width: 80px;
-    pointer-events: none;
-}
-.centered:hover a {
-    filter: brightness(70%);
-}
-@media (hover: hover) {
-    .centered:hover .slick-caption {
-        visibility: visible;
-        z-index: 2;
-    }
-}
-.slick-prev {
-    top: 102% !important;
-    left: 47.5% !important;
-}
-.slick-next {
-    top: 102% !important;
-    right: 47.5% !important;
-}
-.slick-prev:before, .slick-next:before {
-    font-size: 25px !important;
-    line-height: 0 !important;
-}
-.slick-caption {
-    position: relative;
-    bottom: 60px;
-    left: 9%;
-    visibility: hidden;
-    width: 80%;
-    text-align: center;
-}
-.slick-caption h5 {
-    color: var(--color-text);
-    font-size: 1.5rem;
-    text-align: center;
-}
-.slick-caption p {
-    text-align: center;
-}
-
-@media (max-width: 992px) {
-    .slick-item a video {
-        border-radius: 15px;
-        width: 600px;
-    }
-    .slick-item a {
-        margin: 4rem 1.9rem 0;
-    }
-    .slick-prev {
-        left: 46% !important;
-    }
-    .slick-next {
-        right: 46% !important;
-    }
-}
-@media (max-width: 800px) {
-    .slick-item a video {
-        width: 450px;
-    }
-    .slick-item a {
-        margin: 3rem 1.5rem 0;
-    }
-    .slick-prev {
-        left: 44% !important;
-    }
-    .slick-next {
-        right: 44% !important;
-    }
-}
-@media (max-width: 570px) {
-    .slick-item a video {
-        width: 350px;
-    }
-    .slick-item a {
-        margin: 3rem 1.5rem 0;
-    }
-    .slick-prev {
-        left: 42% !important;
-    }
-    .slick-next {
-        right: 42% !important;
-    }
-}
-@media (max-width: 410px) {
-    .slick-item a video {
-        width: 280px;
-        border-radius: 7px;
-    }
-    .slick-item a {
-        margin: 3rem 0 0;
-    }
-    .slick-prev {
-        left: 40% !important;
-    }
-    .slick-next {
-        right: 40% !important;
-    }
-}
 
 /* ==========================================================================
-   PROJECTS - the card grid (#project-grid, one .project-card per project)
+   1. HERO - name and skills on the left, video stage and rail on the right
+      The stage and rail contents are built by src/hero-stage.js
+   ========================================================================== */
+#hero {
+    --hero-rotate-time: 6s;   /* how long each project stays on the stage */
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: clamp(20px, 3.6vw, 48px);
+    padding: 40px var(--page-gutter) 14px;
+}
+.hero-intro,
+.hero-showcase {
+    position: relative;
+    z-index: 1;   /* above the backdrop */
+}
+
+/* Left column */
+.hero-intro {
+    display: grid;
+    gap: 14px;
+    align-content: center;
+}
+.hero-name {
+    margin: 0;
+    font: 700 clamp(34px, 5vw, 58px)/1.02 var(--font-display);
+    letter-spacing: -.025em;
+    text-wrap: balance;
+}
+.hero-title {
+    width: fit-content;
+    margin: 0;
+    font: 500 clamp(17px, 2vw, 22px)/1.3 var(--font-display);
+    background-image: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.hero-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 2px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.hero-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* Right column: the stage (one project's video) */
+.hero-stage {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    background-color: var(--color-surface);
+}
+.hero-stage-link {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.hero-stage-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-stage-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 70px 20px 16px;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, .88));
+    pointer-events: none;   /* clicks on the caption go through to the video link */
+}
+.hero-stage-title {
+    margin: 0;
+    color: var(--color-text);
+    font: 600 clamp(18px, 2.2vw, 26px)/1.1 var(--font-display);
+    letter-spacing: -.01em;
+}
+.hero-stage-blurb {
+    margin: 5px 0 0;
+    color: rgba(255, 255, 255, .82);
+    font-size: 14px;
+    line-height: 1.4;
+}
+.hero-stage-button {
+    flex: none;
+    pointer-events: auto;
+}
+/* Pause / Play button in the top right corner of the stage */
+.hero-stage-toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    background-color: rgba(21, 18, 16, .6);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease;
+}
+.hero-stage-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+.hero-stage-toggle .icon {
+    width: 13px;
+    height: 13px;
+}
+.hero-stage-toggle-play,
+.is-paused-by-visitor .hero-stage-toggle-pause {
+    display: none;
+}
+.is-paused-by-visitor .hero-stage-toggle-play {
+    display: block;
+}
+
+/* Right column: the rail of thumbnails under the stage */
+.hero-rail {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 8px;
+}
+.hero-rail-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--color-surface);
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+.hero-rail-thumb:hover {
+    opacity: .85;
+}
+.hero-rail-thumb.is-active {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+    opacity: 1;
+}
+.hero-rail-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* The progress bar along the bottom of the active thumbnail; when it fills, the next project shows */
+.hero-rail-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-image: var(--gradient-title);
+}
+.hero-rail-thumb.is-active .hero-rail-progress {
+    animation: hero-rail-progress var(--hero-rotate-time) linear forwards;
+}
+/* Rotation paused (hovering the stage, tab hidden, Pause pressed...): freeze the progress bar.
+   The selector is as specific as the rule above, otherwise that rule's animation would win. */
+.is-rotation-paused .hero-rail-thumb.is-active .hero-rail-progress {
+    animation-play-state: paused;
+}
+/* Reduced motion: no countdown, the stage stays on the project it is on */
+.is-static .hero-rail-progress {
+    display: none;
+}
+@keyframes hero-rail-progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Background: a grid on wide screens that cross-fades to a glow at the phone size */
+.hero-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(#000 62%, transparent 100%);
+    mask-image: linear-gradient(#000 62%, transparent 100%);
+}
+.hero-backdrop-grid,
+.hero-backdrop-glow {
+    position: absolute;
+    inset: 0;
+    transition: opacity 500ms ease;
+}
+.hero-backdrop-grid {
+    background-image:
+        linear-gradient(rgba(255, 235, 220, .19) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 235, 220, .19) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: linear-gradient(#000 15%, transparent 95%);
+    mask-image: linear-gradient(#000 15%, transparent 95%);
+}
+.hero-backdrop-glow {
+    opacity: 0;
+    background-image:
+        radial-gradient(640px 340px at 6% 0%, color-mix(in srgb, #ff7a1a 54%, transparent), transparent 70%),
+        radial-gradient(640px 360px at 100% 30%, color-mix(in srgb, var(--color-accent-2) 47%, transparent), transparent 70%);
+}
+
+/* Phone layout: everything stacks, the blurb is hidden, the rail is two rows, grid swaps to glow */
+@media (max-width: 760px) {
+    #hero {
+        grid-template-columns: 1fr;
+    }
+    .hero-stage-caption {
+        padding: 40px 12px 12px;
+    }
+    .hero-stage-blurb {
+        display: none;
+    }
+    .hero-rail {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .hero-backdrop-grid {
+        opacity: 0;
+    }
+    .hero-backdrop-glow {
+        opacity: 1;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-backdrop-grid,
+    .hero-backdrop-glow {
+        transition: none;
+    }
+}
+
+
+/* ==========================================================================
+   2. PROJECTS - the card grid (#project-grid, one .project-card per project)
    Shared pieces (.page-section, .section-heading, .tag-pill, .button) are in base.css
    ========================================================================== */
 #project-grid {
@@ -301,57 +364,46 @@ main {
     }
 }
 
-/* MEDIA QUERIES */
-@media (min-width: 410px)
-{
-    #about img {
-        width: 315px;
-        justify-self: center;
-    }
-    #about h1, #about h2, #about p {
-        justify-self: center;
+
+/* ==========================================================================
+   3. ABOUT - photo and paragraph (the spec sheet is added in a later round)
+   ========================================================================== */
+#about {
+    scroll-margin-top: var(--nav-height);
+}
+.about-layout {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+.about-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--color-line);
+    border-radius: 20px;
+}
+.about-text {
+    max-width: 66ch;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+}
+/* Tablet: the photo column scales with the page */
+@media (max-width: 960px) {
+    .about-layout {
+        grid-template-columns: clamp(120px, 24vw, 210px) minmax(0, 1fr);
     }
 }
-@media (min-width: 992px)
-{
-    #about {
-        width: 90%;
-        column-gap: 1.5rem;
-    grid-template-columns: .3fr 1fr;
-    grid-template-areas: 
-        "profile name"
-        "profile tag-line"
-        "profile about";
+/* Phone: photo above the text */
+@media (max-width: 760px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-    #about img {
-        width: 258px;
-        margin-top: 0;
-    }
-    #about h1, #about h2, #about p {
-        justify-self: left;
-    }
-    #about h1 {
-        font-size: 2.8vw;
-    }
-    #about h2 {
-        font-size: 1.6vw;
-    }
-    #about p {
-        font-size: 1.4vw;
-    }
-}
-@media (min-width: 1280px)
-{
-    #about {
-        width: 80%;
-    }
-    #about h1 {
-        font-size: 2.3rem;
-    }
-    #about h2 {
-        font-size: 1.4rem;
-    }
-    #about p {
-        font-size: 1.1rem;
+    .about-photo {
+        width: 130px;
     }
 }

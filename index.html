@@ -14,16 +14,8 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <!-- Menu button of the top bar -->
     <script type="module" src="./src/nav.js"></script>
-    <!-- jQuery and Slick Carousel (both are removed when the carousels are rebuilt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
-        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="module" src="./src/slick-main.js"></script>
+    <!-- Hero video stage and thumbnail rail -->
+    <script type="module" src="./src/hero-stage.js"></script>
 </head>
 
 <body>
@@ -44,118 +36,74 @@
         </ul>
     </nav>
 
-    <header>
-        <div class="grid" id="about">
-            <img src="media/profile.webp" alt="profile picture" width="640" height="593">
-            <h1>Nathan Wildofsky</h1>
-            <h2>Game Developer and Designer</h2>
-            <p>
-                I am a game developer that enjoys the challenge of solving complex problems while also adding my own personal
-                spin and creativity. I have years of experience in the C# and C++ languages, I am well versed in using Unity, and
-                I am familiar with Unreal Engine 5. That being said, I am quick to learn new tools and programs and eager to sink
-                my teeth into new languages.
-
-                I like to focus on the programming and technical aspects of projects but I have the experience to put on the game design, 
-                level design, and web design hats when needed.
-                
-                I enjoy working with a team full of talented people and creating products that are fun, interesting, and useful. 
-                
-            </p>
+    <!-- ===== HERO: name, skills, links, and the rotating project video =====
+         The video stage and the thumbnail rail on the right are built by src/hero-stage.js from the
+         project cards further down (their title, blurb, link, data-video and data-poster).
+         The templates at the bottom of this section hold the stage's markup and its button words. -->
+    <header id="hero">
+        <!-- Background layers: a grid on wide screens, a glow on phones (pure CSS, see stylesheet.css) -->
+        <div class="hero-backdrop" aria-hidden="true">
+            <div class="hero-backdrop-grid"></div>
+            <div class="hero-backdrop-glow"></div>
         </div>
 
-        <div class="slick-carousel">
-            <div class="slick-item">
-                <a href="#projects"><video playsinline loop muted preload="none" poster="./media/MF/mystic_forest-poster.webp">
-                        <source src="./media/MF/mystic_forest.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Mystic Forest</h5>
-                    <p>A 2D platformer focused on level design</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-2"><video playsinline loop muted preload="none" poster="./media/DMR/dmr_playthrough-poster.webp">
-                        <source src="./media/DMR/dmr_playthrough.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Starsector Mod: Dead Man's Riot Quest</h5>
-                    <p>A zombie quest mod for the game Starsector</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-3"><video playsinline loop muted preload="none" poster="./media/RE/re_simulation-poster.webp">
-                        <source src="./media/RE/re_simulation.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Racecar Evolution</h5>
-                    <p>A genetic algorithm simulation where AI cars learn to drive</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-4"><video playsinline loop muted preload="none" poster="./media/BRE/bre_demo-poster.webp">
-                        <source src="./media/BRE/bre_demo.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Basic Rendering Engine</h5>
-                    <p>A custom-built rendering engine in C++ with many basic features</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-5"><video playsinline loop muted preload="none" poster="./media/TE/talisman-poster.webp">
-                        <source src="./media/TE/talisman.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Talisman of Ethshar</h5>
-                    <p>A challenging puzzle game set in the Ethshar universe</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-6"><video playsinline loop muted preload="none" poster="./media/DF/skyline-poster.webp">
-                        <source src="./media/DF/skyline.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Dresden Files: Skyline</h5>
-                    <p>A Murder Mystery set in the Dresden Files universe</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-7"><video playsinline loop muted preload="none" poster="./media/IA/IA_1-turn-poster.webp">
-                        <source src="./media/IA/IA_1-turn.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Investment Andes</h5>
-                    <p>A high stakes and quick paced card game</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-8"><video playsinline loop muted preload="none" poster="./media/HZ/HvZ_gameplay-poster.webp">
-                        <source src="./media/HZ/HvZ_gameplay.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Humans vs. Zombies</h5>
-                    <p>Interactive AI simulation built in Unity with C#</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-9"><video playsinline loop muted preload="none" poster="./media/QT/quake_tracker-poster.webp">
-                        <source src="./media/QT/quake_tracker.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Quake Tracker</h5>
-                    <p>A web app that maps earthquake data from the USGS</p>
-                </div>
-            </div>
-            <div class="slick-item">
-                <a href="#project-10"><video playsinline loop muted preload="none" poster="./media/PK/TCG_gameplay-poster.webp">
-                        <source src="./media/PK/TCG_gameplay.mp4" type="video/mp4">
-                    </video></a>
-                <div class="slick-caption">
-                    <h5>Pokemon TCG Finder</h5>
-                    <p>A web app for searching the database of Pokemon Cards</p>
-                </div>
+        <div class="hero-intro">
+            <h1 class="hero-name">Nathan Wildofsky</h1>
+            <p class="hero-title">Game Developer and Designer</p>
+            <!-- DRAFT: Nathan to review (skill chips; copy a line to add one) -->
+            <ul class="hero-skills">
+                <li class="chip">C#</li>
+                <li class="chip">C++</li>
+                <li class="chip">Unity</li>
+                <li class="chip">Unreal Engine 5</li>
+                <li class="chip">Level design</li>
+                <li class="chip">Web design</li>
+            </ul>
+            <div class="hero-links">
+                <a class="icon-link" href="mailto:wildofskynsw@gmail.com" aria-label="Email">
+                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-email"></use></svg>
+                </a>
+                <a class="icon-link" href="https://www.linkedin.com/in/nwildofsky/" aria-label="LinkedIn">
+                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-linkedin"></use></svg>
+                </a>
+                <a class="icon-link" href="https://github.com/nwildofsky" aria-label="GitHub">
+                    <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-github"></use></svg>
+                </a>
             </div>
         </div>
 
+        <div class="hero-showcase">
+            <div class="hero-stage" id="hero-stage"></div>
+            <div class="hero-rail" id="hero-rail"></div>
+        </div>
+
+        <!-- Template for the stage (src/hero-stage.js copies it and fills in the empty parts from the current card).
+             Change the words "Learn More", "Pause" and "Play" here. -->
+        <template id="hero-stage-template">
+            <!-- Clicking the video opens the project (mouse only; keyboard users use the button below) -->
+            <a class="hero-stage-link" href="#" tabindex="-1" aria-hidden="true">
+                <video class="hero-stage-video" muted loop playsinline preload="none"></video>
+            </a>
+            <div class="hero-stage-caption">
+                <div class="hero-stage-text">
+                    <h2 class="hero-stage-title"></h2>
+                    <p class="hero-stage-blurb"></p>
+                </div>
+                <a class="button button-primary hero-stage-button" href="#">Learn More<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+            </div>
+            <button class="hero-stage-toggle" type="button" data-label-pause="Pause" data-label-play="Play">
+                <svg class="icon hero-stage-toggle-pause" aria-hidden="true"><use href="./media/icons.svg#icon-pause"></use></svg>
+                <svg class="icon hero-stage-toggle-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+            </button>
+        </template>
+
+        <!-- Template for one thumbnail in the rail (one is made per project card) -->
+        <template id="hero-rail-thumb-template">
+            <button class="hero-rail-thumb" type="button">
+                <img alt="">
+                <span class="hero-rail-progress"></span>
+            </button>
+        </template>
     </header>
 
     <main>
@@ -173,7 +121,7 @@
             <div id="project-grid">
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-1">
+                <article class="project-card" id="project-1" data-video="./media/MF/mystic_forest.mp4" data-poster="./media/MF/mystic_forest-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-1.html"><img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
@@ -195,7 +143,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-2">
+                <article class="project-card" id="project-2" data-video="./media/DMR/dmr_playthrough.mp4" data-poster="./media/DMR/dmr_playthrough-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-2.html"><img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
@@ -217,7 +165,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-3">
+                <article class="project-card" id="project-3" data-video="./media/RE/re_simulation.mp4" data-poster="./media/RE/re_simulation-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-3.html"><img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
@@ -239,7 +187,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-4">
+                <article class="project-card" id="project-4" data-video="./media/BRE/bre_demo.mp4" data-poster="./media/BRE/bre_demo-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-4.html"><img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
@@ -261,7 +209,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-5">
+                <article class="project-card" id="project-5" data-video="./media/TE/talisman.mp4" data-poster="./media/TE/talisman-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-5.html"><img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
@@ -283,7 +231,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-6">
+                <article class="project-card" id="project-6" data-video="./media/DF/skyline.mp4" data-poster="./media/DF/skyline-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-6.html"><img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
@@ -305,7 +253,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-7">
+                <article class="project-card" id="project-7" data-video="./media/IA/IA_1-turn.mp4" data-poster="./media/IA/IA_1-turn-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-7.html"><img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="tag-pill-dot"></span>Group</span>
@@ -326,7 +274,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-8">
+                <article class="project-card" id="project-8" data-video="./media/HZ/HvZ_gameplay.mp4" data-poster="./media/HZ/HvZ_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-8.html"><img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
@@ -348,7 +296,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-9">
+                <article class="project-card" id="project-9" data-video="./media/QT/quake_tracker.mp4" data-poster="./media/QT/quake_tracker-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-9.html"><img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
@@ -370,7 +318,7 @@
                 </article>
 
                 <!-- Project card: copy this whole block to add a project -->
-                <article class="project-card" id="project-10">
+                <article class="project-card" id="project-10" data-video="./media/PK/TCG_gameplay.mp4" data-poster="./media/PK/TCG_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-10.html"><img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy"></a>
                         <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="tag-pill-dot"></span>Solo</span>
@@ -390,6 +338,25 @@
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="page-section">
+            <div class="about-layout">
+                <img class="about-photo" src="media/profile.webp" alt="profile picture" width="640" height="593">
+                <p class="about-text">
+                    I am a game developer that enjoys the challenge of solving complex problems while also adding my own personal
+                    spin and creativity. I have years of experience in the C# and C++ languages, I am well versed in using Unity, and
+                    I am familiar with Unreal Engine 5. That being said, I am quick to learn new tools and programs and eager to sink
+                    my teeth into new languages.
+
+                    I like to focus on the programming and technical aspects of projects but I have the experience to put on the game design, 
+                    level design, and web design hats when needed.
+                    
+                    I enjoy working with a team full of talented people and creating products that are fun, interesting, and useful. 
+                    
+                </p>
             </div>
         </section>
     </main>
