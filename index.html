@@ -8,7 +8,7 @@
     <!-- Fonts: Sora (headings) and DM Sans (text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/stylesheet.css">
@@ -343,20 +343,75 @@
 
         <!-- ===== ABOUT ===== -->
         <section id="about" class="page-section">
+            <h2 class="section-heading">About Me</h2>
             <div class="about-layout">
                 <img class="about-photo" src="media/profile.webp" alt="profile picture" width="640" height="593">
-                <p class="about-text">
-                    I am a game developer that enjoys the challenge of solving complex problems while also adding my own personal
-                    spin and creativity. I have years of experience in the C# and C++ languages, I am well versed in using Unity, and
-                    I am familiar with Unreal Engine 5. That being said, I am quick to learn new tools and programs and eager to sink
-                    my teeth into new languages.
+                <div class="about-body">
+                    <p class="about-text">
+                        I am a game developer that enjoys the challenge of solving complex problems while also adding my own personal
+                        spin and creativity. I have years of experience in the C# and C++ languages, I am well versed in using Unity, and
+                        I am familiar with Unreal Engine 5. That being said, I am quick to learn new tools and programs and eager to sink
+                        my teeth into new languages.
 
-                    I like to focus on the programming and technical aspects of projects but I have the experience to put on the game design, 
-                    level design, and web design hats when needed.
-                    
-                    I enjoy working with a team full of talented people and creating products that are fun, interesting, and useful. 
-                    
-                </p>
+                        I like to focus on the programming and technical aspects of projects but I have the experience to put on the game design, 
+                        level design, and web design hats when needed.
+                        
+                        I enjoy working with a team full of talented people and creating products that are fun, interesting, and useful. 
+                        
+                    </p>
+                    <!-- DRAFT: Nathan to review (spec sheet rows and chips; to add a row, copy a whole spec-row block) -->
+                    <dl class="spec-sheet">
+                        <div class="spec-row">
+                            <dt class="spec-label">Languages</dt>
+                            <dd>
+                                <ul class="spec-chips">
+                                    <li class="chip">C#</li>
+                                    <li class="chip">C++</li>
+                                    <li class="chip">Java</li>
+                                    <li class="chip">JavaScript</li>
+                                    <li class="chip">HTML</li>
+                                    <li class="chip">CSS</li>
+                                    <li class="chip">HLSL</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Engines</dt>
+                            <dd>
+                                <ul class="spec-chips">
+                                    <li class="chip">Unity</li>
+                                    <li class="chip">Unreal Engine 5 (familiar)</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Graphics and tools</dt>
+                            <dd>
+                                <ul class="spec-chips">
+                                    <li class="chip">DirectX 11</li>
+                                    <li class="chip">Dear ImGui</li>
+                                    <li class="chip">Visual Studio</li>
+                                    <li class="chip">Visual Studio Code</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Disciplines</dt>
+                            <dd>
+                                <ul class="spec-chips">
+                                    <li class="chip">Gameplay programming</li>
+                                    <li class="chip">Level design</li>
+                                    <li class="chip">Game design</li>
+                                    <li class="chip">Web design</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt class="spec-label">Working style</dt>
+                            <dd><p class="spec-text">Team player, quick to learn new tools</p></dd>
+                        </div>
+                    </dl>
+                </div>
             </div>
         </section>
     </main>

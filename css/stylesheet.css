@@ -366,7 +366,7 @@
 
 
 /* ==========================================================================
-   3. ABOUT - photo and paragraph (the spec sheet is added in a later round)
+   3. ABOUT - heading, photo, paragraph and the spec sheet (#about)
    ========================================================================== */
 #about {
     scroll-margin-top: var(--nav-height);
@@ -375,7 +375,7 @@
     display: grid;
     grid-template-columns: 210px minmax(0, 1fr);
     align-items: start;
-    gap: 28px;
+    gap: 36px;
 }
 .about-photo {
     width: 100%;
@@ -387,14 +387,54 @@
 }
 .about-text {
     max-width: 66ch;
-    margin: 0;
+    margin: 0 0 30px;   /* the 30px gap before the spec sheet */
     font-size: 17px;
     line-height: 1.65;
 }
-/* Tablet: the photo column scales with the page */
+
+/* Spec sheet: a list of rows, each with a label and its chips */
+.spec-sheet {
+    margin: 0;
+    border-top: 1px solid var(--color-line);
+}
+.spec-row {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-line);
+}
+.spec-label {
+    color: var(--color-accent);
+    font: 600 12.5px/1.3 var(--font-mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.spec-row dd {
+    margin: 0;
+}
+.spec-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.spec-text {
+    margin: 0;
+    font-size: 14.5px;
+}
+
+/* Tablet: the photo column scales with the page and the labels sit above their chips */
 @media (max-width: 960px) {
     .about-layout {
         grid-template-columns: clamp(120px, 24vw, 210px) minmax(0, 1fr);
+    }
+    .spec-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 }
 /* Phone: photo above the text */
