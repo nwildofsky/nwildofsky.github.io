@@ -144,10 +144,11 @@
     display: block;
 }
 
-/* Right column: the rail of thumbnails under the stage */
+/* Right column: the rail of thumbnails under the stage. Six per row, so 12 projects are two rows;
+   at 1500px and wider it is a single row (see the LARGE SCREENS section) */
 .hero-rail {
     display: grid;
-    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: .6rem;
     margin-top: .8rem;
 }
@@ -234,7 +235,7 @@
         radial-gradient(64rem 36rem at 100% 30%, color-mix(in srgb, var(--color-accent-2) 47%, transparent), transparent 70%);
 }
 
-/* Phone layout: everything stacks, the blurb is hidden, the rail is two rows, grid swaps to glow */
+/* Phone layout: everything stacks, the blurb is hidden, grid swaps to glow */
 @media (max-width: 760px) {
     #hero {
         grid-template-columns: 1fr;
@@ -244,9 +245,6 @@
     }
     .hero-stage-blurb {
         display: none;
-    }
-    .hero-rail {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
     .hero-backdrop-grid {
         opacity: 0;
@@ -467,6 +465,12 @@
     /* Hero: a slightly smaller stage, and a bigger name and title next to it */
     #hero {
         grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    }
+    /* The rail becomes one row: one thumbnail per project, side by side, however many there are */
+    .hero-rail {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
     }
     .hero-name {
         font-size: 6.6rem;
