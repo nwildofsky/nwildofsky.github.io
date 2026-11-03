@@ -312,12 +312,18 @@
 .project-card:hover .project-card-image img {
     transform: scale(1.05);
 }
-.project-card-image .tag-pill-kind {
+.project-card-image .tag-pill-kind,
+.project-card-image .tag-pill-published {
     position: absolute;
     top: 1rem;
-    left: 1rem;
     z-index: 1;
     pointer-events: none;   /* clicks go through to the image link */
+}
+.project-card-image .tag-pill-kind {
+    left: 1rem;
+}
+.project-card-image .tag-pill-published {
+    right: 1rem;
 }
 .tag-pill-keywords {
     position: absolute;

@@ -151,8 +151,26 @@
     padding: 0;
     list-style: none;
 }
+/* The kind chips: an icon and Group Project, Solo Project, Professional Project, Class Project or
+   Independent Project, with the team size after a divider (.kind-team, in base.css), and Published */
 .chip-kind {
     gap: .6rem;
+}
+.chip-kind .icon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.chip-kind-professional,
+.chip-kind-published {
+    border-color: transparent;
+    color: var(--color-on-accent);
+    font-weight: 600;
+}
+.chip-kind-professional {
+    background-color: var(--color-kind-professional);
+}
+.chip-kind-published {
+    background-color: var(--color-kind-published);
 }
 .project-title {
     margin: 0;

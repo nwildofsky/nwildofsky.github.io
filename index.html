@@ -113,10 +113,20 @@
              One project-card block per project, in the order they should appear.
              To add a project: copy a whole article block, then change its id (project-N), the links, the image,
              the title, the blurb and the pills.
-             Pills: the Group/Solo pill matches the project page's "Group Project"/"Solo Project" tag. The three
-             keyword pills are the project's first type tag, first tool and first skill (skip Teamwork and Communication).
-             Professional project: in its card, replace the Group/Solo pill with this pill:
-                 <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-check"></use></svg>Professional &middot; Shipped</span>
+             Pills: the three keyword pills are the project's first type tag, first tool and first skill (skip
+             Teamwork and Communication). The kind pill (top left of the image) is one of these:
+
+             Team size only (Group; for Solo use icon-user and the word Solo):
+                 <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
+
+             What the project is, plus the team size after a divider. The first icon and word are one of:
+             icon-briefcase + Professional (and add tag-pill-professional to the class list, it makes the pill amber),
+             icon-graduation-cap + Class, icon-lightbulb + Indie. The team part is icon-users + Group, icon-user + Solo,
+             or icon-users + a number such as ~8, &lt;5 or &gt;20 (the number is for professional projects):
+                 <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~8</span></span>
+
+             Published (an extra pill, put it right after the kind pill; it shows at the top right of the image):
+                 <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
         -->
         <section id="projects" class="page-section">
             <h2 class="section-heading">Projects</h2>
@@ -126,7 +136,7 @@
                 <article class="project-card" id="project-1" data-video="./media/MF/mystic_forest.mp4" data-poster="./media/MF/mystic_forest-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-1.html"><img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="kind-dot"></span>Group</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
@@ -148,7 +158,7 @@
                 <article class="project-card" id="project-2" data-video="./media/DMR/dmr_playthrough.mp4" data-poster="./media/DMR/dmr_playthrough-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-2.html"><img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="kind-dot"></span>Group</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Mod</li>
@@ -170,7 +180,7 @@
                 <article class="project-card" id="project-3" data-video="./media/RE/re_simulation.mp4" data-poster="./media/RE/re_simulation-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-3.html"><img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="kind-dot"></span>Solo</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Simulation</li>
@@ -192,7 +202,7 @@
                 <article class="project-card" id="project-4" data-video="./media/BRE/bre_demo.mp4" data-poster="./media/BRE/bre_demo-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-4.html"><img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="kind-dot"></span>Solo</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Application</li>
@@ -214,7 +224,7 @@
                 <article class="project-card" id="project-5" data-video="./media/TE/talisman.mp4" data-poster="./media/TE/talisman-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-5.html"><img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="kind-dot"></span>Group</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
@@ -236,7 +246,7 @@
                 <article class="project-card" id="project-6" data-video="./media/DF/skyline.mp4" data-poster="./media/DF/skyline-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-6.html"><img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="kind-dot"></span>Group</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
@@ -258,7 +268,7 @@
                 <article class="project-card" id="project-7" data-video="./media/IA/IA_1-turn.mp4" data-poster="./media/IA/IA_1-turn-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-7.html"><img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-group"><span class="kind-dot"></span>Group</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Card Game</li>
@@ -279,7 +289,7 @@
                 <article class="project-card" id="project-8" data-video="./media/HZ/HvZ_gameplay.mp4" data-poster="./media/HZ/HvZ_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-8.html"><img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="kind-dot"></span>Solo</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Interactive Simulation</li>
@@ -301,7 +311,7 @@
                 <article class="project-card" id="project-9" data-video="./media/QT/quake_tracker.mp4" data-poster="./media/QT/quake_tracker-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-9.html"><img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="kind-dot"></span>Solo</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Application</li>
@@ -323,7 +333,7 @@
                 <article class="project-card" id="project-10" data-video="./media/PK/TCG_gameplay.mp4" data-poster="./media/PK/TCG_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-10.html"><img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-kind-solo"><span class="kind-dot"></span>Solo</span>
+                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
                         <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Application</li>
@@ -340,6 +350,55 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- DRAFT: Nathan to review. The two PLACEHOLDER professional projects below (project-11 and project-12) are commented out.
+                     To show them again, for example to preview a 12-card grid and a 12-thumbnail hero, delete the line that
+                     contains only the opening of the next comment and the line that contains only its closing. -->
+                <!--
+                PLACEHOLDER professional project 1 (no project page, no video)
+                <article class="project-card" id="project-11" data-poster="./media/800x500.png">
+                    <div class="project-card-image">
+                        <a href="#"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~8</span></span>
+                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Placeholder Professional Project 1</h3>
+                        <p class="project-card-blurb">Placeholder description for a professional project</p>
+                        <div class="project-card-buttons">
+                            <a href="#" class="button button-primary">Learn More</a>
+                            <a href="#" class="button">Placeholder Link</a>
+                        </div>
+                    </div>
+                </article>
+
+                PLACEHOLDER professional project 2 (no project page, no video)
+                <article class="project-card" id="project-12" data-poster="./media/800x500.png">
+                    <div class="project-card-image">
+                        <a href="#"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>&lt;5</span></span>
+                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                            <li class="tag-pill tag-pill-keyword">Keyword</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Placeholder Professional Project 2</h3>
+                        <p class="project-card-blurb">Placeholder description for a professional project</p>
+                        <div class="project-card-buttons">
+                            <a href="#" class="button button-primary">Learn More</a>
+                            <a href="#" class="button">Placeholder Link</a>
+                        </div>
+                    </div>
+                </article>
+                -->
             </div>
         </section>
 

@@ -28,9 +28,8 @@
     --color-accent-2: #2db8ff;
     --color-on-accent: #1a1008;
     --color-chip-dark: color-mix(in srgb, var(--color-bg) 78%, #000);   /* chips inside grey tables */
-    --color-kind-group: #2db8ff;
-    --color-kind-solo: #ff6b4a;
-    --color-kind-professional: #ffa726;
+    --color-kind-professional: #ffa726;   /* the filled Professional pill and chip */
+    --color-kind-published: #2db8ff;   /* the filled Published pill and chip */
 
     /* Gradients */
     --gradient-title: linear-gradient(90deg, #ffb020, #ff5a1f);
@@ -269,7 +268,10 @@ button {
 
 /* ==========================================================================
    6. TAG PILLS - small solid labels that sit on top of a card image
-      .tag-pill-kind          Group / Solo (colored dot) or Professional
+      .tag-pill-kind          what the project is: an icon and Professional, Class or Indie, then (after a divider,
+                              .kind-team) an icon and the team size: Group, Solo or a number such as ~8
+      .tag-pill-professional  add to a kind pill: the filled amber version
+      .tag-pill-published     the filled cyan Published pill (shown at the top right of the image)
       .tag-pill-keyword       type, tool and language keywords
    ========================================================================== */
 .tag-pill {
@@ -287,30 +289,31 @@ button {
 .tag-pill-keyword {
     background-color: color-mix(in srgb, var(--color-bg) 90%, transparent);
 }
-.kind-dot {
-    flex: none;
-    width: .7rem;
-    height: .7rem;
-    border-radius: 50%;
-    background-color: var(--color-text-muted);
+.tag-pill .icon {
+    width: 1.2rem;
+    height: 1.2rem;
 }
-.tag-pill-kind-group .kind-dot,
-.chip-kind-group .kind-dot {
-    background-color: var(--color-kind-group);
-}
-.tag-pill-kind-solo .kind-dot,
-.chip-kind-solo .kind-dot {
-    background-color: var(--color-kind-solo);
-}
-/* Filled amber pill for professional work (not used until the first professional project is added) */
+/* Filled amber pill for professional work */
 .tag-pill-professional {
     border-color: transparent;
     background-color: var(--color-kind-professional);
     color: var(--color-on-accent);
 }
-.tag-pill-professional .icon {
-    width: 1.2rem;
-    height: 1.2rem;
+/* Filled cyan pill for a published project */
+.tag-pill-published {
+    border-color: transparent;
+    background-color: var(--color-kind-published);
+    color: var(--color-on-accent);
+}
+/* The team size at the end of a kind pill or chip, after a thin divider: icon and Group, Solo or a number */
+.kind-team {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    margin-left: .2rem;   /* with the pill's own .6rem gap this is .8rem before the divider */
+    padding-left: .8rem;
+    border-left: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+    font-weight: 500;
 }
 
 
