@@ -3,6 +3,7 @@
         1. Hero (#hero)
         2. Projects (#project-grid)
         3. About (#about)
+        4. Large screens (1500px and wider)
 */
 
 
@@ -16,8 +17,8 @@
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     align-items: center;
-    gap: clamp(20px, 3.6vw, 48px);
-    padding: 40px var(--page-gutter) 14px;
+    gap: clamp(2rem, 3.6vw, 4.8rem);
+    padding: 4rem var(--page-gutter) 1.4rem;
 }
 .hero-intro,
 .hero-showcase {
@@ -28,19 +29,19 @@
 /* Left column */
 .hero-intro {
     display: grid;
-    gap: 14px;
+    gap: 1.4rem;
     align-content: center;
 }
 .hero-name {
     margin: 0;
-    font: 700 clamp(34px, 5vw, 58px)/1.02 var(--font-display);
+    font: 700 clamp(3.4rem, 5vw, 5.8rem)/1.02 var(--font-display);
     letter-spacing: -.025em;
     text-wrap: balance;
 }
 .hero-title {
     width: fit-content;
     margin: 0;
-    font: 500 clamp(17px, 2vw, 22px)/1.3 var(--font-display);
+    font: 500 clamp(1.7rem, 2vw, 2.2rem)/1.3 var(--font-display);
     background-image: var(--gradient-title);
     -webkit-background-clip: text;
     background-clip: text;
@@ -50,7 +51,7 @@
 .hero-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: .6rem;
     margin: 2px 0 0;
     padding: 0;
     list-style: none;
@@ -58,8 +59,8 @@
 .hero-links {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 8px;
+    gap: .8rem;
+    margin-top: .8rem;
 }
 
 /* Right column: the stage (one project's video) */
@@ -68,7 +69,7 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border: 1px solid var(--color-line);
-    border-radius: 14px;
+    border-radius: 1.4rem;
     background-color: var(--color-surface);
 }
 .hero-stage-link {
@@ -88,21 +89,21 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px;
-    padding: 70px 20px 16px;
+    gap: 1.6rem;
+    padding: 7rem 2rem 1.6rem;
     background-image: linear-gradient(transparent, rgba(0, 0, 0, .88));
     pointer-events: none;   /* clicks on the caption go through to the video link */
 }
 .hero-stage-title {
     margin: 0;
     color: var(--color-text);
-    font: 600 clamp(18px, 2.2vw, 26px)/1.1 var(--font-display);
+    font: 600 clamp(1.8rem, 2.2vw, 2.6rem)/1.1 var(--font-display);
     letter-spacing: -.01em;
 }
 .hero-stage-blurb {
-    margin: 5px 0 0;
+    margin: .5rem 0 0;
     color: rgba(255, 255, 255, .82);
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 1.4;
 }
 .hero-stage-button {
@@ -112,13 +113,13 @@
 /* Pause / Play button in the top right corner of the stage */
 .hero-stage-toggle {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 1.2rem;
+    right: 1.2rem;
     z-index: 1;
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
+    width: 3.4rem;
+    height: 3.4rem;
     padding: 0;
     border: 1px solid var(--color-line);
     border-radius: 50%;
@@ -132,8 +133,8 @@
     color: var(--color-accent);
 }
 .hero-stage-toggle .icon {
-    width: 13px;
-    height: 13px;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 .hero-stage-toggle-play,
 .is-paused-by-visitor .hero-stage-toggle-pause {
@@ -147,8 +148,8 @@
 .hero-rail {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
-    gap: 6px;
-    margin-top: 8px;
+    gap: .6rem;
+    margin-top: .8rem;
 }
 .hero-rail-thumb {
     position: relative;
@@ -156,7 +157,7 @@
     overflow: hidden;
     padding: 0;
     border: 0;
-    border-radius: 5px;
+    border-radius: .5rem;
     background-color: var(--color-surface);
     opacity: .5;
     cursor: pointer;
@@ -182,7 +183,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 3px;
+    height: .3rem;
     background-image: var(--gradient-title);
 }
 .hero-rail-thumb.is-active .hero-rail-progress {
@@ -222,15 +223,15 @@
     background-image:
         linear-gradient(rgba(255, 235, 220, .19) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 235, 220, .19) 1px, transparent 1px);
-    background-size: 36px 36px;
+    background-size: 3.6rem 3.6rem;
     -webkit-mask-image: linear-gradient(#000 15%, transparent 95%);
     mask-image: linear-gradient(#000 15%, transparent 95%);
 }
 .hero-backdrop-glow {
     opacity: 0;
     background-image:
-        radial-gradient(640px 340px at 6% 0%, color-mix(in srgb, #ff7a1a 54%, transparent), transparent 70%),
-        radial-gradient(640px 360px at 100% 30%, color-mix(in srgb, var(--color-accent-2) 47%, transparent), transparent 70%);
+        radial-gradient(64rem 34rem at 6% 0%, color-mix(in srgb, #ff7a1a 54%, transparent), transparent 70%),
+        radial-gradient(64rem 36rem at 100% 30%, color-mix(in srgb, var(--color-accent-2) 47%, transparent), transparent 70%);
 }
 
 /* Phone layout: everything stacks, the blurb is hidden, the rail is two rows, grid swaps to glow */
@@ -239,7 +240,7 @@
         grid-template-columns: 1fr;
     }
     .hero-stage-caption {
-        padding: 40px 12px 12px;
+        padding: 4rem 1.2rem 1.2rem;
     }
     .hero-stage-blurb {
         display: none;
@@ -271,8 +272,8 @@
 }
 #project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+    gap: 1.8rem;
 }
 .project-card {
     display: flex;
@@ -281,14 +282,14 @@
     border: 1px solid var(--color-line);
     border-radius: var(--radius-card);
     background-color: var(--color-surface);
-    scroll-margin-top: calc(var(--nav-height) + 16px);
+    scroll-margin-top: calc(var(--nav-height) + 1.6rem);
     transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 /* Hover: lifts 3px, cyan border and a soft cyan glow; the image zooms 5% */
 .project-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-.3rem);
     border-color: color-mix(in srgb, var(--color-accent-2) 70%, transparent);
-    box-shadow: 0 12px 40px -14px color-mix(in srgb, var(--color-accent-2) 30%, transparent);
+    box-shadow: 0 1.2rem 4rem -1.4rem color-mix(in srgb, var(--color-accent-2) 30%, transparent);
 }
 
 /* Image with the pills on top of it */
@@ -312,20 +313,20 @@
 }
 .project-card-image .tag-pill-kind {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1rem;
+    left: 1rem;
     z-index: 1;
     pointer-events: none;   /* clicks go through to the image link */
 }
 .tag-pill-keywords {
     position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: .6rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -337,27 +338,27 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 14px 16px 16px;
+    padding: 1.4rem 1.6rem 1.6rem;
 }
 .project-card-title {
-    margin: 0 0 6px;
-    font: 600 17px/1.25 var(--font-display);
+    margin: 0 0 .6rem;
+    font: 600 1.7rem/1.25 var(--font-display);
 }
 .project-card-blurb {
-    margin: 0 0 14px;
+    margin: 0 0 1.4rem;
     color: var(--color-text-muted);
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 1.45;
 }
 .project-card-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: .8rem;
     margin-top: auto;
 }
 .project-card .button {
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: .8rem 1.2rem;
+    font-size: 1.3rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -376,9 +377,9 @@
 }
 .about-layout {
     display: grid;
-    grid-template-columns: 210px minmax(0, 1fr);
+    grid-template-columns: 21rem minmax(0, 1fr);
     align-items: start;
-    gap: 36px;
+    gap: 3.6rem;
 }
 .about-photo {
     width: 100%;
@@ -386,12 +387,12 @@
     aspect-ratio: 1;
     object-fit: cover;
     border: 1px solid var(--color-line);
-    border-radius: 20px;
+    border-radius: 2rem;
 }
 .about-text {
     max-width: 66ch;
-    margin: 0 0 30px;   /* the 30px gap before the spec sheet */
-    font-size: 17px;
+    margin: 0 0 3rem;   /* the 3rem gap before the spec sheet */
+    font-size: 1.7rem;
     line-height: 1.65;
 }
 
@@ -402,15 +403,15 @@
 }
 .spec-row {
     display: grid;
-    grid-template-columns: 180px minmax(0, 1fr);
+    grid-template-columns: 18rem minmax(0, 1fr);
     align-items: center;
-    gap: 14px;
-    padding: 14px 0;
+    gap: 1.4rem;
+    padding: 1.4rem 0;
     border-bottom: 1px solid var(--color-line);
 }
 .spec-label {
     color: var(--color-accent);
-    font: 600 12.5px/1.3 var(--font-mono);
+    font: 600 1.25rem/1.3 var(--font-mono);
     letter-spacing: .08em;
     text-transform: uppercase;
 }
@@ -420,33 +421,86 @@
 .spec-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: .6rem;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 .spec-text {
     margin: 0;
-    font-size: 14.5px;
+    font-size: 1.45rem;
 }
 
 /* Tablet: the photo column scales with the page and the labels sit above their chips */
 @media (max-width: 960px) {
     .about-layout {
-        grid-template-columns: clamp(120px, 24vw, 210px) minmax(0, 1fr);
+        grid-template-columns: clamp(12rem, 24vw, 21rem) minmax(0, 1fr);
     }
     .spec-row {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: .8rem;
     }
 }
 /* Phone: photo above the text */
 @media (max-width: 760px) {
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 2rem;
     }
     .about-photo {
-        width: 130px;
+        width: 13rem;
+    }
+}
+
+
+/* ==========================================================================
+   4. LARGE SCREENS - 1500px and wider, then 2400px and wider
+      The base size (1rem) hardly grows here (see base.css); the layout changes instead.
+      Only what differs from the sections above is listed.
+   ========================================================================== */
+@media (min-width: 1500px) {
+    /* Hero: a slightly smaller stage, and a bigger name and title next to it */
+    #hero {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    }
+    .hero-name {
+        font-size: 6.6rem;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-stage-title {
+        font-size: 2.8rem;
+    }
+
+    /* Projects: four cards per row */
+    #project-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* About: a bigger photo, and the paragraph and the spec sheet side by side */
+    .about-layout {
+        grid-template-columns: 34rem minmax(0, 1fr);
+        gap: 4.8rem;
+    }
+    .about-body {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 4rem;
+    }
+    .about-text {
+        max-width: none;
+        margin: 0;
+        font-size: 1.55rem;
+    }
+    .spec-row {
+        grid-template-columns: 1fr;
+        gap: .8rem;
+    }
+}
+@media (min-width: 2400px) {
+    .about-layout {
+        grid-template-columns: 42rem minmax(0, 1fr);
     }
 }
