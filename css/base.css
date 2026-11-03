@@ -316,7 +316,7 @@ button {
 
 /* ==========================================================================
    7. CHIPS AND ICON LINKS
-      .chip       small label for skills and tools (a li or span)
+      .chip       small label for skills and tools (a li or span); the About chips also get an experience level class
       .icon-link  round button with just an icon, needs an aria-label
    ========================================================================== */
 .chip {
@@ -329,6 +329,17 @@ button {
     color: var(--color-text);
     font: 500 1.25rem/1 var(--font-body);
     white-space: nowrap;
+}
+/* Experience level of a skill (About spec sheet): add one of these classes next to .chip.
+   extensive: amber-tinted and bold. moderate: no rule, it is the plain chip. some: a darker fill. */
+.chip-experience-extensive {
+    border-color: color-mix(in srgb, var(--color-accent) 65%, transparent);
+    background-color: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface-raised));
+    color: color-mix(in srgb, var(--color-accent) 22%, var(--color-text));
+    font-weight: 600;
+}
+.chip-experience-some {
+    background-color: var(--color-chip-dark);
 }
 .icon-link {
     display: inline-grid;
