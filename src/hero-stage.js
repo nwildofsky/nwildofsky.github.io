@@ -11,6 +11,7 @@
 //   - <template id="hero-stage-template"> and <template id="hero-rail-thumb-template"> in index.html,
 //     which hold the stage's markup and the button words (Learn More, Pause, Play)
 // To add a project to the hero, just add a project card with data-video and data-poster.
+// A card without data-video shows only its poster on the stage.
 
 const hero = document.getElementById('hero');
 const showcase = hero.querySelector('.hero-showcase');
@@ -62,7 +63,12 @@ function showProject(index) {
 
     // Only this project's video is ever loaded (the others stay untouched until picked)
     video.poster = project.poster;
-    video.src = project.video;
+    if (project.video) {
+        video.src = project.video;
+    } else {
+        video.removeAttribute('src');   // a project without a video (a placeholder) shows only its poster
+        video.load();   // stops the video that was playing
+    }
     updatePlayback();
 
     // Move the highlight and restart the thumbnail's progress bar
