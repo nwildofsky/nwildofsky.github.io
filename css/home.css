@@ -283,11 +283,13 @@
     border-radius: var(--radius-card);
     background-color: var(--color-surface);
     scroll-margin-top: calc(var(--nav-height) + 1.6rem);
-    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    position: relative;   /* the lift moves the card with top, not transform, so its text stays sharp during the hover */
+    top: 0;
+    transition: top .25s ease-out, border-color .25s ease-out, box-shadow .25s ease-out;
 }
 /* Hover: lifts 3px, cyan border and a soft cyan glow; the image zooms 5% */
 .project-card:hover {
-    transform: translateY(-.3rem);
+    top: -3px;   /* px on purpose: .3rem is 3.6px at some widths, and a fractional offset blurs the text */
     border-color: color-mix(in srgb, var(--color-accent-2) 70%, transparent);
     box-shadow: 0 1.2rem 4rem -1.4rem color-mix(in srgb, var(--color-accent-2) 30%, transparent);
 }
@@ -306,7 +308,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .35s ease;
+    will-change: transform;   /* keeps the image on its own layer so the zoom does not jump at its start and end */
+    transition: transform .25s ease-out;   /* the same time as the card, so both stop together */
 }
 .project-card:hover .project-card-image img {
     transform: scale(1.05);
@@ -362,7 +365,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .project-card:hover,
+    .project-card:hover {
+        top: 0;
+    }
     .project-card:hover .project-card-image img {
         transform: none;
     }
