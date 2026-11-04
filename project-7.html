@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Andes</title>
+    <title>Talisman of Ethshar</title>
     <!-- Browser tab icon -->
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <!-- Fonts: Sora (headings) and DM Sans (text) -->
@@ -21,7 +21,7 @@
          Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
     <nav class="project-bar">
         <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
-        <span class="project-bar-count">7 of 10</span>
+        <span class="project-bar-count">7 of 12</span>
         <div class="project-bar-pager">
             <a class="button" href="./project-6.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
             <a class="button" href="./project-8.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
@@ -37,35 +37,35 @@
                 <ul class="project-media-thumbs">
                     <!-- Video: its picture is only the preview shown before it plays -->
                     <li>
-                        <button class="project-media-thumb" type="button" data-video="./media/IA/IA_1-turn.mp4">
-                            <img src="./media/IA/IA_1-turn-poster.webp" alt="" width="1280" height="720">
+                        <button class="project-media-thumb" type="button" data-video="./media/TE/talisman.mp4">
+                            <img src="./media/TE/talisman-poster.webp" alt="" width="1280" height="720">
                             <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
                             <span class="visually-hidden">Video</span>
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/IA/IA_decks.webp" alt="The included decks of cards" width="1919" height="1079">
+                            <img src="./media/TE/TE_title.webp" alt="The title screen" width="1919" height="1077">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/IA/IA_money.webp" alt="The money cards" width="1919" height="1079">
+                            <img src="./media/TE/TE_level-select.webp" alt="The level select screen" width="1919" height="1079">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/IA/IA_actions.webp" alt="The action cards" width="1919" height="1079">
+                            <img src="./media/TE/TE_lvl4.webp" alt="Level 4 example" width="1921" height="1077">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/IA/IA_hand.webp" alt="An example hand" width="1920" height="1076">
+                            <img src="./media/TE/TE_thumbnail.webp" alt="Level 8 example" width="1622" height="913">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/IA/IA_board.webp" alt="An example of a mid-game board" width="1919" height="1079">
+                            <img src="./media/TE/TE_lvl13.webp" alt="Level 13 example" width="1919" height="1079">
                         </button>
                     </li>
                 </ul>
@@ -74,23 +74,26 @@
             <div class="project-summary">
                 <ul id="tags" class="project-tags">
                     <li class="chip chip-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group Project</li>
-                    <li class="chip">Card Game</li>
+                    <li class="chip">Game</li>
+                    <li class="chip">2D</li>
+                    <li class="chip">Puzzle</li>
                 </ul>
-                <h1 class="project-title">Investment Andes</h1>
+                <h1 class="project-title">Talisman of Ethshar</h1>
                 <dl id="stats" class="project-facts">
                     <div class="project-fact">
                         <dt>Timeframe:</dt>
-                        <dd>2 Months</dd>
+                        <dd>5 Weeks</dd>
                     </div>
                     <div class="project-fact">
                         <dt>Role:</dt>
-                        <dd>Game Designer and Playtest Coordinator</dd>
+                        <dd>Gameplay Programmer, Level Designer, and UI Designer</dd>
                     </div>
                     <div class="project-fact project-fact-wide">
                         <dt>Tools:</dt>
                         <dd>
                             <ul class="project-fact-chips">
-                                <li class="chip">Tabletop Simulator</li>
+                                <li class="chip">Unity</li>
+                                <li class="chip">Visual Studio</li>
                             </ul>
                         </dd>
                     </div>
@@ -98,15 +101,13 @@
                         <dt>Skills:</dt>
                         <dd>
                             <ul class="project-fact-chips">
-                                <li class="chip">Teamwork</li>
-                                <li class="chip">Communication</li>
+                                <li class="chip">C#</li>
                             </ul>
                         </dd>
                     </div>
                 </dl>
                 <div class="project-links">
-                    <a href="https://drive.google.com/file/d/1KLew1eUWlu_wpQKOsgTqwLcl4hJgzUfQ/view?usp=sharing" class="button button-primary">View Rules</a>
-                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2413986966" class="button">See on Steam</a>
+                    <a href="https://play.unity.com/mg/other/talisman-of-ethshar" class="button button-primary">Play Now</a>
                 </div>
             </div>
         </div>
@@ -114,66 +115,74 @@
         <!-- ===== WRITEUP: description, then the three lists ===== -->
         <div class="project-writeup">
             <p id="description">
-                    A fast-paced and high stakes card game intended for play in tabletop simulator. Make smart
-                    investments into buildings that you think will give you the most benefit and use any action
-                    cards you get to give yourself an advantage over the other players. The game only continues
-                    while there is still money left in the deck, so once the economy dries up, the player with the
-                    most money wins. Investment Andes was a group project and my contribution, along with my other
-                    teammates, was the balancing of the game, the ideas for buildings and action cards, and the rules
-                    of the game.<br><br>
+                    A connect-the-dots style puzzle game crafted in Unity and inspired by the Ethshar universe.
+                    Talisman of Ethshar consists of 15 levels of increasingly difficult puzzles where you are tasked
+                    with recreating the "talisman" image in the bottom right by connecting the dots one-by-one.
+                    You can start your line at any dot and can connect to any dot from there but you cannot go back
+                    across a line you've already drawn. As you progress through the game, new mechanics are introduced
+                    that keep the puzzles fresh, fun, and challenging. This was a group project and my responsibilities
+                    were designing most of the puzzles, creating the look and feel of the game, and programming the
+                    functionality for connecting dots and checking if the puzzle has been correctly solved.<br><br>
 
-                    There are 5 building options that all players have access to purchase, and they each have passive 
-                    effects that in some way increase the amount of cards in your hand. The two cheapest buildings have 
-                    the effect of increasing your draw at the start of your turn of one of the card types while the more 
-                    expensive buildings will let you draw cards in response to the other players' actions. With only the 
-                    building system, players with more money will simply be able to buy the better buildings and only get 
-                    richer from there. To make the game more fair and randomized, action cards are an additional deck that 
-                    you get to draw from that offer all sorts of effects. With action cards, you can stop other players' 
-                    buildings from functioning, steal cards from another player, draw more cards, and reduce the cost of 
-                    the buildings on your turn. The balance is never perfect because most players don't know that they should 
-                    be trying to get more action cards when they're lower on money instead of money cards, but still with 
-                    action cards the game gets more chaotic and competitive between the players.
+                    Each level consists of a list of nodes, each dot in the level corresponding to a node, and each node 
+                    has a list of current connections to other nodes and a list of the correct connections to other nodes. 
+                    By clicking or dragging on multiple dots in the game, both nodes in the code would add the other to their 
+                    respective current connections lists. Nodes can only added as connections if they are not already in the 
+                    current connections list. If every node in the level has a current connection list that contains the same 
+                    nodes, regardless of order, as the correct connection list, then the level has been completed. Starting at 
+                    level 11, a new mechanic is introduced where any line made from a red dot will "break" any other lines it 
+                    intersects with when a connection is made. Our team had planned to introduce another mechanic and 5 additional 
+                    levels at the end of the game, but we were not able to finish this completely by the deadline and had to cut it.
+                    <br><br>
+
+                    The puzzles for the early levels were fairly easy to design since the base of this game can be boiled down to
+                    drawing Euler paths. For starting levels, easier levels would be Euler paths where all nodes have an even number 
+                    of connections so that there are a multitude of ways to draw a correct path. Difficulty could be added, by giving 
+                    some nodes in the graph odd numbers of connections, so the correct path could only be drawn starting and ending at 
+                    these nodes. Complexity could also be added to the graphs themselves to make drawing the full path more challenging. 
+                    Designing the levels which included the break mechanic (red dots) was much harder as the graphs no longer followed 
+                    the same logic. Each of these levels was designed with an intended path but there are many different ways to solve 
+                    these levels, some harder and some easier.
             </p>
             <div class="project-lists">
                 <section id="challenges">
                 <h2 class="list-title">Challenges:</h2>
                 <ul>
-                    <li>Balancing the game in such a way that the rich don't always get richer but also that money received 
-                        feels earned and worthwhile.
+                    <li>Drawing the lines so that every connection is straight and has the same width</li>
+                    <li>Allowing the player to connect multiple dots at once when they connect 2 dots but there are other 
+                        dots between those 2.
                     </li>
-                    <li>Maintaining the feel of the game for both small and large player groups.</li>
-                    <li>Keeping the game's fast pace even when players need to count their money for every purchase 
-                        and strategize what building to purchase.
-                    </li>
+                    <li>Correctly checking if the level has been completed.</li>
+                    <li>Tracking the player's progress through the game and displaying that in the level select screen.</li>
                 </ul>
                 </section>
                 <section id="likes">
                 <h2 class="list-title">What I did well:</h2>
                 <ul>
-                    <li>Reduced the number of buildings available in the game to an easily comprehensible 5. 
-                        Originally there were way more buildings with various inconsistent effects and it was way 
-                        too much.
+                    <li>Used multiple of Unity's Line Renderers to draw the connections, instead of just 1, so that 
+                        the connections' geometry don't depend on any of the others.
                     </li>
-                    <li>Gave players calculators to use and lowered the value of money as a whole so 
-                        calculations for purchasing buildings and counting each player's final score.
+                    <li>Connections can be drawn by clicking on 2 dots, dragging the mouse from 1 dot to another, and clicking 
+                        on another dot when the line drawn passes through mutiple more dots.
                     </li>
-                    <li>Designed a comprehensive and easy to read pdf of the game's rules that allows for quick 
-                        access to labeled topics that a player would be specifically searching for.
+                    <li>The mouse cursor lets the player know whether or not they can create a connection with a dot it's 
+                        hovering over, and the lines that would be broken when a connection is made are highlighted with red.
                     </li>
+                    <li>The game is challenging, starting out easier and scaling up from there.</li>
                 </ul>
                 </section>
                 <section id="dislikes">
                 <h2 class="list-title">What I would change/improve:</h2>
                 <ul>
-                    <li>In general the action cards need to be seen by newer players as a viable option instead 
-                        of them thinking they only need money. Possibly add more card examples in the rules so they 
-                        understand what action cards can do.
+                    <li>Add more new mechanics, and levels along with that, to the game. The break mechanic makes 
+                        the game more interesting and adding more mechanics like that would give the game the variety 
+                        it needs.
                     </li>
-                    <li>Action cards are a bit too strong I think, once players realize what they can do it's normally 
-                        the player who gets the most action cards who wins the whole game. Lowering the limit 
-                        of action cards that can be played in a turn could reduce their turn-by-turn strength and 
-                        reducing the number of action cards that are: "Draw X money cards," or changing their effect 
-                        to be more conditional.
+                    <li>If more levels are added, some of the overly complex levels with just the base mechanics 
+                        should be simplified or removed.
+                    </li>
+                    <li>Make the hint system way more useful. Currently it highlights 2 dots as a recommended start 
+                        but it does not signify which is first or second and it's only for starting out in the level.
                     </li>
                 </ul>
                 </section>

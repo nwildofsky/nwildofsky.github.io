@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talisman of Ethshar</title>
+    <title>Racecar Evolution</title>
     <!-- Browser tab icon -->
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <!-- Fonts: Sora (headings) and DM Sans (text) -->
@@ -21,7 +21,7 @@
          Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
     <nav class="project-bar">
         <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
-        <span class="project-bar-count">5 of 10</span>
+        <span class="project-bar-count">5 of 12</span>
         <div class="project-bar-pager">
             <a class="button" href="./project-4.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
             <a class="button" href="./project-6.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
@@ -37,35 +37,35 @@
                 <ul class="project-media-thumbs">
                     <!-- Video: its picture is only the preview shown before it plays -->
                     <li>
-                        <button class="project-media-thumb" type="button" data-video="./media/TE/talisman.mp4">
-                            <img src="./media/TE/talisman-poster.webp" alt="" width="1280" height="720">
+                        <button class="project-media-thumb" type="button" data-video="./media/RE/re_simulation.mp4">
+                            <img src="./media/RE/re_simulation-poster.webp" alt="" width="1280" height="720">
                             <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
                             <span class="visually-hidden">Video</span>
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/TE/TE_title.webp" alt="The title screen" width="1919" height="1077">
+                            <img src="./media/RE/re_building_track.webp" alt="Setting up a race track in the track builder" width="1920" height="912">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/TE/TE_level-select.webp" alt="The level select screen" width="1919" height="1079">
+                            <img src="./media/RE/re_beginning.webp" alt="The beginning of an early generation" width="1920" height="907">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/TE/TE_lvl4.webp" alt="Level 4 example" width="1921" height="1077">
+                            <img src="./media/RE/re_alt_track.webp" alt="A different track option" width="1920" height="910">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/TE/TE_thumbnail.webp" alt="Level 8 example" width="1622" height="913">
+                            <img src="./media/RE/re_mid_generation.webp" alt="Snapshot of a generation in the middle of a simulation" width="1920" height="909">
                         </button>
                     </li>
                     <li>
                         <button class="project-media-thumb" type="button">
-                            <img src="./media/TE/TE_lvl13.webp" alt="Level 13 example" width="1919" height="1079">
+                            <img src="./media/RE/re_result.webp" alt="The final racer who completed the track well enough" width="1920" height="913">
                         </button>
                     </li>
                 </ul>
@@ -73,20 +73,19 @@
 
             <div class="project-summary">
                 <ul id="tags" class="project-tags">
-                    <li class="chip chip-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group Project</li>
-                    <li class="chip">Game</li>
-                    <li class="chip">2D</li>
-                    <li class="chip">Puzzle</li>
+                    <li class="chip chip-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo Project</li>
+                    <li class="chip">Simulation</li>
+                    <li class="chip">AI Algorithm</li>
                 </ul>
-                <h1 class="project-title">Talisman of Ethshar</h1>
+                <h1 class="project-title">Racecar Evolution</h1>
                 <dl id="stats" class="project-facts">
                     <div class="project-fact">
                         <dt>Timeframe:</dt>
-                        <dd>5 Weeks</dd>
+                        <dd>1 Month</dd>
                     </div>
                     <div class="project-fact">
                         <dt>Role:</dt>
-                        <dd>Gameplay Programmer, Level Designer, and UI Designer</dd>
+                        <dd>Designer and Developer</dd>
                     </div>
                     <div class="project-fact project-fact-wide">
                         <dt>Tools:</dt>
@@ -107,7 +106,7 @@
                     </div>
                 </dl>
                 <div class="project-links">
-                    <a href="https://play.unity.com/mg/other/talisman-of-ethshar" class="button button-primary">Play Now</a>
+                    <a href="https://github.com/nwildofsky/GameAI/tree/main/FinalProject/Assets/Scripts" class="button button-primary">See the Code</a>
                 </div>
             </div>
         </div>
@@ -115,76 +114,66 @@
         <!-- ===== WRITEUP: description, then the three lists ===== -->
         <div class="project-writeup">
             <p id="description">
-                    A connect-the-dots style puzzle game crafted in Unity and inspired by the Ethshar universe.
-                    Talisman of Ethshar consists of 15 levels of increasingly difficult puzzles where you are tasked
-                    with recreating the "talisman" image in the bottom right by connecting the dots one-by-one.
-                    You can start your line at any dot and can connect to any dot from there but you cannot go back
-                    across a line you've already drawn. As you progress through the game, new mechanics are introduced
-                    that keep the puzzles fresh, fun, and challenging. This was a group project and my responsibilities
-                    were designing most of the puzzles, creating the look and feel of the game, and programming the
-                    functionality for connecting dots and checking if the puzzle has been correctly solved.<br><br>
+                    An interactive simulation showcasing a genetic algorithm of a racecar learning to drive on a track.
+                    Users first create a looped racetrack using the built-in track creator, then once they hit play the
+                    simulation will start. During the simulation, batches of racecar AI are placed into the simulation in
+                    generations. Each racecar agent starts with a randomized set of instructions to complete the track, and 
+                    as each generation ends a new generation is made by "evolving" the previous generation. This means selecting
+                    a certain number cars that had the best run and using their set of instructions or "chromosome" as the basis of
+                    the new generation. This process is set to continue until an agent is found who completed the track at a high 
+                    level of quality. This project was my introduction to genetic algorithms and can certainly be improved, but 
+                    remains a good display of the algorithm's process and adaptability.<br><br>
 
-                    Each level consists of a list of nodes, each dot in the level corresponding to a node, and each node 
-                    has a list of current connections to other nodes and a list of the correct connections to other nodes. 
-                    By clicking or dragging on multiple dots in the game, both nodes in the code would add the other to their 
-                    respective current connections lists. Nodes can only added as connections if they are not already in the 
-                    current connections list. If every node in the level has a current connection list that contains the same 
-                    nodes, regardless of order, as the correct connection list, then the level has been completed. Starting at 
-                    level 11, a new mechanic is introduced where any line made from a red dot will "break" any other lines it 
-                    intersects with when a connection is made. Our team had planned to introduce another mechanic and 5 additional 
-                    levels at the end of the game, but we were not able to finish this completely by the deadline and had to cut it.
-                    <br><br>
+                    What makes all of this work is the fitness function which is able to calculate how well each racecar agent did
+                    in their run of the track. This drives the process of evolution and also determines when the simulation is finished.
+                    Creating, testing, and improving the fitness function was one of the major challenges of the whole project.
+                    I tried using average speed, track completion time, percentage of run within track boundaries, percentage of track
+                    visited, and a completion check all as weighted variables that would add up to calculate the overall fitness.
+                    In the end, I chose to use the inside boundaries percentage, track visitation percentage, and a completion check
+                    to make up the entire calculation.<br><br>
+                    
+                    There's no denial that speed and lap time, as well as many other possible
+                    statistics, are just as important, but too many unwanted behaviors arose when prioritizing these variables.
+                    Racers would be able to achieve very high speeds by not turning often and going way out of the boundaries of
+                    the track and racers would be able to achieve very low lap times by looping the starting line and going past it
+                    again as a finish line. Unfortunately, most of these problems derive from my desire for the algorithm to adapt
+                    from a starting point of complete freedom. While the track is visible to the users, it means nothing to the AI
+                    as its doing its run. If the racetrack was a physical object and restricted the racers inside of the road area
+                    with bounding walls at the edges, then most unwanted behvior I was getting would have been stopped from the start.<br><br>
 
-                    The puzzles for the early levels were fairly easy to design since the base of this game can be boiled down to
-                    drawing Euler paths. For starting levels, easier levels would be Euler paths where all nodes have an even number 
-                    of connections so that there are a multitude of ways to draw a correct path. Difficulty could be added, by giving 
-                    some nodes in the graph odd numbers of connections, so the correct path could only be drawn starting and ending at 
-                    these nodes. Complexity could also be added to the graphs themselves to make drawing the full path more challenging. 
-                    Designing the levels which included the break mechanic (red dots) was much harder as the graphs no longer followed 
-                    the same logic. Each of these levels was designed with an intended path but there are many different ways to solve 
-                    these levels, some harder and some easier.
+                    In the end, most of this project's flaws come from it trying to adapt and accomodate to any possible racetrack that can
+                    be created in the simulation. I was overly ambitious and overestimated the power of genetic algorithms thinking that they
+                    would work the same on all possible tracks it would be presented with. But at the same time, with some additional tweaking
+                    I feel the simulation can be greatly improved and be able to actually generate a quality racer that can complete most tracks
+                    you give it.
             </p>
             <div class="project-lists">
                 <section id="challenges">
-                <h2 class="list-title">Challenges:</h2>
-                <ul>
-                    <li>Drawing the lines so that every connection is straight and has the same width</li>
-                    <li>Allowing the player to connect multiple dots at once when they connect 2 dots but there are other 
-                        dots between those 2.
-                    </li>
-                    <li>Correctly checking if the level has been completed.</li>
-                    <li>Tracking the player's progress through the game and displaying that in the level select screen.</li>
-                </ul>
+                    <h2 class="list-title">Challenges:</h2>
+                    <ul>
+                        <li>Figuring out a proper way to represent the chromosome of each racer in code</li>
+                        <li>Creating, testing, and improving the fitness function to be as effective as possible</li>
+                        <li>Building a comprehensive track creator that manages all the necessary track data for the simulation as the track is being built</li>
+                        <li>Adjusting the algorithm to see good results on multiple different racetracks rather than the few the algorithm was tested on</li>
+                    </ul>
                 </section>
                 <section id="likes">
-                <h2 class="list-title">What I did well:</h2>
-                <ul>
-                    <li>Used multiple of Unity's Line Renderers to draw the connections, instead of just 1, so that 
-                        the connections' geometry don't depend on any of the others.
-                    </li>
-                    <li>Connections can be drawn by clicking on 2 dots, dragging the mouse from 1 dot to another, and clicking 
-                        on another dot when the line drawn passes through mutiple more dots.
-                    </li>
-                    <li>The mouse cursor lets the player know whether or not they can create a connection with a dot it's 
-                        hovering over, and the lines that would be broken when a connection is made are highlighted with red.
-                    </li>
-                    <li>The game is challenging, starting out easier and scaling up from there.</li>
-                </ul>
+                    <h2 class="list-title">What I did well:</h2>
+                    <ul>
+                        <li>The tile-based track creator allows users to run the simulation on any track they can think of</li>
+                        <li>Each racer agent has a list of actions that automatically play and link into each other as the simulation runs</li>
+                        <li>The simulation can be sped up or slowed down for convenience without affecting the result of each generation</li>
+                        <li>Each wave of racers is visually displayed in an interesting and easy to follow way</li>
+                    </ul>
                 </section>
                 <section id="dislikes">
-                <h2 class="list-title">What I would change/improve:</h2>
-                <ul>
-                    <li>Add more new mechanics, and levels along with that, to the game. The break mechanic makes 
-                        the game more interesting and adding more mechanics like that would give the game the variety 
-                        it needs.
-                    </li>
-                    <li>If more levels are added, some of the overly complex levels with just the base mechanics 
-                        should be simplified or removed.
-                    </li>
-                    <li>Make the hint system way more useful. Currently it highlights 2 dots as a recommended start 
-                        but it does not signify which is first or second and it's only for starting out in the level.
-                    </li>
-                </ul>
+                    <h2 class="list-title">What I would change/improve:</h2>
+                    <ul>
+                        <li>Adapt starting chromosome sizes based on the length of the racetrack</li>
+                        <li>Restrict the racers to only be able to drive within the racetrack</li>
+                        <li>Incoportate speed and lap time variables back into the fitness evaluation</li>
+                        <li>Further refine mutation and selection mechanics</li>
+                    </ul>
                 </section>
             </div>
         </div>

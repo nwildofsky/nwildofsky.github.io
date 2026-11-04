@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Finder</title>
+    <!-- Browser tab icon -->
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- Fonts: Sora (headings) and DM Sans (text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- My Stylesheets: base.css is shared by every page -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
+</head>
+<body>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <span class="project-bar-count">12 of 12</span>
+        <div class="project-bar-pager">
+            <a class="button" href="./project-11.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./project-3.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <!-- Video: its picture is only the preview shown before it plays -->
+                    <li>
+                        <button class="project-media-thumb" type="button" data-video="./media/PK/TCG_gameplay.mp4">
+                            <img src="./media/PK/TCG_gameplay-poster.webp" alt="" width="1280" height="720">
+                            <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+                            <span class="visually-hidden">Video</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/PK/PK_rayquaza.webp" alt="Searching the API for rayquaza" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/PK/PK_name_search.webp" alt="Focusing on a charizard card" width="1919" height="1079">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/PK/PK_specific.webp" alt="The card-specific page" width="1919" height="1077">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/PK/PK_filter.webp" alt="Filtering the search results" width="1919" height="1077">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/PK/PK_mobile.webp" alt="The site interface on mobile" width="1919" height="1077">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo Project</li>
+                    <li class="chip">Application</li>
+                    <li class="chip">Web Development</li>
+                    <li class="chip">API</li>
+                </ul>
+                <h1 class="project-title">Pokemon TCG Card Finder</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>2 Weeks</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Developer and Designer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Visual Studio Code</li>
+                                <li class="chip">Pokemon TCG API</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Javascript</li>
+                                <li class="chip">HTML</li>
+                                <li class="chip">CSS</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://people.rit.edu/nsw7227/235/project2/" class="button button-primary">Try It Out</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
+                    A website I designed and created that uses Javascript and the Pokemon TCG
+                    API that allows the user to search for any Pokemon card using multiple search options and filters.
+                    Once the user finds a card that they want to learn more about or see a clearer picture of, they can
+                    simply click on the card and they are taken to a new page that has a higher resolution picture of
+                    the card as well as all the important details of the card given in a much easier to read design. The
+                    website is mainly for users who already know a fair amount about Pokemon cards and are looking for
+                    something specific, but it helps users who might not know as much by restricting number inputs to
+                    the valid range and certain filters so that there are fewer invalid queries to the API. The site is
+                    also fully responsive with the exception of the filter popout not fitting the screens of some mobile
+                    phones.<br><br>
+
+                    You are able to search for cards by name, text on the card, health amount, attack damage, attack cost, 
+                    and retreat cost. Results can be specified even further by filtering the cards by card type, energy type, 
+                    and rarity. The API provides a lot of options for limiting the results of the API call but does not have 
+                    an easy way to limit the results with multiple parameters at a time. To correct this for my website, I 
+                    make multiple calls to the API each with a different parameter that the user specified, then combine the 
+                    results of all the individual calls that fit all of the parameters set and display them.<br><br>
+                    
+                    The page for individual cards that are selected is completely modular. It is one html file that adapts its 
+                    content based on the card clicked to get there. This can be done by adding the id of the selected card to 
+                    the url of this page after a '?' character, and then reading the id when the page loads and grabbing that card's 
+                    information. If you click the advanced button from this page, then you will be taken back to the main app 
+                    page and the last call made to the API will be done again.
+            </p>
+            <div class="project-lists">
+                <section id="challenges">
+                <h2 class="list-title">Challenges:</h2>
+                <ul>
+                    <li>Giving proper search results when the API does not allow for all the search option combinations 
+                        that my website provides.
+                    </li>
+                    <li>Creating 1 separate page that displays the data for any card that is clicked on.</li>
+                    <li>Designing the application to be responsive and work on various mobile devices.</li>
+                    <li>Applying the selected sort method, filters, and search parameters to the data before 
+                        it is displayed on the app.
+                    </li>
+                </ul>
+                </section>
+                <section id="likes">
+                <h2 class="list-title">What I did well:</h2>
+                <ul>
+                    <li>Gave the users a large number of ways to limit the search how they want to.</li>
+                    <li>Search results are dynamically displayed in a grid pattern that is responsive.</li>
+                    <li>Card text is displayed using graphics similar to the ones on the cards themselves.</li>
+                </ul>
+                </section>
+                <section id="dislikes">
+                <h2 class="list-title">What I would change/improve:</h2>
+                <ul>
+                    <li>Add the enter button as an alternative to pressing the search button in the app header.</li>
+                    <li>Utilize local storage to retain query data and search parameters so the API is called less often 
+                        and users don't have to re-enter the same parameters.
+                    </li>
+                    <li>Fix cases where a card will appear in the list on the main page but when selected the 
+                        website says there is no data for that card or it cannot find that card.
+                    </li>
+                    <li>Make the application even more useful by allowing users to create decks out of searched cards 
+                        or lists of cards they may have collected.
+                    </li>
+                </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
+        <div class="project-pager">
+            <a class="button" href="./project-11.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./project-3.html">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </main>
+
+    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <footer id="contact" class="site-footer">
+        <div class="contact-text">
+            <h2 class="contact-heading">Contact Me!</h2>
+            <p class="contact-details">wildofskynsw@gmail.com &middot; (937)-925-2140</p>
+        </div>
+        <div class="contact-buttons">
+            <a class="button button-primary" href="mailto:wildofskynsw@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-email"></use></svg>Email
+            </a>
+            <a class="button" href="https://www.linkedin.com/in/nwildofsky/">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-linkedin"></use></svg>LinkedIn
+            </a>
+            <a class="button" href="https://github.com/nwildofsky">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-github"></use></svg>GitHub
+            </a>
+            <a class="button" href="./media/NWildofsky_Resume.pdf">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
