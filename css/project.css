@@ -39,6 +39,13 @@
     display: flex;
     gap: .6rem;
 }
+/* The count and Previous / Next are filled in by src/project-pager.js, which then adds the class
+   project-pager-ready to <html>. Until then (or if it cannot run) they are hidden; visibility keeps
+   their space so the bar does not shift when they appear. */
+html:not(.project-pager-ready) .project-bar-count,
+html:not(.project-pager-ready) .project-bar-pager {
+    visibility: hidden;
+}
 
 
 /* ==========================================================================
@@ -274,6 +281,10 @@
     gap: 1rem;
     padding-top: 2rem;
     border-top: 1px solid var(--color-line);
+}
+/* Hidden until src/project-pager.js has filled in the links (see section 1) */
+html:not(.project-pager-ready) .project-pager {
+    display: none;
 }
 
 

@@ -15,16 +15,21 @@
     <link rel="stylesheet" href="css/project.css">
     <!-- Media gallery (large item and thumbnails) -->
     <script type="module" src="./src/gallery.js"></script>
+    <!-- Count and Previous / Next links, worked out from the project cards on the home page -->
+    <script type="module" src="./src/project-pager.js"></script>
 </head>
 <body>
     <!-- ===== TOP BAR (the only bar on a project page) =====
-         Previous / Next go around: the first project's Previous is the last project, and the last project's Next is the first. -->
+         The count and the Previous / Next links (here and at the bottom of the page) are filled in by src/project-pager.js
+         from the order of the project cards on index.html, going around from the last project to the first. Do not edit
+         them by hand: the empty spans and the links to #projects are only what is there if the script cannot run, and
+         project.css hides them then. -->
     <nav class="project-bar">
         <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
-        <span class="project-bar-count">7 of 12</span>
+        <span class="project-bar-count"><span id="project-position"></span> of <span id="project-total"></span></span>
         <div class="project-bar-pager">
-            <a class="button" href="./project-6.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
-            <a class="button" href="./project-8.html"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./index.html#projects"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
         </div>
     </nav>
 
@@ -191,8 +196,8 @@
 
         <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
         <div class="project-pager">
-            <a class="button" href="./project-6.html"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
-            <a class="button" href="./project-8.html">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./index.html#projects">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
         </div>
     </main>
 
