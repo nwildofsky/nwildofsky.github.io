@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Walking Dead: Aftermath</title>
+    <!-- Browser tab icon -->
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- Fonts: Sora (headings) and DM Sans (text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- My Stylesheets: base.css is shared by every page -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
+    <!-- Count and Previous / Next links, worked out from the project cards on the home page -->
+    <script type="module" src="./src/project-pager.js"></script>
+</head>
+<body>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         The count and the Previous / Next links (here and at the bottom of the page) are filled in by src/project-pager.js
+         from the order of the project cards on index.html, going around from the last project to the first. Do not edit
+         them by hand: the empty spans and the links to #projects are only what is there if the script cannot run, and
+         project.css hides them then. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <span class="project-bar-count"><span id="project-position"></span> of <span id="project-total"></span></span>
+        <div class="project-bar-pager">
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./index.html#projects"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <!-- Video: its picture is only the preview shown before it plays -->
+                    <li>
+                        <button class="project-media-thumb" type="button" data-video="./media/DMR/dmr_playthrough.mp4">
+                            <img src="./media/DMR/dmr_playthrough-poster.webp" alt="" width="1280" height="720">
+                            <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+                            <span class="visually-hidden">Video</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_quest_offer.webp" alt="Quest giver offering the quest to the player" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_sector_map.webp" alt="Lazarus system visible from the sector map" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_lazarus.webp" alt="View of Lazarus system" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_market.webp" alt="Yurei planetary market" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_fleets.webp" alt="Mission fleets waiting for player choice" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_battle.webp" alt="Engaged in a battle over Yurei" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_view_weapon.webp" alt="Description of modded weapon" width="1920" height="1080">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional Project<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>&lt;15</span></li>
+                    <li class="chip chip-kind chip-kind-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</li>
+                    <li class="chip">Mobile Game</li>
+                </ul>
+                <h1 class="project-title">The Walking Dead: Aftermath</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>Dec 2025 - Oct 2026 (11 months)</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Meta-systems developer, Gameplay developer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Unity</li>
+                                <li class="chip">JetBrains Rider</li>
+                                <li class="chip">CodeMagic</li>
+                                <li class="chip">Firebase</li>
+                                <li class="chip">Jira</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">C#</li>
+                                <li class="chip">GitLab</li>
+                                <li class="chip">System engineering</li>
+                                <li class="chip">CI/CD</li>
+                                <li class="chip">Agentic Coding</li>
+                                <li class="chip">Unit Testing</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://www.nexusmods.com/starsector/mods/104" class="button button-primary">View & Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
+
+                A 3D survivors-like mobile game entry in The Walking Dead universe released for iOS and Android. Many popular characters
+                from the series are available as survivors within the game with their own weapon type, skills, and upgrades.
+                Gameplay is typical of the genre, but it features reloading and building mechanics, and the available upgrades change
+                based on which group of survivors is brought into gameplay. But several alternate game modes greatly change the gameplay,
+                and many out-of-gameplay systems offer ways to increase the survivors' power and stats. A loose storyline can also be followed
+                as players navigate through missions in familiar locales and recruit more survivors to the cause. I joined this project's team
+                of around 10 to 15 members midway through development as a supporting Unity engineer and helped push the game towards
+                launch and post-launch updates.<br><br>
+
+                My main role on the team was meta-systems and gameplay developer, and I shipped end-to-end over 8 major live-service features
+                focused on progression, retention, and monetization. Some of the most prominent features I implemented were the quests, login streak,
+                and season pass systems. Since the team had a history of similar games, this feature work started as a task to port the existing systems
+                from previous games and integrate them into the project's codebase. These tasks allowed me to get a good grasp of this
+                project's inner workings, and each came with additional requests for elements new to this game. Over time, I moved on to building more
+                systems from the ground up, creating the game's dialogue system and The Bar. The Bar was a monetization system that included daily, weekly,
+                and monthly IAP bundles, a currency received for each bundle purchased, and an event gacha that used that currency for pulls from a
+                rotating set of items. I also had the chance to work on the gameplay side of the code, through some of these features and through an
+                alternate Survivor Trials game mode. The trials mode is a challenge mode for replaying previous campaign levels with varying difficulty
+                modifiers that could affect player or enemy stats or prevent helpful items like health drops from appearing.<br><br>
+
+                Many of the features I developed brought challenges from building a live-service game, with players in different time zones,
+                players updating to new features with existing data, and systems that could be updated at runtime with a server fetch.
+                The main skills and experience I gained from this project came from managing these challenges. I used server-authoritative strategies
+                to set specific timed events and prevent player cheating. I managed player save data carefully and performed migrations when
+                updating player data from previous game versions. I built features that can have their data, assets, and schedule configured remotely,
+                so they can be managed outside of the game engine. Following the project conventions, I also gained more experience with unit testing,
+                reactive programming, and mobile performance awareness. Additionally, throughout my work on this project, I learned how to use AI coding
+                assistant tools well while still knowing how the code I was pushing functioned.<br><br>
+
+                The project workflow was Agile and sectioned into 1-2 week sprints with code reviews and an in-depth QA step before any feature was finalized.
+                This worked well for me and the team as a whole, and together with proper documentation and realistic expectations for the deadline,
+                the launch in July 2026 went very smoothly and was well received. At release, the game had over 60 levels, multiple bosses,
+                a few additional game modes, and over 10 survivors with plenty of ways to level up and increase power. Post-launch updates focused on
+                adding more ways to play, more systems to keep players around, and more content in general. The season pass system I had worked on remained
+                the game's top-selling feature, but as the number of players and the money spent within the game were waning, I worked on The Bar system,
+                which offered better low-cost IAPs and rewarded players further for their purchases. Finishing The Bar system at that point proved successful,
+                as a spike in players and spend, similar to the spike from a new season at the start of each month, was tracked once it went live. Despite this,
+                at the time I left the project, the overall outlook was still that the game was not hitting its desired metrics and bigger changes would be needed to reach them.
+            </p>
+            <div class="project-lists">
+                <section id="challenges">
+                    <h2 class="list-title">Challenges:</h2>
+                    <ul>
+                        <li>Creating live-ops features that work for all players across a variety of conditions</li>
+                        <li>Updating code ported from a previous game to match this project's design patterns and integrate its systems</li>
+                        <li>Coordinating work on important features across a large time zone difference efficiently</li>
+                        <li>Delivering on a high level of polish with short feature timelines</li>
+                    </ul>
+                </section>
+                <section id="likes">
+                    <h2 class="list-title">What I did well:</h2>
+                    <ul>
+                        <li>Owned and shipped over 8 major features end-to-end with minimal bugs once live for players</li>
+                        <li>Crafted unit tests and developer cheats for comprehensive and convenient testing before releasing each feature</li>
+                        <li>Faithfully assembled working and responsive UI menus from designer mock-ups with added animations and VFX</li>
+                        <li>Tested performance in editor and on both Android and iOS devices to reduce CPU and memory load in gameplay hot paths</li>
+                    </ul>
+                </section>
+                <section id="dislikes">
+                    <h2 class="list-title">What I would change/improve:</h2>
+                    <ul>
+                        <li>Give more time for designers to work with developers to fully close gaps in the technical documentation or
+                            grant more freedom for personal fixes/changes when implementing a feature</li>
+                        <li>Allow for continued work on released features in the schedule for a higher level of completion and
+                            polish or additional time for the feature development deadlines</li>
+                        <li>Manage the monetization and economy in a more player-friendly way with less in-game popups, purchasable offers,
+                            and difficulty to get new survivors while maintaining a smaller number of high value ways to spend to get ahead</li>
+                        <li>Develop features with confidence in their game design and a more defined roadmap for the future updates instead
+                            of looking to replicate other similar games in the market and follow data trends</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
+        <div class="project-pager">
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./index.html#projects">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </main>
+
+    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <footer id="contact" class="site-footer">
+        <div class="contact-text">
+            <h2 class="contact-heading">Contact Me!</h2>
+            <p class="contact-details">wildofskynsw@gmail.com &middot; (937)-925-2140</p>
+        </div>
+        <div class="contact-buttons">
+            <a class="button button-primary" href="mailto:wildofskynsw@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-email"></use></svg>Email
+            </a>
+            <a class="button" href="https://www.linkedin.com/in/nwildofsky/">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-linkedin"></use></svg>LinkedIn
+            </a>
+            <a class="button" href="https://github.com/nwildofsky">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-github"></use></svg>GitHub
+            </a>
+            <a class="button" href="./media/NWildofsky_Resume.pdf">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

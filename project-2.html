@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercenary Syndicate: Survival</title>
+    <!-- Browser tab icon -->
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- Fonts: Sora (headings) and DM Sans (text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- My Stylesheets: base.css is shared by every page -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project.css">
+    <!-- Media gallery (large item and thumbnails) -->
+    <script type="module" src="./src/gallery.js"></script>
+    <!-- Count and Previous / Next links, worked out from the project cards on the home page -->
+    <script type="module" src="./src/project-pager.js"></script>
+</head>
+<body>
+    <!-- ===== TOP BAR (the only bar on a project page) =====
+         The count and the Previous / Next links (here and at the bottom of the page) are filled in by src/project-pager.js
+         from the order of the project cards on index.html, going around from the last project to the first. Do not edit
+         them by hand: the empty spans and the links to #projects are only what is there if the script cannot run, and
+         project.css hides them then. -->
+    <nav class="project-bar">
+        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <span class="project-bar-count"><span id="project-position"></span> of <span id="project-total"></span></span>
+        <div class="project-bar-pager">
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
+            <a class="button" href="./index.html#projects"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <div class="project-header">
+            <div class="project-media">
+                <div class="project-media-main"></div>
+                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
+                <ul class="project-media-thumbs">
+                    <!-- Video: its picture is only the preview shown before it plays -->
+                    <li>
+                        <button class="project-media-thumb" type="button" data-video="./media/DMR/dmr_playthrough.mp4">
+                            <img src="./media/DMR/dmr_playthrough-poster.webp" alt="" width="1280" height="720">
+                            <svg class="icon project-media-play" aria-hidden="true"><use href="./media/icons.svg#icon-play"></use></svg>
+                            <span class="visually-hidden">Video</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_quest_offer.webp" alt="Quest giver offering the quest to the player" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_sector_map.webp" alt="Lazarus system visible from the sector map" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_lazarus.webp" alt="View of Lazarus system" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_market.webp" alt="Yurei planetary market" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_fleets.webp" alt="Mission fleets waiting for player choice" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_battle.webp" alt="Engaged in a battle over Yurei" width="1920" height="1080">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="project-media-thumb" type="button">
+                            <img src="./media/DMR/dmr_view_weapon.webp" alt="Description of modded weapon" width="1920" height="1080">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-summary">
+                <ul id="tags" class="project-tags">
+                    <li class="chip chip-kind chip-kind-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional Project<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~5</span></li>
+                    <li class="chip chip-kind chip-kind-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</li>
+                    <li class="chip">Mobile Game</li>
+                </ul>
+                <h1 class="project-title">Mercenary Syndicate: Survival</h1>
+                <dl id="stats" class="project-facts">
+                    <div class="project-fact">
+                        <dt>Timeframe:</dt>
+                        <dd>May 2024 - Dec 2025 (1 year 7 months)</dd>
+                    </div>
+                    <div class="project-fact">
+                        <dt>Role:</dt>
+                        <dd>Gameplay Developer and Designer, User Interface Programmer</dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Tools:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">Unity</li>
+                                <li class="chip">JetBrains Rider</li>
+                                <li class="chip">Spline</li>
+                                <li class="chip">CodeMagic</li>
+                                <li class="chip">Firebase</li>
+                                <li class="chip">Jira</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="project-fact project-fact-wide">
+                        <dt>Skills:</dt>
+                        <dd>
+                            <ul class="project-fact-chips">
+                                <li class="chip">C#</li>
+                                <li class="chip">GitLab</li>
+                                <li class="chip">Dependency Injection</li>
+                                <li class="chip">Reactive Programming</li>
+                                <li class="chip">User Interface Design</li>
+                                <li class="chip">CI/CD</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="project-links">
+                    <a href="https://www.nexusmods.com/starsector/mods/104" class="button button-primary">View & Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <div class="project-writeup">
+            <p id="description">
+                A 2D survivors-like shooter mobile game released for iOS and Android as the first project of a startup team. Players can build a squad
+                of mercenaries to take into battle, where their unique weapons and abilities can shine and be upgraded further to deal devastating damage.
+                Then, they continue to upgrade the mercenaries in their squad out of combat with each level's rewards and navigate branching world maps
+                with increasing difficulty and more permanent upgrades. The team size for this project started with only 5 members and 3 core programmers
+                (including me), but grew slightly larger over time. The idea behind this project was to take the foundation of the existing game Heroes Vs Hordes
+                and design new systems around correcting its weaknesses and preserving its strengths. These efforts resulted in a focus on shorter gameplay sessions,
+                more active characters, and better control over the types of weapons and upgrades received in gameplay. Ultimately, though, after an unsuccessful
+                launch and trouble retaining players in the following months, the game was removed from stores at the end of 2025.<br><br>
+
+                My role in the project was primarily gameplay engineer, but I also took on the roles of gameplay designer and user interface programmer
+                throughout development. We had the foundation of an existing codebase to start from, but the first main task I had was to rework the player
+                controller from featuring a single hero character with direct movement controls to 3 characters active at once, with new auto-follower movement
+                for the 2 characters not being directly controlled. This was the first challenge, as we wanted the following squad movement to be natural-looking
+                but also controlled so it still felt responsive and didn't place the backup characters too far forward or behind. This extensive work with the player
+                characters led to me becoming the main engineer behind the implementations of 15 of the 20 mercenaries we had in the game. This involved programming
+                their weapon behavior, creating their configurable stats, and setting up their animations and VFX. Soon after starting, I became the feature owner
+                of the mercenary characters, so I handled the design of each new mercenary's weapon type, upgradeable stats via level up, and overall balancing.
+                Finally, I created and implemented many of the UI menus in the game with Unity's UGUI and custom scripts.<br><br>
+
+                While working on this project, I not only gained experience with mobile game development, but I also learned many new skills and industry practices.
+                Due to the nature of the existing codebase, I had to become familiar with dependency injection and reactive programming frameworks before I could
+                even understand or add any code myself. Plus, I developed a deeper understanding of C# from the use of the model-view-presenter, strategy,
+                and factory design patterns and more advanced language use cases like asynchronous methods, LINQ, data transfer objects, and null conditionals.
+                Aside from my direct contributions, I learned at the project level the value of data-driven development, server authentication and user data storage,
+                addressables memory management, analytics, and continuous integration and deployment. With my time spent on this project, I now have a better understanding
+                of how large-scale games need to be set up and maintained.<br><br>
+
+                Throughout this game's development, there was a struggle to fully capture players and hit desired retention metrics. While the major game design
+                decisions were backed by data and made with the intention of improving the player experience, they were often put in the hands of players or
+                playtesters when their implementations were not fully completed or polished. This, in tandem with the free-to-play economy not hitting expected metrics,
+                resulted in many attempts to refresh core game aspects that would continually fail to meet the KPI requirements. Additionally, these reworks
+                were landing in the mid to late development cycle, many months after the prototyping phase, which was passed and assumed to do well all too quickly.
+                Nearing the end of 2025, after the game was fully released for a short time, it was announced the project would be sunset and internal resources
+                would be allocated to other projects. I was assigned to be the last developer working on a final gameplay rework for one more market test.
+                It would change the core game mode from surviving multiple enemy waves in a single level with power-ups based on dropped enemy XP, to a multi-room-based
+                level with a single enemy wave in each room and branching options when determining which room to enter next. While this project wasn't a success,
+                it was a great learning experience, especially from trying so many different game mechanics and seeing first-hand their strengths and weaknesses.
+            </p>
+            <div class="project-lists">
+                <section id="challenges">
+                    <h2 class="list-title">Challenges:</h2>
+                    <ul>
+                        <li>Nailing the feel of player movement with indirectly controlled characters that need to naturally move alongside the leader
+                            while keeping up, not becoming stuck, and reacting to quick direction changes</li>
+                        <li>Planning over 20 unique mercenary characters with multiple abilities and stats then creating formulas to calculate
+                            their overall effectiveness and balance accordingly</li>
+                        <li>Managing to improve the player experience and new content through multiple large-scale core gameplay reworks</li>
+                        <li>Directing an outsourced team of artists on character animations, character VFX, and UI mock-ups to achieve consistent and technically viable results</li>
+                    </ul>
+                </section>
+                <section id="likes">
+                    <h2 class="list-title">What I did well:</h2>
+                    <ul>
+                        <li>Learned the patterns and frameworks present in the existing codebase quickly, so that there was little downtime after starting the project before I could contribute</li>
+                        <li>Led core gameplay development and undertook work on the game's movement, weapons, upgrades, and progression systems resulting in a satisfying game feel</li>
+                        <li>Defined the method for out of combat map progression and designed each map with interesting choices and rewards that must be replayed for full completion</li>
+                        <li>Took on all remaining roles in the final weeks of development, including level design, enemy wave design, and game balance, to complete and publish a final major gameplay rework</li>
+                    </ul>
+                </section>
+                <section id="dislikes">
+                    <h2 class="list-title">What I would change/improve:</h2>
+                    <ul>
+                        <li>Prevent the project from moving past the prototype phase without more in-depth testing of various different gameplay
+                            options with positive feedback and analytics from actual playtesters</li>
+                        <li>Place more emphasis on the quality of systems over achieving quotas for a quantity of systems based on what a
+                            mature live service game would have but all at launch</li>
+                        <li>Take more time to playtest my own changes and game design ideas so that I would only be implementing and recommending
+                            the best features through experience and trial and error</li>
+                        <li>Tailor mercenary character designs better for the simplified combat experience so that each one feels more unique,
+                            or adjust the combat elements themselves so that the differing stats of each mercenary become prominent</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
+        <div class="project-pager">
+            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
+            <a class="button" href="./index.html#projects">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+        </div>
+    </main>
+
+    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <footer id="contact" class="site-footer">
+        <div class="contact-text">
+            <h2 class="contact-heading">Contact Me!</h2>
+            <p class="contact-details">wildofskynsw@gmail.com &middot; (937)-925-2140</p>
+        </div>
+        <div class="contact-buttons">
+            <a class="button button-primary" href="mailto:wildofskynsw@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-email"></use></svg>Email
+            </a>
+            <a class="button" href="https://www.linkedin.com/in/nwildofsky/">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-linkedin"></use></svg>LinkedIn
+            </a>
+            <a class="button" href="https://github.com/nwildofsky">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-github"></use></svg>GitHub
+            </a>
+            <a class="button" href="./media/NWildofsky_Resume.pdf">
+                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-download"></use></svg>Resume
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

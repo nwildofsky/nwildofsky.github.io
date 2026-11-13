@@ -52,14 +52,14 @@
         <div class="hero-intro">
             <h1 class="hero-name">Nathan Wildofsky</h1>
             <p class="hero-title">Game Developer and Designer</p>
-            <!-- DRAFT: Nathan to review (skill chips; copy a line to add one) -->
             <ul class="hero-skills">
                 <li class="chip">C#</li>
-                <li class="chip">C++</li>
                 <li class="chip">Unity</li>
-                <li class="chip">Unreal Engine 5</li>
-                <li class="chip">Level design</li>
-                <li class="chip">Web design</li>
+                <li class="chip">C++</li>
+                <li class="chip">Gameplay</li>
+                <li class="chip">UI/UX</li>
+                <li class="chip">Game AI</li>
+                <li class="chip">Tools Programmer</li>
             </ul>
             <div class="hero-links">
                 <a class="icon-link" href="mailto:wildofskynsw@gmail.com" aria-label="Email">
@@ -132,16 +132,63 @@
             <h2 class="section-heading">Projects</h2>
             <div id="project-grid">
 
+                <article class="project-card" id="project-1" data-poster="./media/800x500.png">
+                    <div class="project-card-image">
+                        <a href="./project-1.html"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>&lt;15</span></span>
+                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Mobile Game</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">The Walking Dead: Aftermath</h3>
+                        <p class="project-card-blurb">A free-to-play 3D survivors-like mobile game entry in The Walking Dead universe</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-1.html" class="button button-primary">Learn More</a>
+                            <a href="#" class="button">View & Download</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" id="project-2" data-poster="./media/800x500.png">
+                    <div class="project-card-image">
+                        <a href="./project-2.html"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~5</span></span>
+                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <ul class="tag-pill-keywords">
+                            <li class="tag-pill tag-pill-keyword">Mobile Game</li>
+                            <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                        </ul>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Mercenary Syndicate: Survivors</h3>
+                        <p class="project-card-blurb">A 2D survivors-like shooter mobile game released as the first project of a startup team</p>
+                        <div class="project-card-buttons">
+                            <a href="./project-2.html" class="button button-primary">Learn More</a>
+                            <a href="#" class="button">View & Download</a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-3" data-video="./media/DMR/dmr_playthrough.mp4" data-poster="./media/DMR/dmr_playthrough-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-3.html"><img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                            </span>
+                        </span>
+                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Mod</li>
-                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
                             <li class="tag-pill tag-pill-keyword">Java</li>
+                            <li class="tag-pill tag-pill-keyword">VS Code</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -158,12 +205,16 @@
                 <article class="project-card" id="project-4" data-video="./media/BRE/bre_demo.mp4" data-poster="./media/BRE/bre_demo-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-4.html"><img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Application</li>
-                            <li class="tag-pill tag-pill-keyword">Visual Studio</li>
                             <li class="tag-pill tag-pill-keyword">C++</li>
+                            <li class="tag-pill tag-pill-keyword">DirectX 11</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -180,12 +231,16 @@
                 <article class="project-card" id="project-5" data-video="./media/RE/re_simulation.mp4" data-poster="./media/RE/re_simulation-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-5.html"><img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Simulation</li>
-                            <li class="tag-pill tag-pill-keyword">Unity</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -202,12 +257,16 @@
                 <article class="project-card" id="project-6" data-video="./media/MF/mystic_forest.mp4" data-poster="./media/MF/mystic_forest-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-6.html"><img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 5
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
-                            <li class="tag-pill tag-pill-keyword">Unity</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -224,12 +283,16 @@
                 <article class="project-card" id="project-7" data-video="./media/TE/talisman.mp4" data-poster="./media/TE/talisman-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-7.html"><img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
-                            <li class="tag-pill tag-pill-keyword">Unity</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -246,12 +309,16 @@
                 <article class="project-card" id="project-8" data-video="./media/DF/skyline.mp4" data-poster="./media/DF/skyline-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-8.html"><img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Game</li>
-                            <li class="tag-pill tag-pill-keyword">Unity</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -268,8 +335,12 @@
                 <article class="project-card" id="project-9" data-video="./media/IA/IA_1-turn.mp4" data-poster="./media/IA/IA_1-turn-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-9.html"><img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Card Game</li>
                             <li class="tag-pill tag-pill-keyword">Tabletop Simulator</li>
@@ -289,17 +360,21 @@
                 <article class="project-card" id="project-10" data-video="./media/HZ/HvZ_gameplay.mp4" data-poster="./media/HZ/HvZ_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-10.html"><img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
-                            <li class="tag-pill tag-pill-keyword">Interactive Simulation</li>
-                            <li class="tag-pill tag-pill-keyword">Unity</li>
+                            <li class="tag-pill tag-pill-keyword">Simulation</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
+                            <li class="tag-pill tag-pill-keyword">Unity</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
-                        <h3 class="project-card-title">Autonomous Agents: Humans vs. Zombies</h3>
-                        <p class="project-card-blurb">Interactive AI simulation built in Unity with C#</p>
+                        <h3 class="project-card-title">Humans vs. Zombies</h3>
+                        <p class="project-card-blurb">Interactive AI movement simulation built in Unity with C#</p>
                         <div class="project-card-buttons">
                             <a href="./project-10.html" class="button button-primary">Learn More</a>
                             <a href="https://github.com/IGME-202/HvZ_AIProject/tree/master/Wildofsky_HvZ/Assets/Scripts" class="button">See the Code</a>
@@ -311,12 +386,16 @@
                 <article class="project-card" id="project-11" data-video="./media/QT/quake_tracker.mp4" data-poster="./media/QT/quake_tracker-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-11.html"><img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
-                            <li class="tag-pill tag-pill-keyword">Application</li>
-                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
+                            <li class="tag-pill tag-pill-keyword">Web App</li>
                             <li class="tag-pill tag-pill-keyword">Javascript</li>
+                            <li class="tag-pill tag-pill-keyword">REST API</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
@@ -333,72 +412,27 @@
                 <article class="project-card" id="project-12" data-video="./media/PK/TCG_gameplay.mp4" data-poster="./media/PK/TCG_gameplay-poster.webp">
                     <div class="project-card-image">
                         <a href="./project-12.html"><img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>Solo</span>
-                        <!-- DRAFT: Nathan to review (keyword pills come from the project page's tags and stats) -->
+                        <span class="tag-pill tag-pill-kind">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                            </span>
+                        </span>
                         <ul class="tag-pill-keywords">
-                            <li class="tag-pill tag-pill-keyword">Application</li>
-                            <li class="tag-pill tag-pill-keyword">Visual Studio Code</li>
+                            <li class="tag-pill tag-pill-keyword">Web App</li>
                             <li class="tag-pill tag-pill-keyword">Javascript</li>
+                            <li class="tag-pill tag-pill-keyword">REST API</li>
                         </ul>
                     </div>
                     <div class="project-card-body">
                         <h3 class="project-card-title">Pokemon TCG Card Finder</h3>
-                        <p class="project-card-blurb">A web app for searching the database of Pokemon Cards</p>
+                        <p class="project-card-blurb">A web app for searching an online database of Pokemon Cards</p>
                         <div class="project-card-buttons">
                             <a href="./project-12.html" class="button button-primary">Learn More</a>
                             <a href="https://people.rit.edu/nsw7227/235/project2/" class="button">Try It Out</a>
                         </div>
                     </div>
                 </article>
-
-                <!-- DRAFT: Nathan to review. The two PLACEHOLDER professional projects below (project-13 and project-14) are commented out.
-                     To show them again, for example to preview a 12-card grid and a 12-thumbnail hero, delete the line that
-                     contains only the opening of the next comment and the line that contains only its closing. -->
-                <!--
-                PLACEHOLDER professional project 1 (no project page, no video)
-                <article class="project-card" id="project-13" data-poster="./media/800x500.png">
-                    <div class="project-card-image">
-                        <a href="#"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~8</span></span>
-                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
-                        <ul class="tag-pill-keywords">
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                        </ul>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-card-title">Placeholder Professional Project 1</h3>
-                        <p class="project-card-blurb">Placeholder description for a professional project</p>
-                        <div class="project-card-buttons">
-                            <a href="#" class="button button-primary">Learn More</a>
-                            <a href="#" class="button">Placeholder Link</a>
-                        </div>
-                    </div>
-                </article>
-
-                PLACEHOLDER professional project 2 (no project page, no video)
-                <article class="project-card" id="project-14" data-poster="./media/800x500.png">
-                    <div class="project-card-image">
-                        <a href="#"><img src="media/800x500.png" alt="Placeholder image" width="800" height="500" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>&lt;5</span></span>
-                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
-                        <ul class="tag-pill-keywords">
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                            <li class="tag-pill tag-pill-keyword">Keyword</li>
-                        </ul>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-card-title">Placeholder Professional Project 2</h3>
-                        <p class="project-card-blurb">Placeholder description for a professional project</p>
-                        <div class="project-card-buttons">
-                            <a href="#" class="button button-primary">Learn More</a>
-                            <a href="#" class="button">Placeholder Link</a>
-                        </div>
-                    </div>
-                </article>
-                -->
             </div>
         </section>
 
@@ -409,51 +443,50 @@
                 <img class="about-photo" src="media/profile.webp" alt="profile picture" width="640" height="593">
                 <div class="about-body">
                     <p class="about-text">
-                        I am a game developer that enjoys the challenge of solving complex problems while also adding my own personal
-                        spin and creativity. I have years of experience in the C# and C++ languages, I am well versed in using Unity, and
-                        I am familiar with Unreal Engine 5. That being said, I am quick to learn new tools and programs and eager to sink
-                        my teeth into new languages.
+                        I am a game developer who thrives on complex problems and brings my own creativity to solving them.
+                        I have years of professional experience in C# and Unity, including shipping multiple mobile games to full public release,
+                        where I've built everything from gameplay systems and menus to live-service features.
+                        I also have a background of working with C++ and Unreal Engine 5.<br><br>
 
-                        I like to focus on the programming and technical aspects of projects but I have the experience to put on the game design, 
-                        level design, and web design hats when needed.
-                        
-                        I enjoy working with a team full of talented people and creating products that are fun, interesting, and useful. 
-                        
+                        I'm quick to learn new tools, systems, and languages, and I'm comfortable taking ownership of features that reach deep into a project.
+                        I focus on the programming and technical side, but I can step into game design, UI/UX design, and level design when needed.
+                        I do my best work alongside talented people, building products that are fun, interesting, and useful.
                     </p>
-                    <!-- DRAFT: Nathan to review (spec sheet rows and chips; to add a row, copy a whole spec-row block).
-                         Each chip has an experience level class next to "chip": chip-experience-extensive (amber, bold), chip-experience-moderate (plain) or chip-experience-some (darker fill). Change that one word to change a level. These levels are placeholders. -->
                     <dl class="spec-sheet">
                         <div class="spec-row">
                             <dt class="spec-label">Languages</dt>
                             <dd>
                                 <ul class="spec-chips">
                                     <li class="chip chip-experience-extensive">C#</li>
-                                    <li class="chip chip-experience-extensive">C++</li>
+                                    <li class="chip chip-experience-moderate">C++</li>
                                     <li class="chip chip-experience-moderate">Java</li>
                                     <li class="chip chip-experience-moderate">JavaScript</li>
                                     <li class="chip chip-experience-moderate">HTML</li>
                                     <li class="chip chip-experience-moderate">CSS</li>
+                                    <li class="chip chip-experience-some">C</li>
                                     <li class="chip chip-experience-some">HLSL</li>
+                                    <li class="chip chip-experience-some">Typescript</li>
                                 </ul>
                             </dd>
                         </div>
                         <div class="spec-row">
-                            <dt class="spec-label">Engines</dt>
+                            <dt class="spec-label">Developer Tools</dt>
                             <dd>
                                 <ul class="spec-chips">
                                     <li class="chip chip-experience-extensive">Unity</li>
-                                    <li class="chip chip-experience-some">Unreal Engine 5 (familiar)</li>
-                                </ul>
-                            </dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt class="spec-label">Graphics and tools</dt>
-                            <dd>
-                                <ul class="spec-chips">
-                                    <li class="chip chip-experience-moderate">DirectX 11</li>
-                                    <li class="chip chip-experience-moderate">Dear ImGui</li>
+                                    <li class="chip chip-experience-extensive">Git</li>
                                     <li class="chip chip-experience-extensive">Visual Studio</li>
-                                    <li class="chip chip-experience-extensive">Visual Studio Code</li>
+                                    <li class="chip chip-experience-extensive">JetBrains Rider</li>
+                                    <li class="chip chip-experience-extensive">Photoshop</li>
+                                    <li class="chip chip-experience-extensive">Agentic Coding</li>
+                                    <li class="chip chip-experience-moderate">Unreal Engine 5</li>
+                                    <li class="chip chip-experience-moderate">Dear ImGui</li>
+                                    <li class="chip chip-experience-moderate">Blender</li>
+                                    <li class="chip chip-experience-moderate">Maya</li>
+                                    <li class="chip chip-experience-moderate">Firebase</li>
+                                    <li class="chip chip-experience-some">DirectX 11</li>
+                                    <li class="chip chip-experience-some">CI/CD</li>
+                                    <li class="chip chip-experience-some">Perforce</li>
                                 </ul>
                             </dd>
                         </div>
@@ -462,15 +495,44 @@
                             <dd>
                                 <ul class="spec-chips">
                                     <li class="chip chip-experience-extensive">Gameplay programming</li>
-                                    <li class="chip chip-experience-moderate">Level design</li>
+                                    <li class="chip chip-experience-extensive">Systems engineer</li>
+                                    <li class="chip chip-experience-extensive">UI/UX scripting</li>
+                                    <li class="chip chip-experience-extensive">Game AI programming</li>
+                                    <li class="chip chip-experience-extensive">Tools programming</li>
+                                    <li class="chip chip-experience-moderate">Performance optimization</li>
+                                    <li class="chip chip-experience-moderate">Game Modding</li>
                                     <li class="chip chip-experience-moderate">Game design</li>
-                                    <li class="chip chip-experience-moderate">Web design</li>
+                                    <li class="chip chip-experience-moderate">Level design</li>
+                                    <li class="chip chip-experience-moderate">3D Modeling</li>
+                                    <li class="chip chip-experience-moderate">Web development</li>
+                                    <li class="chip chip-experience-moderate">Graphics & Rendering</li>
                                 </ul>
                             </dd>
                         </div>
                         <div class="spec-row">
-                            <dt class="spec-label">Working style</dt>
-                            <dd><p class="spec-text">Team player, quick to learn new tools</p></dd>
+                            <dt class="spec-label">Concepts</dt>
+                            <dd>
+                                <ul class="spec-chips">
+                                    <li class="chip chip-experience-extensive">Problem solving</li>
+                                    <li class="chip chip-experience-extensive">OOP</li>
+                                    <li class="chip chip-experience-extensive">Data structures and algorithms</li>
+                                    <li class="chip chip-experience-extensive">Dependency Injection</li>
+                                    <li class="chip chip-experience-extensive">Reactive programming</li>
+                                    <li class="chip chip-experience-extensive">Asynchronous programming</li>
+                                    <li class="chip chip-experience-extensive">Prototyping</li>
+                                    <li class="chip chip-experience-extensive">Debugging</li>
+                                    <li class="chip chip-experience-moderate">Technical documentation</li>
+                                    <li class="chip chip-experience-moderate">Agile methodologies</li>
+                                    <li class="chip chip-experience-moderate">Unit Testing</li>
+                                    <li class="chip chip-experience-moderate">Pathfinding</li>
+                                    <li class="chip chip-experience-moderate">Game design documentation</li>
+                                    <li class="chip chip-experience-moderate">Full-stack development</li>
+                                    <li class="chip chip-experience-some">Game Balancing</li>
+                                    <li class="chip chip-experience-some">Analytics</li>
+                                    <li class="chip chip-experience-some">Multiplayer networking</li>
+                                </ul>
+                                
+                            </dd>
                         </div>
                     </dl>
                 </div>
