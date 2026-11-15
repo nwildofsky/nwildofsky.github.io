@@ -258,7 +258,7 @@ button {
 .section-heading::after {
     content: "";
     display: block;
-    width: 7.6rem;
+    width: 5.7rem;
     height: .3rem;
     margin-top: .9rem;
     border-radius: 2px;
