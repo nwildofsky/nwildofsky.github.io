@@ -4,43 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dresden Files: Skyline</title>
-    <!-- Browser tab icon -->
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <!-- Fonts: Sora (headings) and DM Sans (text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/project.css">
-    <!-- Media gallery (large item and thumbnails) -->
     <script type="module" src="./src/gallery.js"></script>
-    <!-- Count and Previous / Next links, worked out from the project cards on the home page -->
     <script type="module" src="./src/project-pager.js"></script>
 </head>
 <body>
-    <!-- ===== TOP BAR (the only bar on a project page) =====
-         The count and the Previous / Next links (here and at the bottom of the page) are filled in by src/project-pager.js
-         from the order of the project cards on index.html, going around from the last project to the first. Do not edit
-         them by hand: the empty spans and the links to #projects are only what is there if the script cannot run, and
-         project.css hides them then. -->
+    <!-- ===== TOP BAR ===== -->
     <nav class="project-bar">
-        <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>All projects</a>
+        <a class="button" href="./index.html#projects">
+            <svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>
+            All projects
+        </a>
         <span class="project-bar-count"><span id="project-position"></span> of <span id="project-total"></span></span>
         <div class="project-bar-pager">
-            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg><span class="button-label">Previous</span></a>
-            <a class="button" href="./index.html#projects"><span class="button-label">Next</span><svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+            <a class="button" href="./index.html#projects">
+                <svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>
+                <span class="button-label">Previous</span>
+            </a>
+            <a class="button" href="./index.html#projects">
+                <span class="button-label">Next</span>
+                <svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg>
+            </a>
         </div>
     </nav>
 
     <main class="project-page">
-        <!-- ===== HEADER: media on the left, summary on the right ===== -->
+        <!-- ===== HEADER ===== -->
         <div class="project-header">
             <div class="project-media">
                 <div class="project-media-main"></div>
-                <!-- Media list: the first thumbnail shows first. To add an image, copy an image block and change its src and alt. -->
                 <ul class="project-media-thumbs">
-                    <!-- Video: its picture is only the preview shown before it plays -->
                     <li>
                         <button class="project-media-thumb" type="button" data-video="./media/DF/skyline.mp4">
                             <img src="./media/DF/skyline-poster.webp" alt="" width="1280" height="720">
@@ -83,7 +82,14 @@
 
             <div class="project-summary">
                 <ul id="tags" class="project-tags">
-                    <li class="chip chip-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>Class Project<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>4</span></li>
+                    <li class="chip chip-kind">
+                        <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                        Class Project
+                        <span class="kind-team">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                            4
+                        </span>
+                    </li>
                     <li class="chip">Game</li>
                     <li class="chip">3D Murder Mystery</li>
                 </ul>
@@ -124,7 +130,7 @@
             </div>
         </div>
 
-        <!-- ===== WRITEUP: description, then the three lists ===== -->
+        <!-- ===== WRITEUP ===== -->
         <div class="project-writeup">
             <p id="description">
                     A 3D Murder Mystery game built in Unity and set in the Dresden Files universe. Players are able
@@ -184,12 +190,18 @@
 
         <!-- ===== PREVIOUS / NEXT PROJECT ===== -->
         <div class="project-pager">
-            <a class="button" href="./index.html#projects"><svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>Previous project</a>
-            <a class="button" href="./index.html#projects">Next project<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+            <a class="button" href="./index.html#projects">
+                <svg class="icon button-arrow-back" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-left"></use></svg>
+                Previous project
+            </a>
+            <a class="button" href="./index.html#projects">
+                Next project
+                <svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg>
+            </a>
         </div>
     </main>
 
-    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <!-- ===== CONTACT FOOTER ===== -->
     <footer id="contact" class="site-footer">
         <div class="contact-text">
             <h2 class="contact-heading">Contact Me!</h2>

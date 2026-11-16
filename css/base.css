@@ -1,20 +1,8 @@
-/*
-    Shared styles, loaded by every page before the page's own stylesheet.
-    Order below follows the page, top to bottom:
-        1. Design tokens (colors, fonts, sizes)
-        2. Reset and page basics
-        3. Icons
-        4. Buttons
-        5. Section headings
-        6. Tag pills
-        7. Chips and icon links
-        8. Top navigation bar
-        9. Contact footer
-*/
+/* Shared styles for every page; loaded before the page's own stylesheet. */
 
 
 /* ==========================================================================
-   1. DESIGN TOKENS - change a color or size here and it changes everywhere
+   1. DESIGN TOKENS
    ========================================================================== */
 :root {
     /* Colors */
@@ -27,9 +15,9 @@
     --color-accent: #ffa726;
     --color-accent-2: #2db8ff;
     --color-on-accent: #1a1008;
-    --color-chip-dark: color-mix(in srgb, var(--color-bg) 78%, #000);   /* chips inside grey tables */
-    --color-kind-professional: #ffa726;   /* the filled Professional pill and chip */
-    --color-kind-published: #2db8ff;   /* the filled Published pill and chip */
+    --color-chip-dark: color-mix(in srgb, var(--color-bg) 78%, #000);
+    --color-kind-professional: #ffa726;
+    --color-kind-published: #2db8ff;
 
     /* Gradients */
     --gradient-title: linear-gradient(90deg, #ffb020, #ff5a1f);
@@ -39,22 +27,22 @@
         color-mix(in srgb, rgb(255, 184, 49) 55%, rgb(255, 119, 33)),
         color-mix(in srgb, rgb(255, 119, 33) 70%, #b82400));
 
-    /* Fonts (Sora and DM Sans come from Google Fonts, see each page's <head>) */
+    /* Fonts */
     --font-display: 'Sora', system-ui, 'Segoe UI', sans-serif;
     --font-body: 'DM Sans', system-ui, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 
-    /* Sizes. Every size in the stylesheets is in rem, where 1rem = 10px on a normal screen
-       (so 1.4rem = 14px). From 1280px wide up, 1rem grows a little with the screen (see section 2). */
+    /* Sizes */
     --nav-height: 5.6rem;
-    --page-max-width: 128rem;   /* the 1280px layout; wider at 1500px and up (see below); beyond it the page stays centered */
-    --page-padding: clamp(1.6rem, 4.2vw, 5.2rem);   /* the side space of the page */
-    --page-gutter: calc(var(--page-padding) + max(0px, (100vw - var(--page-max-width)) / 2));   /* the same, plus the extra margin that centers the page on ultrawide screens */
+    --page-max-width: 128rem;
+    --page-padding: clamp(1.6rem, 4.2vw, 5.2rem);
+    /* The page padding plus the extra margin that centers the page on ultrawide screens */
+    --page-gutter: calc(var(--page-padding) + max(0px, (100vw - var(--page-max-width)) / 2));
     --radius-button: .8rem;
     --radius-card: 1.2rem;
     --radius-pill: .6rem;
 }
-/* Large screens: the page gets wider (it stays centered beyond this width) */
+/* Large screens */
 @media (min-width: 1500px) {
     :root {
         --page-max-width: 160rem;
@@ -77,11 +65,8 @@ html {
     font-size: 62.5%;   /* 1rem = 10px */
     scroll-behavior: smooth;
 }
-/* Large screens: the base size grows a little with the screen, then almost stops.
-   Up to 1500px wide the whole page scales (0.78125vw = 10px at 1280px, 11.7px at 1500px). Beyond that
-   it grows slowly (10.8px + 0.06vw: 12px at 1920px, 12.3px at 2560px, 13.1px at 3840px), so text and
-   buttons keep a normal size and the layout (columns, page width) does the rest, see the
-   LARGE SCREENS block at the end of each stylesheet. */
+/* The base size grows with the screen up to 1500px, then almost stops, so text and buttons keep a normal size
+   on large screens and the layout does the rest */
 @media (min-width: 1280px) {
     html {
         font-size: min(0.78125vw, calc(10.8px + 0.06vw));
@@ -121,8 +106,7 @@ a:hover {
 img, svg {
     vertical-align: middle;
 }
-/* A picture inside a button (gallery thumbnails, hero rail) cannot be picked up and dragged, so a
-   click where the mouse moves a little is still a click */
+/* A picture inside a button cannot be dragged, so a click where the mouse moves a little is still a click */
 button img {
     pointer-events: none;
     -webkit-user-drag: none;
@@ -131,14 +115,12 @@ button img {
 button {
     font-family: inherit;
 }
-/* Keyboard focus ring for every link and button */
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
 
-/* Text that only screen readers read (for example the word beside an icon-only button) */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -153,7 +135,7 @@ button {
 
 
 /* ==========================================================================
-   3. ICONS - inline SVGs that point into media/icons.svg
+   3. ICONS
    ========================================================================== */
 .icon {
     width: 1.6rem;
@@ -165,8 +147,6 @@ button {
 
 /* ==========================================================================
    4. BUTTONS
-      .button          outline button (default)
-      .button-primary  the amber gradient button, add it next to .button
    ========================================================================== */
 .button {
     position: relative;
@@ -196,7 +176,7 @@ button {
     background-image: var(--gradient-button);
     color: var(--color-on-accent);
 }
-/* Hover: a richer gradient fades in over the normal one (CSS cannot animate between gradients) */
+/* CSS cannot animate between gradients, so a richer one fades in over the normal one on hover */
 .button-primary::before {
     content: "";
     position: absolute;
@@ -215,14 +195,12 @@ button {
 .button-primary:hover::before {
     opacity: 1;
 }
-/* A forward arrow inside a button slides 3px to the right on hover */
 .button .button-arrow {
     transition: transform .15s ease;
 }
 .button:hover .button-arrow {
     transform: translateX(.3rem);
 }
-/* A back arrow slides 3px to the left */
 .button .button-arrow-back {
     transition: transform .15s ease;
 }
@@ -244,7 +222,6 @@ button {
 
 /* ==========================================================================
    5. SECTION HEADINGS
-      A page section is <section class="page-section"> with an <h2 class="section-heading"> inside.
    ========================================================================== */
 .page-section {
     padding: 4.8rem var(--page-gutter) 0;
@@ -254,7 +231,6 @@ button {
     font: 600 clamp(2.2rem, 2.6vw, 2.8rem)/1.1 var(--font-display);
     letter-spacing: -.015em;
 }
-/* The short amber-to-cyan rule under the heading */
 .section-heading::after {
     content: "";
     display: block;
@@ -267,12 +243,7 @@ button {
 
 
 /* ==========================================================================
-   6. TAG PILLS - small solid labels that sit on top of a card image
-      .tag-pill-kind          what the project is: an icon and Professional, Class or Indie, then (after a divider,
-                              .kind-team) an icon and the team size: Group, Solo or a number such as ~8
-      .tag-pill-professional  add to a kind pill: the filled amber version
-      .tag-pill-published     the filled cyan Published pill (shown at the top right of the image)
-      .tag-pill-keyword       type, tool and language keywords
+   6. TAG PILLS
    ========================================================================== */
 .tag-pill {
     display: inline-flex;
@@ -293,19 +264,16 @@ button {
     width: 1.2rem;
     height: 1.2rem;
 }
-/* Filled amber pill for professional work */
 .tag-pill-professional {
     border-color: transparent;
     background-color: var(--color-kind-professional);
     color: var(--color-on-accent);
 }
-/* Filled cyan pill for a published project */
 .tag-pill-published {
     border-color: transparent;
     background-color: var(--color-kind-published);
     color: var(--color-on-accent);
 }
-/* The team size at the end of a kind pill or chip, after a thin divider: icon and Group, Solo or a number */
 .kind-team {
     display: inline-flex;
     align-items: center;
@@ -319,8 +287,6 @@ button {
 
 /* ==========================================================================
    7. CHIPS AND ICON LINKS
-      .chip       small label for skills and tools (a li or span); the About chips also get an experience level class
-      .icon-link  round button with just an icon, needs an aria-label
    ========================================================================== */
 .chip {
     display: inline-flex;
@@ -333,8 +299,7 @@ button {
     font: 500 1.25rem/1 var(--font-body);
     white-space: nowrap;
 }
-/* Experience level of a skill (About spec sheet): add one of these classes next to .chip.
-   extensive: amber-tinted and bold. moderate: no rule, it is the plain chip. some: a darker fill. */
+/* Experience levels; moderate has no rule because it is the plain chip */
 .chip-experience-extensive {
     border-color: color-mix(in srgb, var(--color-accent) 65%, transparent);
     background-color: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface-raised));
@@ -366,7 +331,7 @@ button {
 
 
 /* ==========================================================================
-   8. TOP NAVIGATION BAR (#site-nav, on the home page only; project pages have their own bar)
+   8. TOP NAVIGATION BAR
    ========================================================================== */
 #site-nav {
     position: sticky;
@@ -429,7 +394,7 @@ button {
     cursor: pointer;
 }
 
-/* Phone layout: the links become a dropdown opened by the Menu button (src/nav.js) */
+/* Phone layout */
 @media (max-width: 760px) {
     .site-nav-menu-button {
         display: inline-flex;
@@ -457,7 +422,7 @@ button {
 
 
 /* ==========================================================================
-   9. CONTACT FOOTER (#contact, the same on every page)
+   9. CONTACT FOOTER
    ========================================================================== */
 .site-footer {
     display: grid;

@@ -5,23 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan Wildofsky's Portfolio</title>
-    <!-- Browser tab icon -->
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <!-- Fonts: Sora (headings) and DM Sans (text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- My Stylesheets: base.css is shared by every page -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
-    <!-- Menu button of the top bar -->
     <script type="module" src="./src/nav.js"></script>
-    <!-- Hero video stage and thumbnail rail -->
     <script type="module" src="./src/hero-stage.js"></script>
 </head>
 
 <body>
-    <!-- ===== TOP NAVIGATION BAR (home page only; project pages have their own top bar) ===== -->
+    <!-- ===== TOP NAVIGATION BAR ===== -->
     <nav id="site-nav" aria-label="Main">
         <a class="site-nav-brand" href="#">Nathan Wildofsky</a>
         <button class="site-nav-menu-button" type="button" aria-expanded="false" aria-controls="site-nav-links">Menu</button>
@@ -38,12 +34,8 @@
         </ul>
     </nav>
 
-    <!-- ===== HERO: name, skills, links, and the rotating project video =====
-         The video stage and the thumbnail rail on the right are built by src/hero-stage.js from the
-         project cards further down (their title, blurb, link, data-video and data-poster).
-         The templates at the bottom of this section hold the stage's markup and its button words. -->
+    <!-- ===== HERO ===== -->
     <header id="hero">
-        <!-- Background layers: a grid on wide screens, a glow on phones (pure CSS, see home.css) -->
         <div class="hero-backdrop" aria-hidden="true">
             <div class="hero-backdrop-grid"></div>
             <div class="hero-backdrop-glow"></div>
@@ -79,8 +71,6 @@
             <div class="hero-rail" id="hero-rail"></div>
         </div>
 
-        <!-- Template for the stage (src/hero-stage.js copies it and fills in the empty parts from the current card).
-             Change the words "Learn More", "Pause" and "Play" here. -->
         <template id="hero-stage-template">
             <!-- Clicking the video opens the project (mouse only; keyboard users use the button below) -->
             <a class="hero-stage-link" href="#" tabindex="-1" aria-hidden="true">
@@ -91,7 +81,10 @@
                     <h2 class="hero-stage-title"></h2>
                     <p class="hero-stage-blurb"></p>
                 </div>
-                <a class="button button-primary hero-stage-button" href="#">Learn More<svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg></a>
+                <a class="button button-primary hero-stage-button" href="#">
+                    Learn More
+                    <svg class="icon button-arrow" aria-hidden="true"><use href="./media/icons.svg#icon-arrow-right"></use></svg>
+                </a>
             </div>
             <button class="hero-stage-toggle" type="button" data-label-pause="Pause" data-label-play="Play">
                 <svg class="icon hero-stage-toggle-pause" aria-hidden="true"><use href="./media/icons.svg#icon-pause"></use></svg>
@@ -99,7 +92,6 @@
             </button>
         </template>
 
-        <!-- Template for one thumbnail in the rail (one is made per project card) -->
         <template id="hero-rail-thumb-template">
             <button class="hero-rail-thumb" type="button">
                 <img alt="">
@@ -109,34 +101,28 @@
     </header>
 
     <main>
-        <!-- ===== PROJECTS =====
-             One project-card block per project, in the order they should appear.
-             To add a project: copy a whole article block, then change its id (project-N), the links, the image,
-             the title, the blurb and the pills.
-             Pills: the three keyword pills are the project's first type tag, first tool and first skill (skip
-             Teamwork and Communication). The kind pill (top left of the image) is one of these:
-
-             Team size only (Group; for Solo use icon-user and the word Solo):
-                 <span class="tag-pill tag-pill-kind"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>Group</span>
-
-             What the project is, plus the team size after a divider. The first icon and word are one of:
-             icon-briefcase + Professional (and add tag-pill-professional to the class list, it makes the pill amber),
-             icon-graduation-cap + Class, icon-lightbulb + Indie. The team part is icon-users + Group, icon-user + Solo,
-             or icon-users + a number such as ~8, &lt;5 or &gt;20 (the number is for professional projects):
-                 <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~8</span></span>
-
-             Published (an extra pill, put it right after the kind pill; it shows at the top right of the image):
-                 <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
-        -->
+        <!-- ===== PROJECTS ===== -->
         <section id="projects" class="page-section">
             <h2 class="section-heading">Projects</h2>
             <div id="project-grid">
 
                 <article class="project-card" id="project-1" data-video="./media/TWD/the_walking_dead.mp4" data-poster="./media/TWD/the_walking_dead-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-1.html"><img src="media/TWD/twd_cover.webp" alt="Key art for The Walking Dead: Aftermath with a crossbow-wielding survivor standing on a car surrounded by walkers" width="1920" height="1080" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>&lt;15</span></span>
-                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <a href="./project-1.html">
+                            <img src="media/TWD/twd_cover.webp" alt="Key art for The Walking Dead: Aftermath with a crossbow-wielding survivor standing on a car surrounded by walkers" width="1920" height="1080" loading="lazy">
+                        </a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>
+                            Professional
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                &lt;15
+                            </span>
+                        </span>
+                        <span class="tag-pill tag-pill-published">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>
+                            Published
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Mobile Game</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
@@ -155,9 +141,21 @@
 
                 <article class="project-card" id="project-2" data-video="./media/MSS/mercenary_syndicate.mp4" data-poster="./media/MSS/mercenary_syndicate-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-2.html"><img src="media/MSS/mss_card.webp" alt="Gameplay snapshot with 3 heroes shooting" width="576" height="411" loading="lazy"></a>
-                        <span class="tag-pill tag-pill-kind tag-pill-professional"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>Professional<span class="kind-team"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>~5</span></span>
-                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <a href="./project-2.html">
+                            <img src="media/MSS/mss_card.webp" alt="Gameplay snapshot with 3 heroes shooting" width="576" height="411" loading="lazy">
+                        </a>
+                        <span class="tag-pill tag-pill-kind tag-pill-professional">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-briefcase"></use></svg>
+                            Professional
+                            <span class="kind-team">
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                ~5
+                            </span>
+                        </span>
+                        <span class="tag-pill tag-pill-published">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>
+                            Published
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Mobile Game</li>
                             <li class="tag-pill tag-pill-keyword">C#</li>
@@ -174,17 +172,23 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-3" data-video="./media/DMR/dmr_playthrough.mp4" data-poster="./media/DMR/dmr_playthrough-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-3.html"><img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy"></a>
+                        <a href="./project-3.html">
+                            <img src="media/DMR/dmr_lazarus.webp" alt="Wide view of custom solar system in-game" width="1920" height="1080" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                4
                             </span>
                         </span>
-                        <span class="tag-pill tag-pill-published"><svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>Published</span>
+                        <span class="tag-pill tag-pill-published">
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-flag"></use></svg>
+                            Published
+                        </span>
                         <ul class="tag-pill-keywords">
                             <li class="tag-pill tag-pill-keyword">Mod</li>
                             <li class="tag-pill tag-pill-keyword">Java</li>
@@ -201,14 +205,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-4" data-video="./media/BRE/bre_demo.mp4" data-poster="./media/BRE/bre_demo-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-4.html"><img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy"></a>
+                        <a href="./project-4.html">
+                            <img src="media/BRE/bre_final.webp" alt="The final version of the engine with a basic winter snowglobe scene" width="1600" height="900" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>
+                                Solo
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -227,14 +234,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-5" data-video="./media/RE/re_simulation.mp4" data-poster="./media/RE/re_simulation-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-5.html"><img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy"></a>
+                        <a href="./project-5.html">
+                            <img src="media/RE/re_beginning.webp" alt="The start of an early generation where racers are going in every direction" width="1920" height="907" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>
+                                Solo
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -253,14 +263,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-6" data-video="./media/MF/mystic_forest.mp4" data-poster="./media/MF/mystic_forest-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-6.html"><img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy"></a>
+                        <a href="./project-6.html">
+                            <img src="media/MF/MF_fall.webp" alt="Falling into the darker part of the forest" width="1921" height="1085" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 5
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                5
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -279,14 +292,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-7" data-video="./media/TE/talisman.mp4" data-poster="./media/TE/talisman-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-7.html"><img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy"></a>
+                        <a href="./project-7.html">
+                            <img src="media/TE/TE_thumbnail.webp" alt="Solving a talisman puzzle" width="1622" height="913" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                4
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -305,14 +321,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-8" data-video="./media/DF/skyline.mp4" data-poster="./media/DF/skyline-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-8.html"><img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy"></a>
+                        <a href="./project-8.html">
+                            <img src="media/DF/DF_inspect.webp" alt="Inspecting a gun clue" width="1919" height="1083" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                4
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -331,14 +350,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-9" data-video="./media/IA/IA_1-turn.mp4" data-poster="./media/IA/IA_1-turn-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-9.html"><img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy"></a>
+                        <a href="./project-9.html">
+                            <img src="media/IA/IA_board.webp" alt="A common-looking board mid-game" width="1919" height="1079" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg> 4
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-users"></use></svg>
+                                4
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -356,14 +378,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-10" data-video="./media/HZ/HvZ_gameplay.mp4" data-poster="./media/HZ/HvZ_gameplay-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-10.html"><img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy"></a>
+                        <a href="./project-10.html">
+                            <img src="media/HZ/HZ_debug.webp" alt="Placing new humans into the simulation" width="1920" height="1080" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>
+                                Solo
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -382,14 +407,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-11" data-video="./media/QT/quake_tracker.mp4" data-poster="./media/QT/quake_tracker-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-11.html"><img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy"></a>
+                        <a href="./project-11.html">
+                            <img src="media/QT/QT_map.webp" alt="A map marking the location of earthquakes" width="1921" height="1077" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>
+                                Solo
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -408,14 +436,17 @@
                     </div>
                 </article>
 
-                <!-- Project card: copy this whole block to add a project -->
                 <article class="project-card" id="project-12" data-video="./media/PK/TCG_gameplay.mp4" data-poster="./media/PK/TCG_gameplay-poster.webp">
                     <div class="project-card-image">
-                        <a href="./project-12.html"><img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy"></a>
+                        <a href="./project-12.html">
+                            <img src="media/PK/PK_rayquaza.webp" alt="Searching for 'rayquaza' with the description 'dragon'" width="1920" height="1080" loading="lazy">
+                        </a>
                         <span class="tag-pill tag-pill-kind">
-                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg> Class
+                            <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-graduation-cap"></use></svg>
+                            Class
                             <span class="kind-team">
-                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg> Solo
+                                <svg class="icon" aria-hidden="true"><use href="./media/icons.svg#icon-user"></use></svg>
+                                Solo
                             </span>
                         </span>
                         <ul class="tag-pill-keywords">
@@ -531,7 +562,7 @@
                                     <li class="chip chip-experience-some">Analytics</li>
                                     <li class="chip chip-experience-some">Multiplayer networking</li>
                                 </ul>
-                                
+
                             </dd>
                         </div>
                     </dl>
@@ -540,7 +571,7 @@
         </section>
     </main>
 
-    <!-- ===== CONTACT FOOTER (the same on every page) ===== -->
+    <!-- ===== CONTACT FOOTER ===== -->
     <footer id="contact" class="site-footer">
         <div class="contact-text">
             <h2 class="contact-heading">Contact Me!</h2>

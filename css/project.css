@@ -1,17 +1,8 @@
-/*
-    Styles for the project pages, on top of base.css. Order follows the page, top to bottom:
-        1. Top bar (the only bar on a project page)
-        2. Page layout
-        3. Header, left: media gallery
-        4. Header, right: tags, title, facts, link buttons
-        5. Writeup: description and the three lists
-        6. Previous / Next at the bottom
-        7. Large screens (1500px and wider)
-*/
+/* Styles for the project pages, on top of base.css. */
 
 
 /* ==========================================================================
-   1. TOP BAR - All projects, "n of N", Previous and Next
+   1. TOP BAR
    ========================================================================== */
 .project-bar {
     position: sticky;
@@ -39,9 +30,7 @@
     display: flex;
     gap: .6rem;
 }
-/* The count and Previous / Next are filled in by src/project-pager.js, which then adds the class
-   project-pager-ready to <html>. Until then (or if it cannot run) they are hidden; visibility keeps
-   their space so the bar does not shift when they appear. */
+/* Hidden until src/project-pager.js has run; visibility keeps their space so the bar does not shift when they appear */
 html:not(.project-pager-ready) .project-bar-count,
 html:not(.project-pager-ready) .project-bar-pager {
     visibility: hidden;
@@ -67,7 +56,7 @@ html:not(.project-pager-ready) .project-bar-pager {
 
 
 /* ==========================================================================
-   3. MEDIA GALLERY (src/gallery.js fills .project-media-main from the thumbnails)
+   3. MEDIA GALLERY
    ========================================================================== */
 .project-media {
     display: grid;
@@ -129,7 +118,6 @@ html:not(.project-pager-ready) .project-bar-pager {
     height: 100%;
     object-fit: cover;
 }
-/* Play symbol on the video's thumbnail */
 .project-media-play {
     position: absolute;
     inset: 0;
@@ -144,7 +132,7 @@ html:not(.project-pager-ready) .project-bar-pager {
 
 
 /* ==========================================================================
-   4. SUMMARY - tags, title, facts table and link buttons
+   4. SUMMARY
    ========================================================================== */
 .project-summary {
     display: grid;
@@ -158,8 +146,6 @@ html:not(.project-pager-ready) .project-bar-pager {
     padding: 0;
     list-style: none;
 }
-/* The kind chips: an icon and Group Project, Solo Project, Professional Project, Class Project or
-   Independent Project, with the team size after a divider (.kind-team, in base.css), and Published */
 .chip-kind {
     gap: .6rem;
 }
@@ -185,7 +171,7 @@ html:not(.project-pager-ready) .project-bar-pager {
     letter-spacing: -.02em;
     text-wrap: balance;
 }
-/* Facts table: Timeframe and Role side by side, then Tools, then Skills */
+/* Facts table */
 .project-facts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -227,7 +213,6 @@ html:not(.project-pager-ready) .project-bar-pager {
     border-color: var(--color-line);
     background-color: var(--color-chip-dark);
 }
-/* Link buttons (Download & Play, See the Code...); the first one is the primary button */
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -236,7 +221,7 @@ html:not(.project-pager-ready) .project-bar-pager {
 
 
 /* ==========================================================================
-   5. WRITEUP - description, then Challenges / What I did well / What I would change
+   5. WRITEUP
    ========================================================================== */
 .project-writeup {
     display: grid;
@@ -272,7 +257,7 @@ html:not(.project-pager-ready) .project-bar-pager {
 
 
 /* ==========================================================================
-   6. PREVIOUS / NEXT PROJECT at the bottom of the page
+   6. PREVIOUS / NEXT PROJECT
    ========================================================================== */
 .project-pager {
     display: flex;
@@ -282,7 +267,6 @@ html:not(.project-pager-ready) .project-bar-pager {
     padding-top: 2rem;
     border-top: 1px solid var(--color-line);
 }
-/* Hidden until src/project-pager.js has filled in the links (see section 1) */
 html:not(.project-pager-ready) .project-pager {
     display: none;
 }
@@ -307,7 +291,6 @@ html:not(.project-pager-ready) .project-pager {
     .project-bar-pager {
         margin-left: auto;
     }
-    /* Previous and Next show only their arrows; the words stay for screen readers */
     .project-bar .button-label {
         position: absolute;
         width: 1px;
@@ -324,24 +307,20 @@ html:not(.project-pager-ready) .project-pager {
 
 
 /* ==========================================================================
-   LARGE SCREENS (1500px and wider, then 2400px and wider)
-   The header and the writeup are laid out as one two-column page: the media gallery on the left
-   (it stays in view while you read), and everything you read in one column on the right: summary,
-   description, the three lists (stacked) and Previous / Next. The start of the description is
-   visible when the page opens. Nothing sits under the gallery, so it can never cover anything.
-   To go back to the stacked layout, delete this block.
+   LARGE SCREENS (1500px and wider)
    ========================================================================== */
 @media (min-width: 1500px) {
     .project-page {
         grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
         column-gap: 4rem;
-        max-width: var(--page-max-width);   /* the same width as the top bar */
+        max-width: var(--page-max-width);
     }
     /* Their children become cells of .project-page */
     .project-header,
     .project-writeup {
         display: contents;
     }
+    /* Nothing sits under the sticky gallery, so it can never cover anything */
     .project-media {
         grid-column: 1;
         grid-row: 1 / span 4;   /* the four rows of the right column */
@@ -367,7 +346,7 @@ html:not(.project-pager-ready) .project-pager {
     .project-lists {
         grid-column: 2;
         grid-row: 3;
-        grid-template-columns: 1fr;   /* the three lists one under the other, as wide as the description */
+        grid-template-columns: 1fr;
         gap: 2.6rem;
     }
     .project-pager {

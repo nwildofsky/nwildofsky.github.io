@@ -1,17 +1,4 @@
-// Hero video stage and thumbnail rail on the home page.
-//
-// What it does: shows one project at a time (a muted looping video, the project's name and
-// one-line blurb, and a "Learn More" button). The rail under it has one thumbnail per project.
-// The stage moves to the next project every few seconds (the time is --hero-rotate-time in
-// home.css; the thumbnail's progress bar is what counts it down).
-//
-// What it reads from the HTML (it never contains visible text of its own):
-//   - every .project-card inside #project-grid: .project-card-title, .project-card-blurb, its first
-//     button (the Learn More link), and the data-video and data-poster attributes
-//   - <template id="hero-stage-template"> and <template id="hero-rail-thumb-template"> in index.html,
-//     which hold the stage's markup and the button words (Learn More, Pause, Play)
-// To add a project to the hero, just add a project card with data-video and data-poster.
-// A card without data-video shows only its poster on the stage.
+// Hero video stage and thumbnail rail on the home page, built from the project cards.
 
 const hero = document.getElementById('hero');
 const showcase = hero.querySelector('.hero-showcase');
@@ -66,12 +53,11 @@ function showProject(index) {
     if (project.video) {
         video.src = project.video;
     } else {
-        video.removeAttribute('src');   // a project without a video (a placeholder) shows only its poster
+        video.removeAttribute('src');
         video.load();   // stops the video that was playing
     }
     updatePlayback();
 
-    // Move the highlight and restart the thumbnail's progress bar
     thumbs.forEach((thumb, i) => {
         thumb.classList.remove('is-active');
         thumb.removeAttribute('aria-current');
@@ -87,7 +73,6 @@ function showNextProject() {
     showProject((currentIndex + 1) % projects.length);
 }
 
-// The progress bar finishing is the signal to move on
 rail.addEventListener('animationend', (event) => {
     if (event.target.classList.contains('hero-rail-progress')) {
         showNextProject();
@@ -95,8 +80,6 @@ rail.addEventListener('animationend', (event) => {
 });
 
 // ---- Pausing ----
-// The video pauses when the visitor presses the Pause button, the tab is hidden, or the stage is
-// scrolled out of view. The rotation also pauses while the pointer or keyboard focus is on the stage.
 let pausedByVisitor = false;
 let tabHidden = document.hidden;
 let outOfView = false;
@@ -121,21 +104,39 @@ toggleButton.addEventListener('click', () => {
     updatePlayback();
 });
 
-stage.addEventListener('pointerenter', () => { pointerOnStage = true; updatePlayback(); });
-stage.addEventListener('pointerleave', () => { pointerOnStage = false; updatePlayback(); });
+stage.addEventListener('pointerenter', () => {
+    pointerOnStage = true;
+    updatePlayback();
+});
+
+stage.addEventListener('pointerleave', () => {
+    pointerOnStage = false;
+    updatePlayback();
+});
+
 // Only keyboard focus holds the rotation: a mouse click on the Pause/Play button also focuses it, and that
 // would keep the rotation halted after pressing Play until the visitor clicked somewhere else.
-stage.addEventListener('focusin', (event) => { focusOnStage = event.target.matches(':focus-visible'); updatePlayback(); });
-stage.addEventListener('focusout', () => { focusOnStage = false; updatePlayback(); });
+stage.addEventListener('focusin', (event) => {
+    focusOnStage = event.target.matches(':focus-visible');
+    updatePlayback();
+});
 
-document.addEventListener('visibilitychange', () => { tabHidden = document.hidden; updatePlayback(); });
+stage.addEventListener('focusout', () => {
+    focusOnStage = false;
+    updatePlayback();
+});
+
+document.addEventListener('visibilitychange', () => {
+    tabHidden = document.hidden;
+    updatePlayback();
+});
 
 new IntersectionObserver((entries) => {
     outOfView = !entries[0].isIntersecting;
     updatePlayback();
 }, { threshold: 0.25 }).observe(stage);
 
-// ---- Reduced motion: the video still plays, but the stage stays on the project it is on ----
+// ---- Reduced motion ----
 function applyReducedMotion() {
     showcase.classList.toggle('is-static', reducedMotion.matches);
 }

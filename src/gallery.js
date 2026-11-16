@@ -1,17 +1,4 @@
 // Media gallery on a project page: one large item with a row of thumbnails under it.
-//
-// What it does: clicking a thumbnail shows that item in the large area. An image thumbnail
-// shows the same image; a video thumbnail shows its video with the browser's own controls.
-// A video starts by itself, muted and looping (browsers only allow autoplay when muted); the
-// controls let the visitor pause it or turn the sound on. It pauses while it is scrolled out
-// of view or the tab is hidden, and it stops loading as soon as another thumbnail is picked.
-//
-// What it reads from the HTML (it never contains visible text of its own):
-//   - <div class="project-media-main">: the empty large area
-//   - every <button class="project-media-thumb"> in <ul class="project-media-thumbs">, in order.
-//     Its <img> gives the picture (and the alt text). If the button has a data-video attribute,
-//     the item is a video and the <img> is only the preview picture shown before it plays.
-// To add an image or a video, copy a thumbnail <li> in the page. The first thumbnail shows first.
 
 const mainArea = document.querySelector('.project-media-main');
 const thumbs = Array.from(document.querySelectorAll('.project-media-thumb'));
@@ -45,7 +32,7 @@ function showItem(index) {
     thumbs.forEach((other, i) => other.setAttribute('aria-pressed', String(i === index)));
 }
 
-// ---- Pause the video while nobody can see it (and only resume it if this script paused it) ----
+// ---- Pause while not visible; only resume a video this script paused ----
 let areaVisible = true;
 let pausedByScript = false;
 
