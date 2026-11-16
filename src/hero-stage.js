@@ -123,7 +123,9 @@ toggleButton.addEventListener('click', () => {
 
 stage.addEventListener('pointerenter', () => { pointerOnStage = true; updatePlayback(); });
 stage.addEventListener('pointerleave', () => { pointerOnStage = false; updatePlayback(); });
-stage.addEventListener('focusin', () => { focusOnStage = true; updatePlayback(); });
+// Only keyboard focus holds the rotation: a mouse click on the Pause/Play button also focuses it, and that
+// would keep the rotation halted after pressing Play until the visitor clicked somewhere else.
+stage.addEventListener('focusin', (event) => { focusOnStage = event.target.matches(':focus-visible'); updatePlayback(); });
 stage.addEventListener('focusout', () => { focusOnStage = false; updatePlayback(); });
 
 document.addEventListener('visibilitychange', () => { tabHidden = document.hidden; updatePlayback(); });
